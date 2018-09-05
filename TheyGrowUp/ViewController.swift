@@ -7,17 +7,23 @@
 //
 
 import UIKit
-import SpriteKit
 import AVFoundation
 
 var gender = "boy"
 var initScore :[UIImage] = []
 
 //initial home screen view
-//allows customization of gender and name
+//allows customization of gender
 
 class ViewController: UIViewController {
 
+    
+    @IBAction func nextButtonAction(_ sender: Any) {
+        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SetupViewController") as UIViewController
+        viewController.modalTransitionStyle = .crossDissolve
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var textbox: UIImageView!
     
@@ -100,7 +106,7 @@ class ViewController: UIViewController {
             })
             
             
-            //TODO: animate scoring bars
+            //animate scoring bars
             UIView.animate(withDuration: 1.2, delay: 2, animations: {
                 self.healthScore.alpha = 1
                 self.moneyScore.alpha = 1
@@ -122,9 +128,9 @@ class ViewController: UIViewController {
                 self.communityLabel.alpha = 1
             })
             
-            // TODO: get baby name, show next button
+            // show next button
             UIView.animate(withDuration: 1.2, delay: 3.2, animations: {
-                //self.
+                self.nextButton.alpha = 1
             })
              
         }
