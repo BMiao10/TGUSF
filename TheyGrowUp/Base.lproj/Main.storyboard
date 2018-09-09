@@ -276,10 +276,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="qf4-ER-uEh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Neighborhood" translatesAutoresizingMaskIntoConstraints="NO" id="qf4-ER-uEh">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="omb-pA-Dcz">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="PjU-o2-tN0">
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Az-JH-prD">
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="Mhv-El-dJk">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="light"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="health_icon" translatesAutoresizingMaskIntoConstraints="NO" id="IO3-xT-zTt" userLabel="health">
                                 <rect key="frame" x="54" y="216" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -316,6 +338,13 @@
                                 <rect key="frame" x="62" y="494" width="65" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Child's Health" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnO-mX-ws7" userLabel="healthLabel">
+                                <rect key="frame" x="207" y="226" width="170" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <color key="textColor" red="0.14117647059999999" green="0.4039215686" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBC-JB-n8d" userLabel="moneyLabel">
                                 <rect key="frame" x="211" y="319" width="83" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -338,14 +367,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHe-We-28P" userLabel="ageLabel">
-                                <rect key="frame" x="153" y="68" width="31" height="82"/>
+                                <rect key="frame" x="166" y="68" width="173" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="68"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSi-Uw-mzj" userLabel="ageScaleLabel">
-                                <rect key="frame" x="111" y="40" width="115" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSi-Uw-mzj" userLabel="ageScaleLabel">
+                                <rect key="frame" x="150" y="20" width="215" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
@@ -372,13 +401,50 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Child's Health" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnO-mX-ws7" userLabel="healthLabel">
-                                <rect key="frame" x="207" y="226" width="170" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <color key="textColor" red="0.14117647059999999" green="0.4039215686" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVB-8A-6Eo">
+                                <rect key="frame" x="485" y="530" width="410" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="choiceA">
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="choiceAButton:" destination="tKk-aN-wJO" eventType="touchUpInside" id="VD7-uw-142"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sst-lD-sZB">
+                                <rect key="frame" x="485" y="675" width="410" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="More Info">
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="moreInfo:" destination="tKk-aN-wJO" eventType="touchUpInside" id="stv-Nn-wBH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bk-zy-8Mr">
+                                <rect key="frame" x="485" y="568" width="410" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="choiceB">
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="choiceBButton:" destination="tKk-aN-wJO" eventType="touchUpInside" id="g3I-iH-XCr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvQ-Fh-7bP">
+                                <rect key="frame" x="486" y="610" width="410" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="choiceC">
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="choiceCButton:" destination="tKk-aN-wJO" eventType="touchUpInside" id="3u0-Yd-rb7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="eeL-eJ-aAz"/>
@@ -387,9 +453,13 @@
                         <outlet property="ageLabel" destination="RHe-We-28P" id="Oob-28-ILP"/>
                         <outlet property="ageScaleLabel" destination="cSi-Uw-mzj" id="E61-6P-aJO"/>
                         <outlet property="backgroundImage" destination="qf4-ER-uEh" id="VLr-yL-Kd1"/>
+                        <outlet property="choiceALabel" destination="aVB-8A-6Eo" id="pHa-0y-ENI"/>
+                        <outlet property="choiceBLabel" destination="8bk-zy-8Mr" id="iTd-q7-vnl"/>
+                        <outlet property="choiceCLabel" destination="hvQ-Fh-7bP" id="hst-FR-fTJ"/>
                         <outlet property="communityScore" destination="f8F-xR-fLB" id="WGP-vO-gFJ"/>
                         <outlet property="healthScore" destination="f8F-xR-fLB" id="zN1-ua-Ln3"/>
                         <outlet property="moneyScore" destination="FK2-Dx-rXG" id="aQZ-YL-yso"/>
+                        <outlet property="moreInfoLabel" destination="Sst-lD-sZB" id="bjp-wO-Hvz"/>
                         <outlet property="textboxImage" destination="OHO-w8-ANJ" id="B5W-iK-k02"/>
                         <outlet property="textboxText" destination="OPY-Oj-Q7W" id="Mf5-8D-P02"/>
                         <outlet property="timeScore" destination="s1f-QO-BsG" id="UXI-GH-iM7"/>
@@ -401,12 +471,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Neighborhood" width="2048" height="1536"/>
         <image name="babyImage" width="499" height="642"/>
         <image name="boy_homeScreen" width="2136" height="1600"/>
         <image name="community_icon" width="157" height="185"/>
         <image name="good-health" width="58" height="181"/>
         <image name="health_icon" width="213" height="192"/>
-        <image name="mainBackground" width="2048" height="1536"/>
         <image name="money_icon" width="157" height="157"/>
         <image name="nextButton" width="357" height="137"/>
         <image name="setupPopup" width="1612" height="1131"/>

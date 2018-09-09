@@ -11,6 +11,7 @@ import AVFoundation
 
 var gender = "boy"
 var initScore :[UIImage] = []
+var pronouns = ["he", "him", "his"]
 
 //initial home screen view
 //allows customization of gender
@@ -54,11 +55,14 @@ class ViewController: UIViewController {
     @IBAction func boySwitch(_ sender: Any) {
         startBackground.image = UIImage(named: "boy_homeScreen")
         gender = "boy"
+        pronouns = ["he", "him", "his"]
+        
     }
     
     @IBAction func girlSwitch(_ sender: Any) {
         startBackground.image = UIImage(named: "girl_homeScreen")
         gender = "girl"
+        pronouns = ["she", "her", "hers"]
     }
     
     @IBAction func startButton(_ sender: Any) {
@@ -134,6 +138,7 @@ class ViewController: UIViewController {
             })
              
         }
+        
     }
     
     override func viewDidLoad() {

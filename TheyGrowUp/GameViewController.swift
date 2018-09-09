@@ -17,6 +17,7 @@ struct myNode : Codable {
     var choiceB:String
     var nextA:Int
     var nextB:Int
+    var nextC:Int
     var money:Int
     var time:Int
     var health:Int
@@ -33,6 +34,7 @@ struct myNode : Codable {
         choiceB = try values.decode(String.self, forKey: .choiceB)
         nextA = try values.decode(Int.self, forKey: .nextA)
         nextB = try values.decode(Int.self, forKey: .nextB)
+        nextC = try values.decode(Int.self, forKey: .nextC)
         money = try values.decode(Int.self, forKey: .money)
         time = try values.decode(Int.self, forKey: .time)
         health = try values.decode(Int.self, forKey: .health)
@@ -46,6 +48,44 @@ struct ResponseData: Decodable {
 }
 
 class GameViewController: UIViewController {
+    
+    var scene = [myNode]()
+    
+    var choices = [Int]()
+    var currScores = ["moneyScore":3,"timeScore":3,"healthScore":3,"communityScore":3]
+    var currNode = 0
+    
+    @IBAction func choiceAButton(_ sender: Any) {
+        let prevNode = currNode
+        currNode = scene[prevNode].nextA
+        loadScene(node: scene[scene[prevNode].nextA])
+        //TODO: store choice to export object
+    }
+    
+    
+    @IBAction func choiceBButton(_ sender: Any) {
+        let prevNode = currNode
+        currNode = scene[prevNode].nextB
+        loadScene(node: scene[scene[prevNode].nextB])
+        //TODO: store choice to export object
+    }
+    
+    @IBAction func choiceCButton(_ sender: Any) {
+        let prevNode = currNode
+        currNode = scene[prevNode].nextC
+        loadScene(node: scene[scene[prevNode].nextC])
+        //TODO: store choice to export object
+    }
+    
+    @IBAction func moreInfo(_ sender: Any) {
+        //TODO:figure out moreInfo stuff
+    }
+    
+    @IBOutlet weak var choiceALabel: UIButton!
+    @IBOutlet weak var choiceBLabel: UIButton!
+    @IBOutlet weak var choiceCLabel: UIButton!
+    
+    @IBOutlet weak var moreInfoLabel: UIButton!
     
     @IBOutlet weak var ageScaleLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
@@ -61,12 +101,26 @@ class GameViewController: UIViewController {
     @IBOutlet weak var communityScore: UIImageView!
     
     override func viewDidLoad() {
-        let scene = loadSceneJSON(filename:"scene1.json")   //create nodes for each node
+        scene = loadSceneJSON(filename:"scene1.json")!   //create nodes for each node
+        
         super.viewDidLoad()
         
-        //TODO: change the baby age
+        //TODO: animate change the baby age
+        UIView.animate(withDuration: 1.7, delay: 0.5, animations: {
+            self.ageScaleLabel.text = "🎉"
+            self.ageLabel.text = "🎉"
+            self.ageScaleLabel.transform = CGAffineTransform(scaleX: 2, y: 2)
+            self.ageLabel.transform = CGAffineTransform(scaleX: 2, y: 2)
+        })   { (_) in
+            
+            UIView.animate(withDuration: 1.2, delay: 0, animations: {
+                self.ageScaleLabel.text = "10"
+                self.ageScaleLabel.transform = CGAffineTransform(scaleX: 1, y: 1)
+            })
+        }
         
-        loadScene(node:scene![0])      //load first scene
+        //load first scene
+        loadScene(node:scene[currNode])
     }
     
     func loadSceneJSON(filename fileName: String) -> [myNode]? {
@@ -85,11 +139,11 @@ class GameViewController: UIViewController {
     
     func loadScene(node:myNode) {
         //load background
-        if backgroundImage.image != UIImage(named: node.background) {
+        if node.background.count > 0 && backgroundImage.image != UIImage(named: node.background) {
             backgroundImage.image = UIImage(named: node.background)
         }
         
-        //add animations/audio
+        //TODO:add animations/audio
         let animations = node.animate.split(separator: ",")
         for i in animations {
             if i.contains("Audio") {
@@ -99,48 +153,87 @@ class GameViewController: UIViewController {
                 //add info button
             }
             else {
-                //animate
+                //animate image
                 let imageArray = createImageArray(total:10, imagePrefix:String(i))
                 animateImage(imageView: textboxImage, images: imageArray, duration: 1.0, reps: 2)
             }
         }
         
         //show speaker images
-        if textboxImage.image != UIImage(named: node.speaker) {
+        if node.speaker.count > 0 && textboxImage.image != UIImage(named: node.speaker) {
             textboxImage.image = UIImage(named: node.speaker)
         }
         
-        //TODO: show dialogue
+        //show dialogue
+        if node.text.count > 0 {
+            textboxText.text = node.text
+        }
         
-        //TODO: changeScore()
+        //change score with animations
+        let scores = [node.time:"timeScore", node.health:"healthScore", node.money:"moneyScore", node.community:"communityScore"]
+        let imagesArray = createImageArray(total:11,imagePrefix:"health")
+        for i in scores.keys {
+            if i != 0 {
+                changeScore(changeImage:scores[i]!, change:i, imageArray: imagesArray)
+            }
+        }
         
-        //TODO: loadChoices()
+        loadChoices()
     }
     
-    func createNodes(content:String) {
+    //TODO:fix this
+    func changeScore(changeImage:String, change:Int, imageArray:[UIImage]) {
+        /**
+        let currImage = UIImage(named: changeImage) //get current metric image to change
+         
+        //get new score
+        let currScore = currScores[changeImage]
+        let newScore = currScore! + change
+         
+        let changeScoreDict = [0, 3, 6, 10]
         
+        if newScore < 1 {
+            //TODO: animate loss of score and change to end screen
+            self.animateImage(imageView: currImage, images: imageArray[changeScoreDict[currScore]..<imageArray.count].reverse(), duration: 1, reps: 1)
+            
+            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameOverViewController") as UIViewController
+            viewController.modalTransitionStyle = .crossDissolve
+            self.present(viewController, animated: true, completion: nil)
+        }
+        else if newScore > 3 {
+            //TODO: animate gold star but no change in score
+        }
+        else {
+            //animate change in score
+            if change > 0 {
+                self.animateImage(imageView: currImage, images: imageArray[changeScoreDict[currScore]..<changeScoreDict[newScore]], duration: 1, reps: 1)
+            }
+            else {
+                self.animateImage(imageView: currImage, images: imageArray[changeScoreDict[currScore]..<changeScoreDict[newScore]].reverse(), duration: 1, reps: 1)
+            }
+            
+        }
+        
+        //update score
+        currScores[changeImage] = newScore
+ **/
     }
     
-    //TODO: func changeScene() {
-    //
-    //}
-    
-    //TODO/PLACEHOLDER: choose next scene, given selection
-    /** func selectChoice(choice:String, currNode:Int) -> Int {
-        let nextChoice = Int
-        
-        if choice == "A" {
-            nextChoice = 0
+    //TODO: finish this
+    func loadChoices() {
+        UIView.animate(withDuration: 1.7, delay: 0.5, animations: {
+            self.choiceALabel.setTitle("", for: UIControlState.normal)
+        })   { (_) in
+            
+            UIView.animate(withDuration: 1.2, delay: 0, animations: {
+                self.choiceBLabel.setTitle("", for: UIControlState.normal)
+            })
+            
+            UIView.animate(withDuration: 1.2, delay: 0, animations: {
+                self.choiceCLabel.setTitle("", for: UIControlState.normal)
+            })
         }
-        elif choice == "B" {
-            nextChoice = 1
-        }
-        elif choice == "C" {
-            nextChoice = 2
-        }
-        
-        return nextChoice
-    } **/
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
