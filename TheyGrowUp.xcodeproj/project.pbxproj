@@ -10,6 +10,7 @@
 		40038E80213F8AD200D7FBA2 /* MainScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 40038E7F213F8AD200D7FBA2 /* MainScene.sks */; };
 		40038E84213F903F00D7FBA2 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40038E83213F903F00D7FBA2 /* SetupViewController.swift */; };
 		40038E86213F914700D7FBA2 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40038E85213F914700D7FBA2 /* GameViewController.swift */; };
+		40220DB5214748F500C4D4A6 /* coughAudio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40220DB4214748F500C4D4A6 /* coughAudio.mp3 */; };
 		403601DA212DE3D30082E29C /* health_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 403601CF212DE3CB0082E29C /* health_3.png */; };
 		403601DB212DE3D30082E29C /* health_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 403601D0212DE3CC0082E29C /* health_2.png */; };
 		403601DC212DE3D30082E29C /* health_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 403601D1212DE3CD0082E29C /* health_4.png */; };
@@ -27,13 +28,14 @@
 		4067CAAB20FAE47900C6A7FE /* TheyGrowUp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4067CAA920FAE47900C6A7FE /* TheyGrowUp.xcdatamodeld */; };
 		4067CAAD20FAE47A00C6A7FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4067CAAC20FAE47A00C6A7FE /* Assets.xcassets */; };
 		4067CAB020FAE47A00C6A7FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4067CAAE20FAE47A00C6A7FE /* LaunchScreen.storyboard */; };
-		406C706821469CB200065B6F /* scene1.json in Resources */ = {isa = PBXBuildFile; fileRef = 406C706721469CB200065B6F /* scene1.json */; };
+		406C706B21471BB700065B6F /* scene1.json in Resources */ = {isa = PBXBuildFile; fileRef = 406C706A21471BB700065B6F /* scene1.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		40038E7F213F8AD200D7FBA2 /* MainScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainScene.sks; sourceTree = "<group>"; };
 		40038E83213F903F00D7FBA2 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		40038E85213F914700D7FBA2 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		40220DB4214748F500C4D4A6 /* coughAudio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coughAudio.mp3; sourceTree = "<group>"; };
 		403601CF212DE3CB0082E29C /* health_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = health_3.png; sourceTree = "<group>"; };
 		403601D0212DE3CC0082E29C /* health_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = health_2.png; sourceTree = "<group>"; };
 		403601D1212DE3CD0082E29C /* health_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = health_4.png; sourceTree = "<group>"; };
@@ -53,7 +55,7 @@
 		4067CAAC20FAE47A00C6A7FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4067CAAF20FAE47A00C6A7FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4067CAB120FAE47A00C6A7FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		406C706721469CB200065B6F /* scene1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = scene1.json; sourceTree = "<group>"; };
+		406C706A21471BB700065B6F /* scene1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scene1.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,8 @@
 		4067CA9620FAE47800C6A7FE = {
 			isa = PBXGroup;
 			children = (
+				40220DB4214748F500C4D4A6 /* coughAudio.mp3 */,
+				406C706A21471BB700065B6F /* scene1.json */,
 				4067CAA120FAE47900C6A7FE /* TheyGrowUp */,
 				4067CAA020FAE47900C6A7FE /* Products */,
 			);
@@ -114,7 +118,6 @@
 				4067CAAC20FAE47A00C6A7FE /* Assets.xcassets */,
 				4067CAAE20FAE47A00C6A7FE /* LaunchScreen.storyboard */,
 				4067CAB120FAE47A00C6A7FE /* Info.plist */,
-				406C706721469CB200065B6F /* scene1.json */,
 				4067CAA920FAE47900C6A7FE /* TheyGrowUp.xcdatamodeld */,
 			);
 			path = TheyGrowUp;
@@ -178,9 +181,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40220DB5214748F500C4D4A6 /* coughAudio.mp3 in Resources */,
+				406C706B21471BB700065B6F /* scene1.json in Resources */,
 				403601E4212DE3D30082E29C /* health_8.png in Resources */,
 				403601E2212DE3D30082E29C /* health_0.png in Resources */,
-				406C706821469CB200065B6F /* scene1.json in Resources */,
 				40038E80213F8AD200D7FBA2 /* MainScene.sks in Resources */,
 				403601DC212DE3D30082E29C /* health_4.png in Resources */,
 				4067CAB020FAE47A00C6A7FE /* LaunchScreen.storyboard in Resources */,

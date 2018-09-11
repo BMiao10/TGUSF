@@ -69,7 +69,7 @@ class ViewController: UIViewController {
         // initialize background, animate scrolling effect
         startBackground.image = UIImage(named: "setupScreen")
         startBackground.frame = CGRect(x: 0, y: 0, width: 1330, height: 768)
-        UIView.animate(withDuration: 1.7, delay: 0.5, animations: {
+        UIView.animate(withDuration: 1.4, delay: 0.5, animations: {
             self.startBackground.transform = CGAffineTransform(translationX: -307, y: 0)
         })   { (_) in
             //Initialize textboxText
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
             
             //animate text and image in textbox
             //TODO:add baby sound
-            UIView.animate(withDuration: 1.2, delay: 1.8, animations: {
+            UIView.animate(withDuration: 1.1, delay: 1.8, animations: {
                 if gender == "boy" {
                     self.textboxImage.image = UIImage(named: "babyBoy")
                 }
