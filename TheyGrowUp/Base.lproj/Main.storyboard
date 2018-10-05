@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -64,6 +64,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="good-health" translatesAutoresizingMaskIntoConstraints="NO" id="N0V-vk-hQe" userLabel="healthScore">
                                 <rect key="frame" x="142" y="183" width="35" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="babyImage" translatesAutoresizingMaskIntoConstraints="NO" id="p8V-ti-wig" userLabel="babyImage">
                                 <rect key="frame" x="27" y="33" width="114" height="140"/>
@@ -133,7 +136,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content=" ">
                                         <attributes>
-                                            <font key="NSFont" size="25" name="Comfortaa-Bold"/>
+                                            <font key="NSFont" metaFont="system" size="25"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -167,7 +170,6 @@
                         <outlet property="babyImage" destination="p8V-ti-wig" id="c7v-XJ-xi9"/>
                         <outlet property="communityIcon" destination="cOV-iS-dhB" id="nMr-v1-oJy"/>
                         <outlet property="communityLabel" destination="lGZ-Ug-lBI" id="I7b-ZK-QV5"/>
-                        <outlet property="communityScore" destination="6Rb-aX-vg9" id="fhF-iE-bPx"/>
                         <outlet property="healthIcon" destination="qFS-JY-XHn" id="yqJ-oL-wnw"/>
                         <outlet property="healthLabel" destination="Wq8-n1-9fU" id="XII-VA-pQK"/>
                         <outlet property="healthScore" destination="N0V-vk-hQe" id="EBz-AR-Y8i"/>

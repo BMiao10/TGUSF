@@ -41,6 +41,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var timeScore: UIImageView!
     @IBOutlet weak var communityScore: UIImageView!
     
+    
+    @IBOutlet weak var communityScore2: LinearProgressBar!
+    
+    
     @IBOutlet weak var healthIcon: UIImageView!
     @IBOutlet weak var moneyIcon: UIImageView!
     @IBOutlet weak var timeIcon: UIImageView!
@@ -73,7 +77,7 @@ class ViewController: UIViewController {
             self.startBackground.transform = CGAffineTransform(translationX: -307, y: 0)
         })   { (_) in
             //Initialize textboxText
-            self.textboxText.text = "Congratulations! As the new parent of a healthy baby " + gender + ", your task is to make the best choices to protect their health, as well as your own money, time, and community. \n\nYour progress will measured by the bars shown on the right. Good luck!"
+            self.textboxText.text = "Congratulations! As the new parent of a healthy baby \(gender), your task is to make the best choices to protect their health, as well as your own money, time, and community. \n\nYour progress will measured by the bars shown on the right. Good luck!"
             
             //animate text box
             //initialize baby age/ageScale
