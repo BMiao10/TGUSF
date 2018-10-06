@@ -65,17 +65,14 @@ class ScoreView: UIView {
         
         ScoreItems.allCases.forEach { (item) in
             let bar = scoreBar(for: item)
-            // TODO: Fix colors and ranges
             bar.barColorForValue = { value in
                 switch value {
-                case 0..<20:
-                    return UIColor.red
-                case 20..<60:
-                    return UIColor.orange
-                case 60..<80:
-                    return UIColor.yellow
+                case 0..<34:
+                    return UIColor.init(hue: 357.0 / 360.0, saturation: 0.57, brightness: 0.93, alpha: 1)
+                case 34..<67:
+                    return UIColor.init(hue: 46.0 / 360.0, saturation: 0.54, brightness: 0.93, alpha: 1)
                 default:
-                    return UIColor.green
+                    return UIColor.init(hue: 163.0 / 360.0, saturation: 0.68, brightness: 0.67, alpha: 1)
                 }
             }
         }
@@ -88,10 +85,9 @@ class ScoreView: UIView {
     func setScore(score newScore: Int, for item:ScoreItems) {
         if ( scores[ item ] != newScore ) {
             scores[ item ] = newScore
-            let progress = newScore / MAX_SCORE * 100
-            scoreBar(for: item).setProgress(CGFloat(progress), animated: true, duration: 5)
+            let progress = Float(newScore) / Float(MAX_SCORE) * 100
+            scoreBar(for: item).setProgress(CGFloat(progress), animated: true, duration: 2.5)
         }
-        
     }
     
     func setScores(scores newScores: [ScoreItems: Int], for item:ScoreItems) {
