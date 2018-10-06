@@ -58,19 +58,6 @@ class ScoreView: UIView {
         xib.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         xib.frame = self.bounds
         contentView = xib
-    }
-    
-    /*required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        self.backgroundColor = UIColor.clear
-        xibSetup()
-    }*/
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        xibSetup()
         
         ScoreItems.allCases.forEach { (item) in
             let bar = scoreBar(for: item)
@@ -85,6 +72,12 @@ class ScoreView: UIView {
                 }
             }
         }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        xibSetup()
     }
     
     override func prepareForInterfaceBuilder() {
