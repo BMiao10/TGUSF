@@ -17,9 +17,11 @@ enum ScoreItems: String, CaseIterable {
     case community
 }
 
+@IBDesignable
 class ScoreView: UIView {
     
     @IBOutlet var view: UIView!
+    private var contentView: UIView?
 
     @IBOutlet weak var healthScore: LinearProgressBar!
     @IBOutlet weak var moneyScore: LinearProgressBar!
@@ -50,18 +52,25 @@ class ScoreView: UIView {
         return contentView
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    func xibSetup() {
+        let xib = self.loadNib()!
+        self.addSubview(xib)
+        xib.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        xib.frame = self.bounds
+        contentView = xib
+    }
+    
+    /*required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        let contentView = self.loadNib()!
         self.backgroundColor = UIColor.clear
-        self.addSubview(contentView)
-        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        contentView.frame = self.bounds
-    }
+        xibSetup()
+    }*/
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        xibSetup()
         
         ScoreItems.allCases.forEach { (item) in
             let bar = scoreBar(for: item)
@@ -76,6 +85,12 @@ class ScoreView: UIView {
                 }
             }
         }
+    }
+    
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        xibSetup()
+        contentView?.prepareForInterfaceBuilder()
     }
     
     func score(for item:ScoreItems) -> Int? {
