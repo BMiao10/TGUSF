@@ -8,10 +8,10 @@
 
 import UIKit
 
-var babyName = ""
-
 //customize name of baby and introduce doctor character
 class SetupViewController: UIViewController {
+    
+    public var gender: Gender = Gender.male
     
     @IBOutlet weak var errorMessage: UILabel!
     
@@ -19,9 +19,13 @@ class SetupViewController: UIViewController {
         if self.nameTextField.text?.isEmpty ?? true {
             self.errorMessage.text = "Please type a name"
         } else {
-            babyName = self.nameTextField.text!
+            let babyName = self.nameTextField.text!
+            let journey = Journey.init(player: Parent.init())
+            let child = Child.init(parent: journey.player, name: babyName, gender: gender)
             
-            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController") as UIViewController
+            let viewController:GameViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
+            viewController.journey = journey
+            viewController.child = child
             viewController.modalTransitionStyle = .partialCurl
             self.present(viewController, animated: true, completion: nil)
         }
@@ -30,19 +34,6 @@ class SetupViewController: UIViewController {
     @IBOutlet weak var nurseLabel: UILabel!
     
     @IBOutlet weak var nameTextField: UITextField!
-    
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
 
     /*

@@ -9,18 +9,18 @@
 import UIKit
 import AVFoundation
 
-var gender = "boy"
-var initScore :[UIImage] = []
-var pronouns = ["he", "him", "his"]
-
 //initial home screen view
 //allows customization of gender
 
 class ViewController: UIViewController {
 
+    var gender = Gender.male
+    var initScore: [UIImage] = []
+    var pronouns = ["he", "him", "his"]
     
     @IBAction func nextButtonAction(_ sender: Any) {
-        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SetupViewController") as UIViewController
+        let viewController:SetupViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SetupViewController") as! SetupViewController
+        viewController.gender = gender // propagate gender to next VC
         viewController.modalTransitionStyle = .crossDissolve
         self.present(viewController, animated: true, completion: nil)
     }
@@ -54,14 +54,14 @@ class ViewController: UIViewController {
     
     @IBAction func boySwitch(_ sender: Any) {
         startBackground.image = UIImage(named: "boy_homeScreen")
-        gender = "boy"
+        gender = Gender.male
         pronouns = ["he", "him", "his"]
         
     }
     
     @IBAction func girlSwitch(_ sender: Any) {
         startBackground.image = UIImage(named: "girl_homeScreen")
-        gender = "girl"
+        gender = Gender.female
         pronouns = ["she", "her", "hers"]
     }
     
@@ -73,7 +73,7 @@ class ViewController: UIViewController {
             self.startBackground.transform = CGAffineTransform(translationX: -307, y: 0)
         })   { (_) in
             //Initialize textboxText
-            self.textboxText.text = "Congratulations! As the new parent of a healthy baby \(gender), your task is to make the best choices to protect their health, as well as your own money, time, and community. \n\nYour progress will measured by the bars shown on the right. Good luck!"
+            self.textboxText.text = "Congratulations! As the new parent of a healthy baby \(self.gender.diminutive()), your task is to make the best choices to protect their health, as well as your own money, time, and community. \n\nYour progress will measured by the bars shown on the right. Good luck!"
             
             //animate text box
             //initialize baby age/ageScale
@@ -85,7 +85,7 @@ class ViewController: UIViewController {
             //animate text and image in textbox
             //TODO:add baby sound
             UIView.animate(withDuration: 1.1, delay: 1.8, animations: {
-                if gender == "boy" {
+                if self.gender == Gender.male {
                     self.textboxImage.image = UIImage(named: "babyBoy")
                 }
                 else {
@@ -117,10 +117,10 @@ class ViewController: UIViewController {
                 self.timeScore.alpha = 1
                 self.communityScore.alpha = 1
                 
-                self.animateImage(imageView: self.healthScore, images: initScore, duration: 2, reps: 2)
-                self.animateImage(imageView: self.moneyScore, images: initScore, duration: 2, reps: 2)
-                self.animateImage(imageView: self.timeScore, images: initScore, duration: 2, reps: 2)
-                self.animateImage(imageView: self.communityScore, images: initScore, duration: 2, reps: 2)
+                self.animateImage(imageView: self.healthScore, images: self.initScore, duration: 2, reps: 2)
+                self.animateImage(imageView: self.moneyScore, images: self.initScore, duration: 2, reps: 2)
+                self.animateImage(imageView: self.timeScore, images: self.initScore, duration: 2, reps: 2)
+                self.animateImage(imageView: self.communityScore, images: self.initScore, duration: 2, reps: 2)
             
             })
 

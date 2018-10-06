@@ -13,12 +13,12 @@ import AVFoundation
 
 class GameViewController: UIViewController {
     
-    var audioPlayer: AVAudioPlayer!
+    private var audioPlayer: AVAudioPlayer!
 
-    var scenario = Scenario(fileName: "scenario1")
-    var babyName = "Georgia"
-    
-    var choices = [Int]()
+    private var scenario = Scenario(fileName: "scenario1")
+    var journey: Journey?
+    private var journeyNode: JourneyNode?
+    var child: Child?
     
     @IBOutlet weak var choiceALabel: UIButton!
     @IBOutlet weak var choiceBLabel: UIButton!
@@ -97,6 +97,9 @@ class GameViewController: UIViewController {
         for (index, choiceLabel) in scene.choices.enumerated() {
             choiceButtons[index]!.setTitle(choiceLabel, for: UIControlState.normal)
         }
+        
+        let node = JourneyNode.init(baseScene: scenario.currentScene)
+        journey?.append(node)
     }
     
     func playSoundWith(fileName: String, fileExtension: String) -> Void {
@@ -133,9 +136,8 @@ class GameViewController: UIViewController {
     
     fileprivate func switchSceneForChoice(_ choice: Int) {
         let nextSceneId = scenario.currentScene.next[choice]
+        journeyNode?.response = choice
         loadScene( scenario.advance(to: nextSceneId)! )
-        
-        //TODO: store choice to export object
     }
     
     @IBAction func restartButton(_ sender: Any) {

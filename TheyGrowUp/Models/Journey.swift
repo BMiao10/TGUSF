@@ -21,6 +21,8 @@ class Journey {
     typealias JourneyNodes = [JourneyNode]
     private var nodes = JourneyNodes()
     
+    private(set) var isFinished: Bool = false
+    
     init( player: Parent ) {
         self.player = player
         self.startTime = Date.init()
@@ -32,6 +34,10 @@ class Journey {
         self.nodes = nodes
     }
     
+    func finish () {
+        endTime = Date.init()
+        isFinished = true
+    }
 }
 
 extension Journey: Collection {
@@ -55,7 +61,12 @@ extension Journey: Collection {
     }
     
     func append(_ node:JourneyNode) {
-        return nodes.append(node)
+        if !isFinished {
+            nodes.last?.next = node
+            node.previous = nodes.last
+            endTime = Date.init()
+            return nodes.append(node)
+        }
     }
 
     func length () -> Int {

@@ -43,7 +43,10 @@ struct Scenario {
     }
     
     mutating func advance( to sceneIndex:Int ) -> Scene? {
-        if sceneIndex < scenes.count {
+        if sceneIndex == -1 {
+            // TODO: End gameplay
+            return nil
+        } else if sceneIndex < scenes.count {
             previousScene = currentScene
             currentIndex = sceneIndex
             currentScene = scenes[ currentIndex ]
