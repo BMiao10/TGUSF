@@ -72,11 +72,11 @@ class GameViewController: UIViewController {
         // More info
         if let moreInfo = scene.moreInfo {
             // TODO: Make this do something
-            moreInfoLabel.setTitle("More Info", for: UIControlState.normal)
+            moreInfoLabel.setTitle("More Info", for: UIControl.State.normal)
             moreInfoLabel.isHidden = false
         } else {
             // Hide more info
-            moreInfoLabel.setTitle("", for: UIControlState.normal)
+            moreInfoLabel.setTitle("", for: UIControl.State.normal)
             moreInfoLabel.isHidden = true
         }
         
@@ -92,10 +92,10 @@ class GameViewController: UIViewController {
         // Update choices
         let choiceButtons = [choiceALabel, choiceBLabel, choiceCLabel]
         choiceButtons.forEach { (button) in
-            button!.setTitle("", for: UIControlState.normal)
+            button!.setTitle("", for: UIControl.State.normal)
         }
         for (index, choiceLabel) in scene.choices.enumerated() {
-            choiceButtons[index]!.setTitle(choiceLabel, for: UIControlState.normal)
+            choiceButtons[index]!.setTitle(choiceLabel, for: UIControl.State.normal)
         }
         
         let node = JourneyNode.init(baseScene: scenario.currentScene)
@@ -152,7 +152,7 @@ class GameViewController: UIViewController {
     
     @IBAction func moreInfo(_ sender: Any) {
         //TODO:figure out moreInfo stuff
-        moreInfoLabel.setTitle("Info not written yet", for: UIControlState.normal)
+        moreInfoLabel.setTitle("Info not written yet", for: UIControl.State.normal)
     }
 
 }
