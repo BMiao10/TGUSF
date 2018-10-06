@@ -41,10 +41,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var timeScore: UIImageView!
     @IBOutlet weak var communityScore: UIImageView!
     
-    
-    @IBOutlet weak var communityScore2: LinearProgressBar!
-    
-    
     @IBOutlet weak var healthIcon: UIImageView!
     @IBOutlet weak var moneyIcon: UIImageView!
     @IBOutlet weak var timeIcon: UIImageView!

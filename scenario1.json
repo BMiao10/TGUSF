@@ -1,15 +1,18 @@
 [
  {
-   "scene": "Neighborhood",
-   "animate": "carAudio",
+   "id": 0,
+   "setting": "Neighborhood",
+   "audio": "carAudio",
    "speaker": "Neighborhood",
    "text": "You pull into your driveway, excited to be home after such a long day. Your neighbor John, who works as a nurse at the local hospital, has also just gotten home.",
-   "choiceA": "Wave and say hello!",
-   "choiceB": "Ignore him and go inside",
-   "choiceC": "None",
-   "nextA": 1,
-   "nextB": 2,
-   "nextC": -1,
+   "choices": [
+        "Wave and say hello!",
+        "Ignore him and go inside"
+        ],
+   "next": [
+       1,
+       2
+   ],
    "money": 0,
    "time": 0,
    "health": 0,
@@ -17,16 +20,16 @@
    "intent": 0
  },
  {
-   "scene": "Neighborhood",
-   "animate": "None",
+   "id": 1,
+   "setting": "Neighborhood",
    "speaker": "Neighbor",
    "text": "John waves back and crosses the street for a quick chat. (-1 time)",
-   "choiceA": "Ask him about his day",
-   "choiceB": "None",
-   "choiceC": "None",
-   "nextA": 3,
-   "nextB": -1,
-   "nextC": -1,
+   "choices": [
+       "Ask him about his day"
+   ],
+   "next": [
+       3
+   ],
    "money": 0,
    "time": -1,
    "health": 0,
@@ -34,16 +37,16 @@
    "intent": 0
  },
  {
-   "scene": "Neighborhood",
-   "animate": "None",
+   "id": 2,
+   "setting": "Neighborhood",
    "speaker": "Neighbor",
    "text": "Before you can slip away, John waves and crosses the street for a quick chat. You wave back and put on a polite smile. (-1 time)",
-   "choiceA": "Ask him about his day",
-   "choiceB": "None",
-   "choiceC": "None",
-   "nextA": 3,
-   "nextB": -1,
-   "nextC": -1,
+   "choices": [
+       "Ask him about his day"
+   ],
+   "next": [
+       3
+   ],
    "money": 0,
    "time": -1,
    "health": 0,
@@ -51,16 +54,18 @@
    "intent": 0
  },
  {
-   "scene": "Neighborhood",
-   "animate": "None",
+   "id": 3,
+   "setting": "Neighborhood",
    "speaker": "Neighbor",
    "text": "\"My day? Not great, actually. There was a baby with whooping cough who we're all pretty worried about. She caught it from her brother, who wasn't vaccinated.\"",
-   "choiceA": "How bad could a cough be?",
-   "choiceB": "Could my child catch it?",
-   "choiceC": "None",
-   "nextA": 4,
-   "nextB": 5,
-   "nextC": -1,
+   "choices": [
+       "How bad could a cough be?",
+       "Could my child catch it?"
+   ],
+   "next": [
+       4,
+       5
+   ],
    "money": 0,
    "time": 0,
    "health": 0,
@@ -68,16 +73,20 @@
    "intent": 0
  },
  {
-   "scene": "Neighborhood",
-   "animate": "coughAudio, herdImmunityInfo",
+   "id": 4,
+   "setting": "Neighborhood",
+   "audio": "coughAudio",
    "speaker": "Neighbor",
    "text": "\"This is what whooping sounds like. In infants, it can cause some severe complications like pneumonia! And since infants don't get the TDaP vaccine until they are 1 years old, they rely on herd immunity or their mother's vaccination during pregnancy.\"",
-   "choiceA": "Our family is all vaccinated!",
-   "choiceB": "I chose not to get vaccinated.",
-   "choiceC": "None",
-   "nextA": 6,
-   "nextB": 7,
-   "nextC": -1,
+   "moreInfo": "herdImmunityInfo",
+   "choices": [
+       "Our family is all vaccinated!",
+       "I chose not to get vaccinated."
+   ],
+   "next": [
+       6,
+       7
+   ],
    "money": 0,
    "time": 0,
    "health": 0,
@@ -85,16 +94,19 @@
    "intent": -1
  },
  {
-   "scene": "Neighborhood",
-   "animate": "tdapInfo",
+   "id": 5,
+   "setting": "Neighborhood",
    "speaker": "Neighbor",
    "text": "\"Since infants don't get the TDaP vaccine until they are 1 years old, they rely on herd immunity or their mother's vaccination during pregnancy. After all, it takes a village to raise a child!\"",
-   "choiceA": "Our family is all vaccinated!",
-   "choiceB": "I didn't get the vaccination.",
-   "choiceC": "None",
-   "nextA": 6,
-   "nextB": 7,
-   "nextC": -1,
+   "moreInfo": "tdapInfo",
+   "choices": [
+       "Our family is all vaccinated!",
+       "I didn't get the vaccination."
+   ],
+   "next": [
+       6,
+       7
+   ],
    "money": 0,
    "time": 0,
    "health": 0,
@@ -102,16 +114,18 @@
    "intent": 1
  },
  {
-   "scene": "Neighborhood",
-   "animate": "None",
+   "id": 6,
+   "setting": "Neighborhood",
    "speaker": "Neighbor",
    "text": "\"That's great! Vaccination and herd immunity are some of the things, along with clean water and healthy food, that we recommend to improve community health. Speaking of community, are you bringing your baby to the barbeque next week?\" (+1 community health)",
-   "choiceA": "Yes, definitely!",
-   "choiceB": "No, we're going to Disneyland!",
-   "choiceC": "None",
-   "nextA": 9,
-   "nextB": 10,
-   "nextC": -1,
+   "choices": [
+       "Yes, definitely!",
+       "No, we're going to Disneyland!"
+   ],
+   "next": [
+       9,
+       10
+   ],
    "money": 0,
    "time": 0,
    "health": 0,
@@ -119,16 +133,18 @@
    "intent": 1
  },
  {
-   "scene": "Neighborhood",
-   "animate": "None",
+   "id": 7,
+   "setting": "Neighborhood",
    "speaker": "Neighbor",
    "text": "\"Whooping cough is highly contagious, and can be preventable with vaccination. Since your baby can't get the vaccine until she is a year old, you'll have to be careful to avoid getting her sick.\" (-1 health)",
-   "choiceA": "We'll vaccinate her when she turns 1.",
-   "choiceB": "I don't plan on vaccinating my child.",
-   "choiceC": "None",
-   "nextA": 6,
-   "nextB": 8,
-   "nextC": -1,
+   "choices": [
+       "We'll vaccinate her when she turns 1.",
+       "I don't plan on vaccinating my child."
+   ],
+   "next": [
+       6,
+       8
+   ],
    "money": 0,
    "time": 0,
    "health": -1,
@@ -136,16 +152,18 @@
    "intent": -1
  },
  {
-   "scene": "Neighborhood",
-   "animate": "None",
+   "id": 8,
+   "setting": "Neighborhood",
    "speaker": "Neighbor",
    "text": "\"If that's your choice, but I still recommend you do some more research. By the way, are you planning to go to that community barbeque next week?\"",
-   "choiceA": "Yes, definitely!",
-   "choiceB": "No, we're going to Disneyland!",
-   "choiceC": "None",
-   "nextA": 11,
-   "nextB": 12,
-   "nextC": -1,
+   "choices": [
+       "Yes, definitely!",
+       "No, we're going to Disneyland!"
+   ],
+   "next": [
+       11,
+       12
+   ],
    "money": 0,
    "time": 0,
    "health": 0,
@@ -153,16 +171,16 @@
    "intent": -1
  },
  {
-   "scene": "Neighborhood",
-   "animate": "None",
+   "id": 9,
+   "setting": "Neighborhood",
    "speaker": "Neighbor",
    "text": "\"Great, then I'll see you and your baby there!\"",
-   "choiceA": "Next",
-   "choiceB": "None",
-   "choiceC": "None",
-   "nextA": 13,
-   "nextB": -1,
-   "nextC": -1,
+   "choices": [
+       "Next"
+   ],
+   "next": [
+       13
+   ],
    "money": 0,
    "time": 0,
    "health": 0,
@@ -170,16 +188,16 @@
    "intent": 0
  },
  {
-   "scene": "Neighborhood",
-   "animate": "None",
+   "id": 10,
+   "setting": "Neighborhood",
    "speaker": "Neighbor",
    "text": "\"That sounds fun! I heard there might be a possible whooping cough outbreak, so just be careful. But your baby should be fine, since your whole family was vaccinated before she was born.\"",
-   "choiceA": "Sounds great! Thanks John!",
-   "choiceB": "None",
-   "choiceC": "None",
-   "nextA": 15,
-   "nextB": -1,
-   "nextC": -1,
+   "choices": [
+       "Sounds great! Thanks John!"
+   ],
+   "next": [
+       15
+   ],
    "money": 0,
    "time": 0,
    "health": 0,
@@ -187,16 +205,16 @@
    "intent": 0
  },
  {
-   "scene": "Neighborhood",
-   "animate": "None",
+   "id": 11,
+   "setting": "Neighborhood",
    "speaker": "Neighbor",
    "text": "\"Great, then I'll see you and your baby there!",
-   "choiceA": "Next",
-   "choiceB": "None",
-   "choiceC": "None",
-   "nextA": 14,
-   "nextB": -1,
-   "nextC": -1,
+   "choices": [
+       "Next"
+   ],
+   "next": [
+       14
+   ],
    "money": 0,
    "time": 0,
    "health": 0,
@@ -204,16 +222,18 @@
    "intent": 0
  },
  {
-   "scene": "Neighborhood",
-   "animate": "None",
+   "id": 12,
+   "setting": "Neighborhood",
    "speaker": "Neighbor",
    "text": "\"That sounds fun! But wasn't there news about a possible whooping cough outbreak?\"",
-   "choiceA": "My baby won't get sick!",
-   "choiceB": "Does that mean my baby could catch it?",
-   "choiceC": "None",
-   "nextA": 16,
-   "nextB": 17,
-   "nextC": -1,
+   "choices": [
+       "My baby won't get sick!",
+       "Does that mean my baby could catch it?"
+   ],
+   "next": [
+       16,
+       17
+   ],
    "money": 0,
    "time": 0,
    "health": 0,
@@ -221,16 +241,16 @@
    "intent": 0
  },
  {
-   "scene": "Neighborhood",
-   "animate": "None",
+   "id": 13,
+   "setting": "Neighborhood",
    "speaker": "bbq",
    "text": "Feeling reassured that there is little risk, your family has a great time at the bbq! Everyone compliments the cornbread your family brought and your baby has a lot of fun playing at the park! (+1 community health, +1 health)",
-   "choiceA": "Fantastic!",
-   "choiceB": "None",
-   "choiceC": "None",
-   "nextA": -1,
-   "nextB": -1,
-   "nextC": -1,
+   "choices": [
+       "Fantastic!"
+   ],
+   "next": [
+       -1
+   ],
    "money": 0,
    "time": 0,
    "health": 1,
@@ -238,16 +258,16 @@
    "intent": 0
  },
  {
-   "scene": "Neighborhood",
-   "animate": "None",
+   "id": 14,
+   "setting": "Neighborhood",
    "speaker": "bbq",
    "text": "Your family has a great time at the bbq, but you see a child coughing and worry it could be something serious like whooping cough. You end up leaving the bbq early, and stocking up on chicken soup just in case. (-1 community health, -1 time)",
-   "choiceA": "Next",
-   "choiceB": "None",
-   "choiceC": "None",
-   "nextA": 18,
-   "nextB": -1,
-   "nextC": -1,
+   "choices": [
+       "Next"
+   ],
+   "next": [
+       18
+   ],
    "money": 0,
    "time": -1,
    "health": 0,
@@ -255,16 +275,16 @@
    "intent": 0
  },
  {
-   "scene": "DisneylandGood",
-   "animate": "None",
+   "id": 15,
+   "setting": "DisneylandGood",
    "speaker": "disneyPertussis",
    "text": "The whooping cough outbreak gets worse, and you are grateful that your baby is at little risk. (+1 health) As a precaution, you head home early, and are angry when you learn that the outbreak spread among unvaccinated children. (-1 money, -1 time)",
-   "choiceA": "I'm just glad my baby is safe...",
-   "choiceB": "None",
-   "choiceC": "None",
-   "nextA": -1,
-   "nextB": -1,
-   "nextC": -1,
+   "choices": [
+       "I'm just glad my baby is safe..."
+   ],
+   "next": [
+       -1
+   ],
    "money": -1,
    "time": -1,
    "health": 1,
@@ -272,16 +292,16 @@
    "intent": 0
  },
  {
-   "scene": "DisneylandBad",
-   "animate": "None",
+   "id": 16,
+   "setting": "DisneylandBad",
    "speaker": "disneyPertussis",
    "text": "When the whooping cough outbreak gets worse, you are afraid to stay. Later, when the news says the outbreak originated from an unvaccinated child, you feel angry that your family trip was ruined. (-1 money, -1 time, -1 community health).",
-   "choiceA": "Oh no! :(",
-   "choiceB": "None",
-   "choiceC": "None",
-   "nextA": -1,
-   "nextB": -1,
-   "nextC": -1,
+   "choices": [
+       "Oh no! :("
+   ],
+   "next": [
+       -1
+   ],
    "money": -1,
    "time": -1,
    "health": 0,
@@ -289,16 +309,18 @@
    "intent": -1
  },
  {
-   "scene": "Neighborhood",
-   "animate": "None",
+   "id": 17,
+   "setting": "Neighborhood",
    "speaker": "Neighbor",
    "text": "\"It's definitely possible, since she has not been vaccinated.\"",
-   "choiceA": "We'll take our chances.",
-   "choiceB": "I guess we could go to the bbq instead...",
-   "choiceC": "None",
-   "nextA": 16,
-   "nextB": 11,
-   "nextC": -1,
+   "choices": [
+       "We'll take our chances.",
+       "I guess we could go to the bbq instead..."
+   ],
+   "next": [
+       16,
+       11
+   ],
    "money": 0,
    "time": 0,
    "health": 0,
@@ -306,16 +328,18 @@
    "intent": 1
  },
  {
-   "scene": "Hospital",
-   "animate": "coughAudio",
+   "id": 18,
+   "setting": "Hospital",
+   "audio": "coughAudio",
    "speaker": "sickChild",
    "text": "It turns out the child had not been vaccinated and did have whooping cough, which your baby caught. You spend the night in the hospital, listening to your baby's struggle to breathe and wishing you had better taken care of her. (-2 health, -1 time, -1 money)",
-   "choiceA": "I know this could have been prevented.",
-   "choiceB": "I'm still hesitant to vaccinate.",
-   "choiceC": "None",
-   "nextA": -1,
-   "nextB": -1,
-   "nextC": -1,
+   "choices": [
+       "I know this could have been prevented.",
+       "I'm still hesitant to vaccinate."
+   ],
+   "next": [
+       -1
+   ],
    "money": -1,
    "time": -1,
    "health": -1,

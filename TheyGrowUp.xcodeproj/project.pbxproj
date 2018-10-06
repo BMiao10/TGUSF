@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		40038E80213F8AD200D7FBA2 /* MainScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 40038E7F213F8AD200D7FBA2 /* MainScene.sks */; };
 		40038E84213F903F00D7FBA2 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40038E83213F903F00D7FBA2 /* SetupViewController.swift */; };
 		40038E86213F914700D7FBA2 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40038E85213F914700D7FBA2 /* GameViewController.swift */; };
 		40220DB5214748F500C4D4A6 /* coughAudio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40220DB4214748F500C4D4A6 /* coughAudio.mp3 */; };
@@ -28,7 +27,11 @@
 		4067CAAB20FAE47900C6A7FE /* TheyGrowUp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4067CAA920FAE47900C6A7FE /* TheyGrowUp.xcdatamodeld */; };
 		4067CAAD20FAE47A00C6A7FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4067CAAC20FAE47A00C6A7FE /* Assets.xcassets */; };
 		4067CAB020FAE47A00C6A7FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4067CAAE20FAE47A00C6A7FE /* LaunchScreen.storyboard */; };
-		406C706B21471BB700065B6F /* scene1.json in Resources */ = {isa = PBXBuildFile; fileRef = 406C706A21471BB700065B6F /* scene1.json */; };
+		406C706B21471BB700065B6F /* scenario1.json in Resources */ = {isa = PBXBuildFile; fileRef = 406C706A21471BB700065B6F /* scenario1.json */; };
+		4A11A3EF2167F96500E9B9F2 /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A11A3EE2167F96500E9B9F2 /* Scenario.swift */; };
+		4A11A3F12168009E00E9B9F2 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A11A3F02168009E00E9B9F2 /* Scene.swift */; };
+		4A11A3F62168291100E9B9F2 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A11A3F52168291100E9B9F2 /* ScoreView.swift */; };
+		4A11A3FA21682DA900E9B9F2 /* ScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A11A3F821682DA900E9B9F2 /* ScoreView.xib */; };
 		4AECB6462166B16B004CB1EC /* Parent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AECB6452166B16B004CB1EC /* Parent.swift */; };
 		4AECB6482166B173004CB1EC /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AECB6472166B173004CB1EC /* Child.swift */; };
 		4AECB64A2166B183004CB1EC /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AECB6492166B183004CB1EC /* Journey.swift */; };
@@ -41,7 +44,6 @@
 /* Begin PBXFileReference section */
 		00921311AFE8D707FB6C3BA4 /* Pods-TheyGrowUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheyGrowUp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheyGrowUp/Pods-TheyGrowUp.debug.xcconfig"; sourceTree = "<group>"; };
 		191559A6D43CF01F939C7495 /* Pods_TheyGrowUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheyGrowUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		40038E7F213F8AD200D7FBA2 /* MainScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainScene.sks; sourceTree = "<group>"; };
 		40038E83213F903F00D7FBA2 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		40038E85213F914700D7FBA2 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		40220DB4214748F500C4D4A6 /* coughAudio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coughAudio.mp3; sourceTree = "<group>"; };
@@ -64,7 +66,11 @@
 		4067CAAC20FAE47A00C6A7FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4067CAAF20FAE47A00C6A7FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4067CAB120FAE47A00C6A7FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		406C706A21471BB700065B6F /* scene1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scene1.json; sourceTree = "<group>"; };
+		406C706A21471BB700065B6F /* scenario1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scenario1.json; sourceTree = "<group>"; };
+		4A11A3EE2167F96500E9B9F2 /* Scenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
+		4A11A3F02168009E00E9B9F2 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		4A11A3F52168291100E9B9F2 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		4A11A3F821682DA900E9B9F2 /* ScoreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreView.xib; sourceTree = "<group>"; };
 		4AECB6452166B16B004CB1EC /* Parent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parent.swift; sourceTree = "<group>"; };
 		4AECB6472166B173004CB1EC /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
 		4AECB6492166B183004CB1EC /* Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
@@ -109,7 +115,7 @@
 			children = (
 				4AF7137121669C010011C159 /* Podfile */,
 				40220DB4214748F500C4D4A6 /* coughAudio.mp3 */,
-				406C706A21471BB700065B6F /* scene1.json */,
+				406C706A21471BB700065B6F /* scenario1.json */,
 				4067CAA120FAE47900C6A7FE /* TheyGrowUp */,
 				4067CAA020FAE47900C6A7FE /* Products */,
 				611DA76236407F5DD65D7EE6 /* Pods */,
@@ -128,21 +134,28 @@
 		4067CAA120FAE47900C6A7FE /* TheyGrowUp */ = {
 			isa = PBXGroup;
 			children = (
+				4A11A3F22168240500E9B9F2 /* ViewControllers */,
 				4AECB64F2166B1F4004CB1EC /* Views */,
 				4AECB6442166B020004CB1EC /* Models */,
 				403601E5212DE3D70082E29C /* health */,
 				4067CAA220FAE47900C6A7FE /* AppDelegate.swift */,
-				4067CAA420FAE47900C6A7FE /* ViewController.swift */,
 				4067CAA620FAE47900C6A7FE /* Main.storyboard */,
-				40038E7F213F8AD200D7FBA2 /* MainScene.sks */,
-				40038E83213F903F00D7FBA2 /* SetupViewController.swift */,
-				40038E85213F914700D7FBA2 /* GameViewController.swift */,
 				4067CAAC20FAE47A00C6A7FE /* Assets.xcassets */,
 				4067CAAE20FAE47A00C6A7FE /* LaunchScreen.storyboard */,
 				4067CAB120FAE47A00C6A7FE /* Info.plist */,
 				4067CAA920FAE47900C6A7FE /* TheyGrowUp.xcdatamodeld */,
 			);
 			path = TheyGrowUp;
+			sourceTree = "<group>";
+		};
+		4A11A3F22168240500E9B9F2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4067CAA420FAE47900C6A7FE /* ViewController.swift */,
+				40038E83213F903F00D7FBA2 /* SetupViewController.swift */,
+				40038E85213F914700D7FBA2 /* GameViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		4AECB6442166B020004CB1EC /* Models */ = {
@@ -152,6 +165,8 @@
 				4AECB6472166B173004CB1EC /* Child.swift */,
 				4AECB6492166B183004CB1EC /* Journey.swift */,
 				4AECB64D2166B1DF004CB1EC /* JourneyNode.swift */,
+				4A11A3F02168009E00E9B9F2 /* Scene.swift */,
+				4A11A3EE2167F96500E9B9F2 /* Scenario.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -160,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				4AECB6562166BC3D004CB1EC /* LinearProgressBar.swift */,
+				4A11A3F52168291100E9B9F2 /* ScoreView.swift */,
+				4A11A3F821682DA900E9B9F2 /* ScoreView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -242,10 +259,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				40220DB5214748F500C4D4A6 /* coughAudio.mp3 in Resources */,
-				406C706B21471BB700065B6F /* scene1.json in Resources */,
+				4A11A3FA21682DA900E9B9F2 /* ScoreView.xib in Resources */,
+				406C706B21471BB700065B6F /* scenario1.json in Resources */,
 				403601E4212DE3D30082E29C /* health_8.png in Resources */,
 				403601E2212DE3D30082E29C /* health_0.png in Resources */,
-				40038E80213F8AD200D7FBA2 /* MainScene.sks in Resources */,
 				403601DC212DE3D30082E29C /* health_4.png in Resources */,
 				4AF7137221669C010011C159 /* Podfile in Resources */,
 				4067CAB020FAE47A00C6A7FE /* LaunchScreen.storyboard in Resources */,
@@ -331,8 +348,11 @@
 				4067CAA520FAE47900C6A7FE /* ViewController.swift in Sources */,
 				4067CAA320FAE47900C6A7FE /* AppDelegate.swift in Sources */,
 				4AECB64A2166B183004CB1EC /* Journey.swift in Sources */,
+				4A11A3EF2167F96500E9B9F2 /* Scenario.swift in Sources */,
+				4A11A3F12168009E00E9B9F2 /* Scene.swift in Sources */,
 				4067CAAB20FAE47900C6A7FE /* TheyGrowUp.xcdatamodeld in Sources */,
 				4AECB6482166B173004CB1EC /* Child.swift in Sources */,
+				4A11A3F62168291100E9B9F2 /* ScoreView.swift in Sources */,
 				4AECB6462166B16B004CB1EC /* Parent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

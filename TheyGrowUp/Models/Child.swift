@@ -7,3 +7,33 @@
 //
 
 import Foundation
+
+public enum Gender {
+    case male
+    case female
+}
+
+class Child {
+    
+    // UUID set by server
+    private var id: String?
+    
+    public let parent: Parent
+    
+    // TODO: Ask for age
+    public let age: Int
+    
+    public let gender: Gender
+    
+    public let vaccinesUTD: Bool
+    
+    init( parent: Parent, age: Int, gender: Gender, vaccinesUTD: Bool) {
+        self.parent = parent
+        self.age = age
+        self.gender = gender
+        self.vaccinesUTD = vaccinesUTD
+    }
+    
+    
+    
+}
