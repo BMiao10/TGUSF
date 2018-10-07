@@ -16,6 +16,14 @@ target 'TheyGrowUp' do
     # Easy load custom fonts
     pod 'FontBlaster', '~>4.1'
     
-    # Swifty regex https://github.com/crossroadlabs/Regex
+    # Swifty regex
+    # https://github.com/crossroadlabs/Regex
     pod 'CrossroadRegex', '~>1.1'
+    
+    # https://github.com/tbaranes/SwiftyUtils
+    # pod SwiftyUtils, '~>2.0'
+    
+    # Audio Player
+    # https://github.com/tbaranes/AudioPlayerSwift
+    pod 'AudioPlayerSwift', '~>1.6.1'
 end
