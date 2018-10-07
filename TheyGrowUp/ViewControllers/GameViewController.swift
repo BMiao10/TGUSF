@@ -52,7 +52,7 @@ class GameViewController: UIViewController {
        
         //load first scene
         Parent.shared.addJourney()
-        scenario = Scenario(fileName: "scenario1")
+        scenario = Scenario(fileName: "scenario_pertussis")
         loadScene( scenario.currentScene )
     }
     

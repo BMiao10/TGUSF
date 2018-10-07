@@ -8,7 +8,7 @@
 
 import UIKit
 
-public let MAX_SCORE = 3
+let MAX_SCORE = 3
 
 enum ScoreItems: String, CaseIterable {
     case health

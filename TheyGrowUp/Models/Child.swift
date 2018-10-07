@@ -8,30 +8,6 @@
 
 import Foundation
 
-public enum Gender {
-    case male
-    case female
-    
-    func diminutive() -> String {
-        switch self {
-        case .male:
-            return "boy"
-        case .female:
-            return "girl"
-        }
-    }
-    
-    // TODO: Is this the best way to use this?
-    func pronouns() -> [String] {
-        switch self {
-        case .male:
-            return ["he", "him", "his"]
-        case .female:
-            return ["she", "her", "hers"]
-        }
-    }
-}
-
 class Child {
     
     // UUID set by server

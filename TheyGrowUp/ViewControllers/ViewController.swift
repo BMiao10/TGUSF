@@ -70,7 +70,7 @@ class ViewController: UIViewController {
             self.startBackground.transform = CGAffineTransform(translationX: -307, y: 0)
         })   { (_) in
             //Initialize textboxText
-            self.textboxText.text = "Congratulations! As the new parent of a healthy baby \(self.gender.diminutive()), your task is to make the best choices to protect their health, as well as your own money, time, and community. \n\nYour progress will measured by the bars shown on the right. Good luck!"
+            self.textboxText.text = "Congratulations! As the new parent of a healthy baby \(self.gender.diminutive), your task is to make the best choices to protect their health, as well as your own money, time, and community. \n\nYour progress will measured by the bars shown on the right. Good luck!"
             
             //animate text box
             //initialize baby age/ageScale
