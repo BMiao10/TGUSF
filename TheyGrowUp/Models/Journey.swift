@@ -31,6 +31,8 @@ class Journey {
     
     private(set) var isFinished: Bool = false
     
+    private(set) var intent: Int = 0
+    
     init( player: Parent ) {
         self.player = player
         self.startTime = Date()
@@ -45,6 +47,10 @@ class Journey {
     func finish() {
         endTime = Date()
         isFinished = true
+    }
+    
+    func changeIntent(by delta:Int) {
+        intent += delta
     }
 
 }
@@ -73,6 +79,10 @@ extension Journey: Collection {
         if !isFinished {
             steps.last?.next = step
             step.previous = steps.last
+            
+            // Update our intent to vaccinate tracker
+            changeIntent(by: step.baseScene.intent)
+            
             endTime = Date()
             return steps.append(step)
         }

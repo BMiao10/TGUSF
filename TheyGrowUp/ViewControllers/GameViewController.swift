@@ -79,6 +79,7 @@ class GameViewController: UIViewController {
             // TODO: Make this do something
             moreInfoLabel.setTitle("More Info", for: .normal)
             moreInfoLabel.isHidden = false
+            journey?.changeIntent(by: 1)
         } else {
             // Hide more info
             moreInfoLabel.setTitle("", for: .normal)
@@ -146,6 +147,7 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func restartButton(_ sender: Any) {
+        // TODO: Reconnect restart button
         /*currNode = 0
         currScores = ["moneyScore":3,"timeScore":3,"healthScore":3,"communityScore":3]
         healthScore.image = UIImage(named:"good-health")

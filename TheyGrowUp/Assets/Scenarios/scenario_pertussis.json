@@ -244,7 +244,7 @@
    "id": 13,
    "setting": "Neighborhood",
    "speaker": "bbq",
-   "text": "Feeling reassured that there is little risk, your family has a great time at the bbq! Everyone compliments the cornbread your family brought and your baby has a lot of fun playing at the park! (+1 community health, +1 health)",
+   "text": "Feeling reassured that there is little risk, your family has a great time at the bbq! Everyone compliments the cornbread your family brought and #{Child.name} had a lot of fun playing at the park! (+1 community health, +1 health)",
    "choices": [
        "Fantastic!"
    ],
