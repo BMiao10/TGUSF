@@ -14,9 +14,8 @@ import AVFoundation
 
 class ViewController: UIViewController {
 
-    var gender = Gender.male
-    var initScore: [UIImage] = []
-    var pronouns = ["he", "him", "his"]
+    private var gender = Gender.male
+    private var initScore: [UIImage] = []
     
     @IBAction func nextButtonAction(_ sender: Any) {
         let viewController:SetupViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SetupViewController") as! SetupViewController
@@ -55,14 +54,12 @@ class ViewController: UIViewController {
     @IBAction func boySwitch(_ sender: Any) {
         startBackground.image = UIImage(named: "boy_homeScreen")
         gender = Gender.male
-        pronouns = ["he", "him", "his"]
         
     }
     
     @IBAction func girlSwitch(_ sender: Any) {
         startBackground.image = UIImage(named: "girl_homeScreen")
         gender = Gender.female
-        pronouns = ["she", "her", "hers"]
     }
     
     @IBAction func startButton(_ sender: Any) {

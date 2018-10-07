@@ -35,7 +35,7 @@
 		4AECB6462166B16B004CB1EC /* Parent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AECB6452166B16B004CB1EC /* Parent.swift */; };
 		4AECB6482166B173004CB1EC /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AECB6472166B173004CB1EC /* Child.swift */; };
 		4AECB64A2166B183004CB1EC /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AECB6492166B183004CB1EC /* Journey.swift */; };
-		4AECB64E2166B1DF004CB1EC /* JourneyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AECB64D2166B1DF004CB1EC /* JourneyNode.swift */; };
+		4AECB64E2166B1DF004CB1EC /* JourneyStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AECB64D2166B1DF004CB1EC /* JourneyStep.swift */; };
 		4AECB6572166BC3D004CB1EC /* LinearProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AECB6562166BC3D004CB1EC /* LinearProgressBar.swift */; };
 		4AF7137221669C010011C159 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4AF7137121669C010011C159 /* Podfile */; };
 		5ADF08D7AF698B943822C015 /* Pods_TheyGrowUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 191559A6D43CF01F939C7495 /* Pods_TheyGrowUp.framework */; };
@@ -74,7 +74,7 @@
 		4AECB6452166B16B004CB1EC /* Parent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parent.swift; sourceTree = "<group>"; };
 		4AECB6472166B173004CB1EC /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
 		4AECB6492166B183004CB1EC /* Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
-		4AECB64D2166B1DF004CB1EC /* JourneyNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyNode.swift; sourceTree = "<group>"; };
+		4AECB64D2166B1DF004CB1EC /* JourneyStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyStep.swift; sourceTree = "<group>"; };
 		4AECB6562166BC3D004CB1EC /* LinearProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearProgressBar.swift; sourceTree = "<group>"; };
 		4AF7137121669C010011C159 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6B69D960958F0F0AC44C4235 /* Pods-TheyGrowUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheyGrowUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheyGrowUp/Pods-TheyGrowUp.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,7 +172,7 @@
 				4AECB6452166B16B004CB1EC /* Parent.swift */,
 				4AECB6472166B173004CB1EC /* Child.swift */,
 				4AECB6492166B183004CB1EC /* Journey.swift */,
-				4AECB64D2166B1DF004CB1EC /* JourneyNode.swift */,
+				4AECB64D2166B1DF004CB1EC /* JourneyStep.swift */,
 				4A11A3F02168009E00E9B9F2 /* Scene.swift */,
 				4A11A3EE2167F96500E9B9F2 /* Scenario.swift */,
 			);
@@ -352,7 +352,7 @@
 			files = (
 				40038E86213F914700D7FBA2 /* GameViewController.swift in Sources */,
 				4AECB6572166BC3D004CB1EC /* LinearProgressBar.swift in Sources */,
-				4AECB64E2166B1DF004CB1EC /* JourneyNode.swift in Sources */,
+				4AECB64E2166B1DF004CB1EC /* JourneyStep.swift in Sources */,
 				40038E84213F903F00D7FBA2 /* SetupViewController.swift in Sources */,
 				4067CAA520FAE47900C6A7FE /* ViewController.swift in Sources */,
 				4067CAA320FAE47900C6A7FE /* AppDelegate.swift in Sources */,

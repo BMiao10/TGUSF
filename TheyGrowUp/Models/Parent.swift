@@ -10,8 +10,11 @@ import Foundation
 
 class Parent {
     
+    // SINGLETON
+    static let shared = Parent()
+    
     // UUID set by server
-    private var id: String?
+    private var id: String
     
     // Timestamp where this parent-user was created
     private var createdAt: Date
@@ -24,18 +27,37 @@ class Parent {
     // private var registeredAt: Date?
     
     // Last played time
-    private var lastPlayed: Date
+    private(set) var lastPlayed: Date
     
     // Parent's child
-    var child: Child?
+    private(set) var child: Child?
     
-    init() {
-        createdAt = Date.init()
-        lastPlayed = Date.init()
+    // Journeys
+    private(set) var journeys: [Journey] = []
+    
+    private init() {
+        // TODO: Sync with server
+        self.id = UUID().uuidString
+        self.createdAt = Date()
+        self.lastPlayed = Date()
     }
     
     public func updatePlaytime() {
-        lastPlayed = Date.init()
+        lastPlayed = Date()
+    }
+    
+    @discardableResult
+    public func addChild( name: String, gender: Gender ) -> Child {
+        let child = Child(parent: self, name: name, gender: gender)
+        self.child = child
+        return child
+    }
+    
+    @discardableResult
+    public func addJourney() -> Journey {
+        let journey = Journey(player: self)
+        self.journeys.append(journey)
+        return journey
     }
     
 }

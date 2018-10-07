@@ -12,7 +12,7 @@ struct Scenario {
     
     var scenes: [Scene] = []
     
-    private(set) var currentScene: Scene
+    private(set) var currentScene: Scene = Scene()
     private(set) var currentIndex: Int = 0 {
         didSet (newIndex) {
             if newIndex >= scenes.count {
@@ -22,9 +22,7 @@ struct Scenario {
     }
     private(set) var previousScene: Scene?
     
-    init( fileName: String ) {
-        self.currentScene = Scene.init()
-        
+    init( fileName: String ) {  
         if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
 
             do {

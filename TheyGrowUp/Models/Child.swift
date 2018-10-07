@@ -21,6 +21,7 @@ public enum Gender {
         }
     }
     
+    // TODO: Is this the best way to use this?
     func pronouns() -> [String] {
         switch self {
         case .male:
@@ -60,7 +61,5 @@ class Child {
         self.name = name
         self.gender = gender
     }
-    
-    
     
 }

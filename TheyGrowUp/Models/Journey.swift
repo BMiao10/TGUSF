@@ -18,59 +18,68 @@ class Journey {
     private let startTime: Date
     private var endTime: Date
     
-    typealias JourneyNodes = [JourneyNode]
-    private var nodes = JourneyNodes()
+    typealias JourneySteps = [JourneyStep]
+    private var steps = JourneySteps()
+    
+    var currentStep: JourneyStep? {
+        guard let step = steps.last else {
+            return nil
+        }
+        
+        return step
+    }
     
     private(set) var isFinished: Bool = false
     
     init( player: Parent ) {
         self.player = player
-        self.startTime = Date.init()
-        self.endTime = Date.init()
+        self.startTime = Date()
+        self.endTime = Date()
     }
     
-    convenience init( player: Parent, nodes: JourneyNodes ) {
+    convenience init( player: Parent, steps: JourneySteps ) {
         self.init( player: player )
-        self.nodes = nodes
+        self.steps = steps
     }
     
-    func finish () {
-        endTime = Date.init()
+    func finish() {
+        endTime = Date()
         isFinished = true
     }
+
 }
 
 extension Journey: Collection {
     
     // Required nested types, that tell Swift what our collection contains
-    typealias Index = JourneyNodes.Index
-    typealias Element = JourneyNodes.Element
+    typealias Index = JourneySteps.Index
+    typealias Element = JourneySteps.Element
     
     // The upper and lower bounds of the collection, used in iterations
-    var startIndex: Index { return nodes.startIndex }
-    var endIndex: Index { return nodes.endIndex }
+    var startIndex: Index { return steps.startIndex }
+    var endIndex: Index { return steps.endIndex }
     
     // Required subscript, based on a dictionary index
     subscript(index: Index) -> Iterator.Element {
-        get { return nodes[index] }
+        get { return steps[index] }
     }
     
     // Method that returns the next index when iterating
-    func index(after i: Journey.JourneyNodes.Index) -> Journey.JourneyNodes.Index {
-        return nodes.index(after: i)
+    func index(after i: Journey.JourneySteps.Index) -> Journey.JourneySteps.Index {
+        return steps.index(after: i)
     }
     
-    func append(_ node:JourneyNode) {
+    func append(_ step:JourneyStep) {
         if !isFinished {
-            nodes.last?.next = node
-            node.previous = nodes.last
-            endTime = Date.init()
-            return nodes.append(node)
+            steps.last?.next = step
+            step.previous = steps.last
+            endTime = Date()
+            return steps.append(step)
         }
     }
 
     func length () -> Int {
-        return nodes.count
+        return steps.count
     }
     
 }

@@ -16,18 +16,15 @@ class SetupViewController: UIViewController {
     @IBOutlet weak var errorMessage: UILabel!
     
     @IBAction func setupNameButton(_ sender: Any) {
-        if self.nameTextField.text?.isEmpty ?? true {
+        if self.nameTextField.text?.isEmpty == true {
             self.errorMessage.text = "Please type a name"
         } else {
             let babyName = self.nameTextField.text!
-            let journey = Journey.init(player: Parent.init())
-            let child = Child.init(parent: journey.player, name: babyName, gender: gender)
+            Parent.shared.addChild(name: babyName, gender: gender)
             
-            let viewController:GameViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
-            viewController.journey = journey
-            viewController.child = child
-            viewController.modalTransitionStyle = .partialCurl
-            self.present(viewController, animated: true, completion: nil)
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
+            vc.modalTransitionStyle = .partialCurl
+            self.present(vc, animated: true, completion: nil)
         }
     }
     

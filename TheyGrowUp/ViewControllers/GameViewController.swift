@@ -15,14 +15,14 @@ class GameViewController: UIViewController {
     
     private var audioPlayer: AVAudioPlayer!
 
-    private var scenario = Scenario(fileName: "scenario1")
-    var journey: Journey?
-    private var journeyNode: JourneyNode?
-    var child: Child?
+    // TODO: Convert to singleton?
+    private var scenario: Scenario!
+    private weak var journey: Journey?
     
     @IBOutlet weak var choiceALabel: UIButton!
     @IBOutlet weak var choiceBLabel: UIButton!
     @IBOutlet weak var choiceCLabel: UIButton!
+    private var choiceButtons: [UIButton]!
     
     @IBOutlet weak var moreInfoLabel: UIButton!
     
@@ -40,19 +40,24 @@ class GameViewController: UIViewController {
         
         super.viewDidLoad()
         
+        choiceButtons = [choiceALabel, choiceBLabel, choiceCLabel]
+        
         //playSoundWith(fileName: "backgroundAudio", fileExtension: "mp3")
         
+        // TODO: Refactor to separate view class?
         UIView.animate(withDuration: 1.7, delay: 0.5, animations: {
             self.ageScaleLabel.text = "Month"
             self.ageLabel.text = "2"
         })
        
         //load first scene
+        Parent.shared.addJourney()
+        scenario = Scenario(fileName: "scenario1")
         loadScene( scenario.currentScene )
     }
     
     
-    func loadScene(_ scene:Scene) {
+    fileprivate func loadScene(_ scene:Scene) {
         //load background
         backgroundImage.image = UIImage(named: scene.setting)
         
@@ -72,11 +77,11 @@ class GameViewController: UIViewController {
         // More info
         if let moreInfo = scene.moreInfo {
             // TODO: Make this do something
-            moreInfoLabel.setTitle("More Info", for: UIControl.State.normal)
+            moreInfoLabel.setTitle("More Info", for: .normal)
             moreInfoLabel.isHidden = false
         } else {
             // Hide more info
-            moreInfoLabel.setTitle("", for: UIControl.State.normal)
+            moreInfoLabel.setTitle("", for: .normal)
             moreInfoLabel.isHidden = true
         }
         
@@ -90,19 +95,18 @@ class GameViewController: UIViewController {
         }
         
         // Update choices
-        let choiceButtons = [choiceALabel, choiceBLabel, choiceCLabel]
         choiceButtons.forEach { (button) in
-            button!.setTitle("", for: UIControl.State.normal)
+            button.setTitle("", for: .normal)
         }
         for (index, choiceLabel) in scene.choices.enumerated() {
-            choiceButtons[index]!.setTitle(choiceLabel, for: UIControl.State.normal)
+            choiceButtons[index].setTitle(choiceLabel, for: .normal)
         }
         
-        let node = JourneyNode.init(baseScene: scenario.currentScene)
-        journey?.append(node)
+        // Update our journey
+        journey?.append( JourneyStep(baseScene: scenario.currentScene) )
     }
     
-    func playSoundWith(fileName: String, fileExtension: String) -> Void {
+    fileprivate func playSoundWith(fileName: String, fileExtension: String) -> Void {
         let audioSourceURL:URL!
         audioSourceURL = Bundle.main.url(forResource: fileName, withExtension: fileExtension)
         
@@ -136,7 +140,8 @@ class GameViewController: UIViewController {
     
     fileprivate func switchSceneForChoice(_ choice: Int) {
         let nextSceneId = scenario.currentScene.next[choice]
-        journeyNode?.response = choice
+        journey?.currentStep?.response = choice
+        // TODO: Handle end of scenario
         loadScene( scenario.advance(to: nextSceneId)! )
     }
     
@@ -152,7 +157,7 @@ class GameViewController: UIViewController {
     
     @IBAction func moreInfo(_ sender: Any) {
         //TODO:figure out moreInfo stuff
-        moreInfoLabel.setTitle("Info not written yet", for: UIControl.State.normal)
+        moreInfoLabel.setTitle("Info not written yet", for: .normal)
     }
 
 }

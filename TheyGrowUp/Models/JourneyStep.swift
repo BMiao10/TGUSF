@@ -8,13 +8,13 @@
 
 import Foundation
 
-class JourneyNode {
+class JourneyStep {
     
     // UUID set by server
     private var id: String?
     
-    weak var previous: JourneyNode?
-    var next: JourneyNode?
+    weak var previous: JourneyStep?
+    var next: JourneyStep?
     
     let baseScene: Scene
     
@@ -22,7 +22,7 @@ class JourneyNode {
     var response: Int? {
         didSet {
             // update endTime
-            endTime = Date.init()
+            endTime = Date()
         }
     }
     
@@ -31,8 +31,8 @@ class JourneyNode {
     
     init( baseScene: Scene ){
         self.baseScene = baseScene
-        self.startTime = Date.init()
-        self.endTime = Date.init()
+        self.startTime = Date()
+        self.endTime = Date()
     }
     
 }
