@@ -41,6 +41,7 @@
 		4AF7137221669C010011C159 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4AF7137121669C010011C159 /* Podfile */; };
 		4AFBCC4D216BE50D00054777 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBCC4A216BE45C00054777 /* AudioPlayer.swift */; };
 		4AFBCC4E216BE51300054777 /* AudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBCC4B216BE45C00054777 /* AudioPlayerManager.swift */; };
+		4AFBCC51216BF7F800054777 /* Better-Days-Ahead.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4AFBCC50216BF7F700054777 /* Better-Days-Ahead.mp3 */; };
 		5ADF08D7AF698B943822C015 /* Pods_TheyGrowUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 191559A6D43CF01F939C7495 /* Pods_TheyGrowUp.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		4AF7137121669C010011C159 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4AFBCC4A216BE45C00054777 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		4AFBCC4B216BE45C00054777 /* AudioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerManager.swift; sourceTree = "<group>"; };
+		4AFBCC50216BF7F700054777 /* Better-Days-Ahead.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Better-Days-Ahead.mp3"; sourceTree = "<group>"; };
 		6B69D960958F0F0AC44C4235 /* Pods-TheyGrowUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheyGrowUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheyGrowUp/Pods-TheyGrowUp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,6 +178,7 @@
 		4A11A3FC216A88CE00E9B9F2 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				4AFBCC50216BF7F700054777 /* Better-Days-Ahead.mp3 */,
 				40220DB4214748F500C4D4A6 /* coughAudio.mp3 */,
 			);
 			path = Audio;
@@ -315,6 +318,7 @@
 				4067CAA820FAE47900C6A7FE /* Main.storyboard in Resources */,
 				403601DD212DE3D30082E29C /* health_7.png in Resources */,
 				403601DB212DE3D30082E29C /* health_2.png in Resources */,
+				4AFBCC51216BF7F800054777 /* Better-Days-Ahead.mp3 in Resources */,
 				403601E3212DE3D30082E29C /* health_5.png in Resources */,
 				403601E1212DE3D30082E29C /* health_1.png in Resources */,
 				403601DE212DE3D30082E29C /* health_10.png in Resources */,

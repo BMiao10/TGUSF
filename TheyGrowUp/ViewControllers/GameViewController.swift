@@ -13,7 +13,7 @@ import AVFoundation
 
 class GameViewController: UIViewController {
     
-    private var audioPlayer: AudioPlayer?
+    private weak var sceneAudioPlayer: AudioPlayer?
 
     private var scenario: Scenario!
     private weak var journey: Journey?
@@ -41,8 +41,6 @@ class GameViewController: UIViewController {
         
         choiceButtons = [choiceALabel, choiceBLabel, choiceCLabel]
         
-        //playSoundWith(fileName: "backgroundAudio", fileExtension: "mp3")
-        
         // TODO: Refactor to separate view class?
         UIView.animate(withDuration: 1.7, delay: 0.5, animations: {
             self.ageScaleLabel.text = "Month"
@@ -60,11 +58,15 @@ class GameViewController: UIViewController {
         //load background
         backgroundImage.image = UIImage(named: scene.setting)
         
-        // Play audio
+        // Stop old audio
+        if let player = sceneAudioPlayer {
+            AudioPlayerManager.remove(player: player)
+            sceneAudioPlayer = nil
+        }
+        
+        // Play new audio
         if let audioFile = scene.audio {
-            //soundPlayer = try? AudioPlayer(fileName: audioFile + ".mp3")
-            //soundPlayer?.play()
-            audioPlayer = try? AudioPlayerManager.play(fileName: audioFile + ".mp3", discardOnCompletion: true)
+            sceneAudioPlayer = try? AudioPlayerManager.play(fileName: audioFile + ".mp3", discardOnCompletion: true)
         }
         
         // TODO: Add image animation

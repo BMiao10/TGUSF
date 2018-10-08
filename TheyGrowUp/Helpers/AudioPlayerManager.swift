@@ -24,6 +24,7 @@ import Foundation
 
 public class AudioPlayerManager {
     
+    /// Singleton shared instance
     static let shared = AudioPlayerManager()
     
     private var players: [AudioPlayer] = []
@@ -33,83 +34,109 @@ public class AudioPlayerManager {
         NotificationCenter.default.addObserver(self, selector: #selector(AudioPlayerManager.soundDidFinishPlaying(_:)), name: AudioPlayer.SoundDidFinishPlayingNotification, object: nil)
     }
     
-    /// MARK - Play
+    // MARK - Play
     
-    // Checks if player exists for specified audio file. If so, resumes play.
-    // If not, initializes new audioplayer with filename
-    // If discardOnCompletion == true, the AudioPlayer instance will be deleted as soon as the sound stops.
+    /**
+        Checks if player exists for specified audio file. If so, resumes play.
+        If not, initializes new audioplayer with filename and starts playing
+        - parameter fileName: Name of audio file with extension (e.g. "audio.mp3")
+        - parameter discardOnCompletion: If true, the AudioPlayer instance will be deleted as soon as the sound completes playing successfully. (Default = true)
+        - Throws: AudioPlayerError
+        - Returns: Existing or initialized AudioPlayer
+    */
     static func play(fileName: String, discardOnCompletion discard: Bool = true) throws -> AudioPlayer {
-        let apm = self.shared
-        
-        if let player = apm.playerWith(name: fileName) {
+        if let player = self.playerWith(name: fileName) {
             player.play()
             return player
         } else {
             let player = try AudioPlayer.init(fileName: fileName)
-            apm.addPlayer( player )
+            self.shared.addPlayer( player )
             return player
         }
     }
     
-    // Initializes new audioplayer with path
+    /**
+     Checks if player exists for specified audio file path. If so, resumes play.
+     If not, initializes new audioplayer with file path and starts playing
+     - parameter path: Path to audio file with extension (e.g. "Assets/audio.mp3")
+     - parameter discardOnCompletion: If true, the AudioPlayer instance will be deleted as soon as the sound completes playing successfully. (Default = true)
+     - Throws: AudioPlayerError
+     - Returns: Existing or initialized AudioPlayer
+     */
     static func play(contentsOfPath path: String, discardOnCompletion discard: Bool = true) throws -> AudioPlayer {
         let fileURL = URL(fileURLWithPath: path)
         return try play(contentsOfUrl: fileURL, discardOnCompletion: discard)
     }
     
-    // Initializes new audioplayer with URL
+    /**
+     Checks if player exists for specified audio file URL. If so, resumes play.
+     If not, initializes new audioplayer with file URL and starts playing
+     - parameter url: URL to audio file with extension
+     - parameter discardOnCompletion: If true, the AudioPlayer instance will be deleted as soon as the sound completes playing successfully. (Default = true)
+     - Throws: AudioPlayerError
+     - Returns: Existing or initialized AudioPlayer
+     */
     static func play(contentsOfUrl url: URL, discardOnCompletion discard: Bool = true) throws -> AudioPlayer {
-        let apm = self.shared
-        
-        if let player = apm.playerWith(name: url.lastPathComponent) {
+        if let player = self.playerWith(name: url.lastPathComponent) {
             player.play()
             return player
         } else {
             let player = try AudioPlayer.init(contentsOf: url)
-            apm.addPlayer( player )
+            self.shared.addPlayer( player )
             return player
         }
     }
     
-    // Resumes play on all players
+    /// Resumes play on all players
     static func play() {
         self.shared.players.forEach { (player) in
             player.play()
         }
     }
     
-    /// MARK - Stop
+    // MARK - Stop
     
-    // Stop an audioplayer with given name
+    /// Stop an audioplayer with given name
     static func stop(name: String) {
-        if let player = self.shared.playerWith(name: name) {
+        if let player = self.playerWith(name: name) {
             player.stop()
         }
     }
     
-    // Stop all players
+    /// Stop all players
     static func stop() {
         self.shared.players.forEach { (player) in
             player.stop()
         }
     }
     
-    /// MARK - Remove
+    // MARK - Remove
     
-    private func remove(_ player: AudioPlayer) {
+    /// Stops playing and removes a given AudioPlayer
+    static func remove(player: AudioPlayer) {
         player.stop()
-        players.removeAll { (ap) -> Bool in
+        
+        let apm = self.shared
+        apm.players.removeAll { (ap) -> Bool in
             return ap == player
         }
-        _playersToDiscardOnCompletion.removeAll { (ap) -> Bool in
+        apm._playersToDiscardOnCompletion.removeAll { (ap) -> Bool in
             return ap == player
         }
     }
     
-    /// MARK - Helpers
+    /// Stops playing and removes an AudioPlayer by name
+    static func remove(name: String) {
+        if let player = self.playerWith(name: name) {
+            remove( player: player )
+        }
+    }
     
-    func playerWith(name: String) -> AudioPlayer? {
-        return players.first(where: { (player) -> Bool in
+    // MARK - Helpers
+    
+    /// Retrieve the AudioPlayer with given name
+    static func playerWith(name: String) -> AudioPlayer? {
+        return self.shared.players.first(where: { (player) -> Bool in
             return player.name == name
         })
     }
@@ -138,7 +165,7 @@ public class AudioPlayerManager {
         let player = notification.object as! AudioPlayer
         let success = notification.userInfo?[ AudioPlayer.SoundDidFinishPlayingSuccessfully ] as! Bool
         if success && _playersToDiscardOnCompletion.contains(player) {
-            remove( player )
+            AudioPlayerManager.remove( player: player )
         }
     }
     
