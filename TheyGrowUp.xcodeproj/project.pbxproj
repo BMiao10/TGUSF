@@ -39,6 +39,8 @@
 		4AECB64E2166B1DF004CB1EC /* JourneyStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AECB64D2166B1DF004CB1EC /* JourneyStep.swift */; };
 		4AECB6572166BC3D004CB1EC /* LinearProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AECB6562166BC3D004CB1EC /* LinearProgressBar.swift */; };
 		4AF7137221669C010011C159 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4AF7137121669C010011C159 /* Podfile */; };
+		4AFBCC4D216BE50D00054777 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBCC4A216BE45C00054777 /* AudioPlayer.swift */; };
+		4AFBCC4E216BE51300054777 /* AudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBCC4B216BE45C00054777 /* AudioPlayerManager.swift */; };
 		5ADF08D7AF698B943822C015 /* Pods_TheyGrowUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 191559A6D43CF01F939C7495 /* Pods_TheyGrowUp.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +81,8 @@
 		4AECB64D2166B1DF004CB1EC /* JourneyStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyStep.swift; sourceTree = "<group>"; };
 		4AECB6562166BC3D004CB1EC /* LinearProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearProgressBar.swift; sourceTree = "<group>"; };
 		4AF7137121669C010011C159 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4AFBCC4A216BE45C00054777 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		4AFBCC4B216BE45C00054777 /* AudioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerManager.swift; sourceTree = "<group>"; };
 		6B69D960958F0F0AC44C4235 /* Pods-TheyGrowUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheyGrowUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheyGrowUp/Pods-TheyGrowUp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				4A11A3FB216888D000E9B9F2 /* Assets */,
+				4AFBCC4C216BE45C00054777 /* Helpers */,
 				4A11A3F22168240500E9B9F2 /* ViewControllers */,
 				4AECB64F2166B1F4004CB1EC /* Views */,
 				4AECB6442166B020004CB1EC /* Models */,
@@ -207,6 +212,16 @@
 			);
 			path = Views;
 			sourceTree = "<group>";
+		};
+		4AFBCC4C216BE45C00054777 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4AFBCC4A216BE45C00054777 /* AudioPlayer.swift */,
+				4AFBCC4B216BE45C00054777 /* AudioPlayerManager.swift */,
+			);
+			name = Helpers;
+			path = /Users/jshenson/Sites/TGUSF/TheyGrowUp/Helpers;
+			sourceTree = "<absolute>";
 		};
 		611DA76236407F5DD65D7EE6 /* Pods */ = {
 			isa = PBXGroup;
@@ -322,7 +337,6 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/AudioPlayerSwift/AudioPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/CrossroadRegex/Regex.framework",
 				"${BUILT_PRODUCTS_DIR}/FontBlaster/FontBlaster.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -335,7 +349,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AudioPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Regex.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontBlaster.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
@@ -375,6 +388,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AFBCC4E216BE51300054777 /* AudioPlayerManager.swift in Sources */,
+				4AFBCC4D216BE50D00054777 /* AudioPlayer.swift in Sources */,
 				40038E86213F914700D7FBA2 /* GameViewController.swift in Sources */,
 				4AECB6572166BC3D004CB1EC /* LinearProgressBar.swift in Sources */,
 				4AECB64E2166B1DF004CB1EC /* JourneyStep.swift in Sources */,

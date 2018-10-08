@@ -13,9 +13,8 @@ import AVFoundation
 
 class GameViewController: UIViewController {
     
-    private var audioPlayer: AVAudioPlayer!
+    private var audioPlayer: AudioPlayer?
 
-    // TODO: Convert to singleton?
     private var scenario: Scenario!
     private weak var journey: Journey?
     
@@ -63,7 +62,9 @@ class GameViewController: UIViewController {
         
         // Play audio
         if let audioFile = scene.audio {
-            playSoundWith(fileName: audioFile, fileExtension: "mp3")
+            //soundPlayer = try? AudioPlayer(fileName: audioFile + ".mp3")
+            //soundPlayer?.play()
+            audioPlayer = try? AudioPlayerManager.play(fileName: audioFile + ".mp3", discardOnCompletion: true)
         }
         
         // TODO: Add image animation
@@ -105,25 +106,6 @@ class GameViewController: UIViewController {
         
         // Update our journey
         journey?.append( JourneyStep(baseScene: scenario.currentScene) )
-    }
-    
-    fileprivate func playSoundWith(fileName: String, fileExtension: String) -> Void {
-        let audioSourceURL:URL!
-        audioSourceURL = Bundle.main.url(forResource: fileName, withExtension: fileExtension)
-        
-        if audioSourceURL == nil {
-            print("This is not a valid song")
-        }
-        else {
-            do {
-                audioPlayer = try AVAudioPlayer.init(contentsOf: audioSourceURL!)
-                audioPlayer.prepareToPlay()
-                audioPlayer.play()
-            }
-            catch {
-                print(error)
-            }
-        }
     }
     
     // MARK: Button Actions
