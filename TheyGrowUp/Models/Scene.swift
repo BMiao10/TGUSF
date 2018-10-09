@@ -91,7 +91,7 @@ struct Scene: Decodable {
         }
     }
     
-    func scoreDelta(for item:ScoreItems) -> Int? {
+    func scoreDelta(for item:ScoreKeeper.ScoreItems) -> Int {
         switch item {
         case .health:
             return health
@@ -102,6 +102,17 @@ struct Scene: Decodable {
         case .community:
             return community
         }
+    }
+    
+    func scoreDeltas() -> [ScoreKeeper.ScoreItems: Int] {
+        var deltas = [ScoreKeeper.ScoreItems: Int]()
+        ScoreKeeper.ScoreItems.allCases.forEach {
+            let d = scoreDelta(for: $0)
+            if d != 0 {
+                deltas.updateValue(d, forKey: $0)
+            }
+        }
+        return deltas
     }
     
 }

@@ -15,28 +15,20 @@ class Journey {
     
     public let player: Parent
     
-    private let startTime: Date
-    private var endTime: Date
+    private let startTime = Date()
+    private var endTime = Date()
     
     typealias JourneySteps = [JourneyStep]
     private var steps = JourneySteps()
-    
-    var currentStep: JourneyStep? {
-        guard let step = steps.last else {
-            return nil
-        }
-        
-        return step
-    }
     
     private(set) var isFinished: Bool = false
     
     private(set) var intent: Int = 0
     
+    private(set) var scoreKeeper = ScoreKeeper()
+    
     init( player: Parent ) {
         self.player = player
-        self.startTime = Date()
-        self.endTime = Date()
     }
     
     convenience init( player: Parent, steps: JourneySteps ) {
@@ -80,6 +72,9 @@ extension Journey: Collection {
             steps.last?.next = step
             step.previous = steps.last
             
+            // Update our ScoreKeeper
+            scoreKeeper.changeScores(step.baseScene.scoreDeltas())
+            
             // Update our intent to vaccinate tracker
             changeIntent(by: step.baseScene.intent)
             
@@ -88,8 +83,12 @@ extension Journey: Collection {
         }
     }
 
-    func length () -> Int {
+    var length: Int {
         return steps.count
+    }
+    
+    var currentStep: JourneyStep? {
+        return steps.last
     }
     
 }

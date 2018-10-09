@@ -48,7 +48,7 @@ class GameViewController: UIViewController {
         })
        
         //load first scene
-        Parent.shared.addJourney()
+        journey = Parent.shared.addJourney()
         // TODO: Handle any load errors gracefully
         scenario = try! Scenario(fileName: "scenario_pertussis")
         loadScene( scenario.currentScene )
@@ -90,15 +90,6 @@ class GameViewController: UIViewController {
             moreInfoLabel.isHidden = true
         }
         
-        // Change score with animations
-        ScoreItems.allCases.forEach { (item) in
-            if let currentScore = scoreView.score(for: item),
-               let adjustment = scene.scoreDelta(for: item)
-                {
-                scoreView.setScore(score: currentScore + adjustment, for: item)
-            }
-        }
-        
         // Update choices
         choiceButtons.forEach { (button) in
             button.setTitle("", for: .normal)
@@ -130,6 +121,8 @@ class GameViewController: UIViewController {
         if scenario.currentScene.isLastScene {
             // TODO: Handle end of scenario -> GOTO FAQs
             print("Scenario ended")
+            journey?.finish()
+            
         } else {
             let nextSceneId = scenario.currentScene.next[choice]
             loadScene( scenario.advance(to: nextSceneId)! )
@@ -137,14 +130,7 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func restartButton(_ sender: Any) {
-        // TODO: Reconnect restart button
-        /*currNode = 0
-        currScores = ["moneyScore":3,"timeScore":3,"healthScore":3,"communityScore":3]
-        healthScore.image = UIImage(named:"good-health")
-        timeScore.image = UIImage(named:"good-health")
-        moneyScore.image = UIImage(named:"good-health")
-        communityScore.image = UIImage(named:"good-health")
-        loadScene(node:wholeScene[0])*/
+        
     }
     
     @IBAction func moreInfo(_ sender: Any) {
