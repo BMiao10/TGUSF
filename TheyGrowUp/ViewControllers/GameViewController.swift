@@ -125,10 +125,15 @@ class GameViewController: UIViewController {
     }
     
     fileprivate func switchSceneForChoice(_ choice: Int) {
-        let nextSceneId = scenario.currentScene.next[choice]
         journey?.currentStep?.response = choice
-        // TODO: Handle end of scenario
-        loadScene( scenario.advance(to: nextSceneId)! )
+        
+        if scenario.currentScene.isLastScene {
+            // TODO: Handle end of scenario -> GOTO FAQs
+            print("Scenario ended")
+        } else {
+            let nextSceneId = scenario.currentScene.next[choice]
+            loadScene( scenario.advance(to: nextSceneId)! )
+        }
     }
     
     @IBAction func restartButton(_ sender: Any) {

@@ -24,6 +24,10 @@ struct Scene: Decodable {
     let community: Int
     let intent: Int
     
+    var isLastScene: Bool {
+        return next.isEmpty || next.first == -1
+    }
+    
     enum CodingKeys: String, CodingKey, CaseIterable {
         case id
         case setting
@@ -59,7 +63,7 @@ struct Scene: Decodable {
         
         renderText()
     }
-//    
+//
 //    init( id: UInt, setting: String, audio: String, speaker: String, text: String, moreInfo: String, choices: [String], next: [Int], health: Int, money: Int, time: Int, community: Int, intent: Int ) {
 //        self.id = id
 //        self.setting = setting
