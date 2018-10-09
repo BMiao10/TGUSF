@@ -10,9 +10,14 @@ import Foundation
 
 struct Scenario {
     
+    enum ScenarioError: Error {
+        case FileUnavailable(fileName: String)
+        case DataCorrupted(url: URL)
+    }
+    
     var scenes: [Scene] = []
     
-    private(set) var currentScene: Scene = Scene()
+    private(set) var currentScene: Scene!
     private(set) var currentIndex: Int = 0 {
         didSet (newIndex) {
             if newIndex >= scenes.count {
@@ -22,18 +27,19 @@ struct Scenario {
     }
     private(set) var previousScene: Scene?
     
-    init( fileName: String ) {  
-        if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
-
-            do {
-                let data = try Data(contentsOf: url)
-                let jsonData = try JSONDecoder().decode([Scene].self, from: data)
-                self.scenes = jsonData
-                self.currentScene = self.scenes[0]
-            } catch {
-                print("error: \(error)")
-            }
+    init( fileName: String ) throws {
+        guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
+            throw ScenarioError.FileUnavailable(fileName: fileName)
         }
+            
+        guard let data = try? Data(contentsOf: url),
+              let jsonData = try? JSONDecoder().decode([Scene].self, from: data)
+        else {
+            throw ScenarioError.DataCorrupted(url: url)
+        }
+        
+        self.scenes = jsonData
+        self.currentScene = self.scenes[0]
     }
     
     mutating func advance( by steps:Int = 1 ) -> Scene? {

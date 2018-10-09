@@ -77,7 +77,7 @@
    "setting": "Neighborhood",
    "audio": "coughAudio",
    "speaker": "Neighbor",
-   "text": "\"This is what whooping sounds like. In infants, it can cause some severe complications like pneumonia! And since infants don't get the TDaP vaccine until they are 1 years old, they rely on herd immunity or their mother's vaccination during pregnancy.\"",
+   "text": "\"This is what whooping cough sounds like. In infants, it can cause some severe complications like pneumonia! And since infants don't get the TDaP vaccine until they are 1 year old, they rely on herd immunity or their mother's vaccination during pregnancy.\"",
    "moreInfo": "herdImmunityInfo",
    "choices": [
        "Our family is all vaccinated!",
@@ -97,7 +97,7 @@
    "id": 5,
    "setting": "Neighborhood",
    "speaker": "Neighbor",
-   "text": "\"Since infants don't get the TDaP vaccine until they are 1 years old, they rely on herd immunity or their mother's vaccination during pregnancy. After all, it takes a village to raise a child!\"",
+   "text": "\"Since infants don't get the TDaP vaccine until they are 1 year old, they rely on herd immunity or their mother's vaccination during pregnancy. After all, it takes a village to raise a child!\"",
    "moreInfo": "tdapInfo",
    "choices": [
        "Our family is all vaccinated!",
@@ -117,7 +117,7 @@
    "id": 6,
    "setting": "Neighborhood",
    "speaker": "Neighbor",
-   "text": "\"That's great! Vaccination and herd immunity are some of the things, along with clean water and healthy food, that we recommend to improve community health. Speaking of community, are you bringing your baby to the barbeque next week?\" (+1 community health)",
+   "text": "\"That's great! Vaccination and herd immunity are some of the things, along with clean water and healthy food, that we recommend to improve community health. Speaking of community, are you bringing {{Child.name}} to the barbeque next week?\" (+1 community health)",
    "choices": [
        "Yes, definitely!",
        "No, we're going to Disneyland!"
@@ -136,10 +136,10 @@
    "id": 7,
    "setting": "Neighborhood",
    "speaker": "Neighbor",
-   "text": "\"Whooping cough is highly contagious, and can be preventable with vaccination. Since your baby can't get the vaccine until she is a year old, you'll have to be careful to avoid getting her sick.\" (-1 health)",
+   "text": "\"Whooping cough is highly contagious, and can be preventable with vaccination. Since {{Child.name}} can't get the vaccine until {{Child.pronoun.he}} is a year old, you'll have to be careful to avoid getting {{Child.pronoun.him}} sick.\" (-1 health)",
    "choices": [
-       "We'll vaccinate her when she turns 1.",
-       "I don't plan on vaccinating my child."
+       "We'll vaccinate {{Child.pronoun.him}} when {{Child.pronoun.he}} turns 1.",
+       "I don't plan on vaccinating {{Child.name}}."
    ],
    "next": [
        6,
@@ -155,7 +155,7 @@
    "id": 8,
    "setting": "Neighborhood",
    "speaker": "Neighbor",
-   "text": "\"If that's your choice, but I still recommend you do some more research. By the way, are you planning to go to that community barbeque next week?\"",
+   "text": "\"That is your choice, but I still recommend you do some more research. By the way, are you planning to go to that community barbeque next week?\"",
    "choices": [
        "Yes, definitely!",
        "No, we're going to Disneyland!"
@@ -174,7 +174,7 @@
    "id": 9,
    "setting": "Neighborhood",
    "speaker": "Neighbor",
-   "text": "\"Great, then I'll see you and your baby there!\"",
+   "text": "\"Great, then I'll see you and {{Child.name}} there!\"",
    "choices": [
        "Next"
    ],
@@ -191,9 +191,9 @@
    "id": 10,
    "setting": "Neighborhood",
    "speaker": "Neighbor",
-   "text": "\"That sounds fun! I heard there might be a possible whooping cough outbreak, so just be careful. But your baby should be fine, since your whole family was vaccinated before she was born.\"",
+   "text": "\"That sounds fun! I heard there might be a possible whooping cough outbreak, so just be careful. But {{Child.name}} should be fine, since your whole family was vaccinated before {{Child.pronoun.he}} was born.\"",
    "choices": [
-       "Sounds great! Thanks John!"
+       "Sounds great! Thanks, John!"
    ],
    "next": [
        15
@@ -208,7 +208,7 @@
    "id": 11,
    "setting": "Neighborhood",
    "speaker": "Neighbor",
-   "text": "\"Great, then I'll see you and your baby there!",
+   "text": "\"Great, then I'll see you and {{Child.name}} there!",
    "choices": [
        "Next"
    ],
@@ -227,8 +227,8 @@
    "speaker": "Neighbor",
    "text": "\"That sounds fun! But wasn't there news about a possible whooping cough outbreak?\"",
    "choices": [
-       "My baby won't get sick!",
-       "Does that mean my baby could catch it?"
+       "{{Child.name}} won't get sick!",
+       "Does that mean {{Child.name}} could catch it?"
    ],
    "next": [
        16,
@@ -244,7 +244,7 @@
    "id": 13,
    "setting": "Neighborhood",
    "speaker": "bbq",
-   "text": "Feeling reassured that there is little risk, your family has a great time at the bbq! Everyone compliments the cornbread your family brought and #{Child.name} had a lot of fun playing at the park! (+1 community health, +1 health)",
+   "text": "Feeling reassured that there is little risk, your family has a great time at the barbecue! Everyone compliments the cornbread your family brought and {{Child.name}} had a lot of fun playing at the park! (+1 community health, +1 health)",
    "choices": [
        "Fantastic!"
    ],
@@ -261,7 +261,7 @@
    "id": 14,
    "setting": "Neighborhood",
    "speaker": "bbq",
-   "text": "Your family has a great time at the bbq, but you see a child coughing and worry it could be something serious like whooping cough. You end up leaving the bbq early, and stocking up on chicken soup just in case. (-1 community health, -1 time)",
+   "text": "Your family has a great time at the barbecue, but you see a child coughing and worry it could be something serious, like whooping cough. You end up leaving the event early, and stocking up on chicken soup just in case. (-1 community health, -1 time)",
    "choices": [
        "Next"
    ],
@@ -278,9 +278,9 @@
    "id": 15,
    "setting": "DisneylandGood",
    "speaker": "disneyPertussis",
-   "text": "The whooping cough outbreak gets worse, and you are grateful that your baby is at little risk. (+1 health) As a precaution, you head home early, and are angry when you learn that the outbreak spread among unvaccinated children. (-1 money, -1 time)",
+   "text": "The whooping cough outbreak gets worse, and you are grateful that {{Child.name}} is at little risk. (+1 health) As a precaution, you head home early, and are angry when you learn that the outbreak spread among unvaccinated children. (-1 money, -1 time)",
    "choices": [
-       "I'm just glad my baby is safe..."
+       "I'm just glad {{Child.name}} is safe..."
    ],
    "next": [
        -1
@@ -312,10 +312,10 @@
    "id": 17,
    "setting": "Neighborhood",
    "speaker": "Neighbor",
-   "text": "\"It's definitely possible, since she has not been vaccinated.\"",
+   "text": "\"It's definitely possible, since {{Child.pronoun.he}} has not been vaccinated.\"",
    "choices": [
        "We'll take our chances.",
-       "I guess we could go to the bbq instead..."
+       "I guess we could go to the barbecue instead..."
    ],
    "next": [
        16,
@@ -332,7 +332,7 @@
    "setting": "Hospital",
    "audio": "coughAudio",
    "speaker": "sickChild",
-   "text": "It turns out the child had not been vaccinated and did have whooping cough, which your baby caught. You spend the night in the hospital, listening to your baby's struggle to breathe and wishing you had better taken care of her. (-2 health, -1 time, -1 money)",
+   "text": "It turns out the child had not been vaccinated and did have whooping cough, which {{Child.name}} caught. You spend the night in the hospital, listening to {{Child.pronoun.him}} struggle to breathe. (-2 health, -1 time, -1 money)",
    "choices": [
        "I know this could have been prevented.",
        "I'm still hesitant to vaccinate."

@@ -8,11 +8,15 @@
 
 import Foundation
 
-enum Gender {
+public enum Gender: String {
     case male
     case female
     
-    var diminutive: String {
+    public enum Pronouns: String {
+        case he, him, his
+    }
+    
+    public var diminutive: String {
         switch self {
         case .male:
             return "boy"
@@ -21,13 +25,18 @@ enum Gender {
         }
     }
     
-    // TODO: Is this the best way to use this?
-    var pronouns: [String] {
+    /// Returns a gender-specific pronoun
+    /// - paramater: pronounType one of "he", "him", or "his"
+    public func pronoun(_ pronounType: Pronouns) -> String {
         switch self {
         case .male:
-            return ["he", "him", "his"]
+            return pronounType.rawValue
         case .female:
-            return ["she", "her", "hers"]
+            switch pronounType {
+                case .he: return "she"
+                case .him: return "her"
+                case .his: return "hers"
+            }
         }
     }
 }

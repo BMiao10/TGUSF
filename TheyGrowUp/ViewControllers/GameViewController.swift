@@ -49,7 +49,8 @@ class GameViewController: UIViewController {
        
         //load first scene
         Parent.shared.addJourney()
-        scenario = Scenario(fileName: "scenario_pertussis")
+        // TODO: Handle any load errors gracefully
+        scenario = try! Scenario(fileName: "scenario_pertussis")
         loadScene( scenario.currentScene )
     }
     
