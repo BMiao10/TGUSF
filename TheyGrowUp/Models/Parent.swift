@@ -57,6 +57,7 @@ class Parent {
     public func addJourney() -> Journey {
         let journey = Journey(player: self)
         self.journeys.append(journey)
+        updatePlaytime()
         return journey
     }
     

@@ -8,15 +8,6 @@
 
 import UIKit
 
-let MAX_SCORE = 3
-
-enum ScoreItems: String, CaseIterable {
-    case health
-    case money
-    case time
-    case community
-}
-
 @IBDesignable
 class ScoreView: UIView {
     
@@ -33,12 +24,6 @@ class ScoreView: UIView {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var communityLabel: UILabel!
     
-    private var scores = [
-        ScoreItems.health: MAX_SCORE,
-        ScoreItems.money: MAX_SCORE,
-        ScoreItems.time: MAX_SCORE,
-        ScoreItems.community: MAX_SCORE
-    ]
     
     func loadNib() -> UIView? {
         let bundle = Bundle(for: type(of: self))
@@ -53,13 +38,15 @@ class ScoreView: UIView {
     }
     
     func xibSetup() {
+        // Load in the xib and add it to our view
         let xib = self.loadNib()!
         self.addSubview(xib)
         xib.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         xib.frame = self.bounds
         contentView = xib
         
-        ScoreItems.allCases.forEach { (item) in
+        // Set up colors
+        ScoreKeeper.ScoreItems.allCases.forEach { (item) in
             let bar = scoreBar(for: item)
             bar.barColorForValue = { value in
                 switch value {
@@ -72,6 +59,9 @@ class ScoreView: UIView {
                 }
             }
         }
+        
+        // Register for notifications
+        NotificationCenter.default.addObserver(self, selector: #selector(handleScoreDidChange(_:)), name: ScoreKeeper.ScoreDidChange, object: nil)
     }
     
     override func awakeFromNib() {
@@ -86,25 +76,21 @@ class ScoreView: UIView {
         contentView?.prepareForInterfaceBuilder()
     }
     
-    func score(for item:ScoreItems) -> Int? {
-        return scores[ item ]!
+    // MARK - Notifications
+    
+    @objc fileprivate func handleScoreDidChange(_ notification:Notification) {
+        
+        let scoreItem = notification.userInfo?[ ScoreKeeper.ScoreDidChangeNotificationKeys.scoreItem ] as! ScoreKeeper.ScoreItems
+        let newScore = notification.userInfo?[ ScoreKeeper.ScoreDidChangeNotificationKeys.newScore ] as! Int
+        
+        let progress = Float(newScore) / Float(ScoreKeeper.maxScore) * 100
+        scoreBar(for: scoreItem).setProgress(CGFloat(progress), animated: true, duration: 2.5)
+        
     }
     
-    func setScore(score newScore: Int, for item:ScoreItems) {
-        if ( scores[ item ] != newScore ) {
-            scores[ item ] = newScore
-            let progress = Float(newScore) / Float(MAX_SCORE) * 100
-            scoreBar(for: item).setProgress(CGFloat(progress), animated: true, duration: 2.5)
-        }
-    }
+    // MARK - Helpers
     
-    func setScores(scores newScores: [ScoreItems: Int], for item:ScoreItems) {
-        newScores.forEach { (key: ScoreItems, value: Int) in
-            setScore(score: value, for: key)
-        }
-    }
-    
-    fileprivate func label(for item:ScoreItems) -> UILabel {
+    fileprivate func label(for item:ScoreKeeper.ScoreItems) -> UILabel {
         switch item {
         case .health:
             return healthLabel
@@ -117,7 +103,7 @@ class ScoreView: UIView {
         }
     }
     
-    fileprivate func scoreBar(for item:ScoreItems) -> LinearProgressBar {
+    fileprivate func scoreBar(for item:ScoreKeeper.ScoreItems) -> LinearProgressBar {
         switch item {
         case .health:
             return healthScore

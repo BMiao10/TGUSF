@@ -8,7 +8,7 @@
 
 import Foundation
 
-class JourneyStep {
+class JourneyStep: TimeTrackable {
     
     // UUID set by server
     private var id: String?
@@ -16,7 +16,7 @@ class JourneyStep {
     weak var previous: JourneyStep?
     var next: JourneyStep?
     
-    let baseScene: Scene
+    let baseScene: Scene!
     
     // TODO Implement type checking
     var response: Int? {
@@ -26,13 +26,11 @@ class JourneyStep {
         }
     }
     
-    let startTime: Date
-    private var endTime: Date
+    let startTime = Date()
+    var endTime = Date()
     
     init( baseScene: Scene ){
         self.baseScene = baseScene
-        self.startTime = Date()
-        self.endTime = Date()
     }
     
 }

@@ -13,9 +13,8 @@ import AVFoundation
 
 class GameViewController: UIViewController {
     
-    private var audioPlayer: AVAudioPlayer!
+    private weak var sceneAudioPlayer: AudioPlayer?
 
-    // TODO: Convert to singleton?
     private var scenario: Scenario!
     private weak var journey: Journey?
     
@@ -42,8 +41,6 @@ class GameViewController: UIViewController {
         
         choiceButtons = [choiceALabel, choiceBLabel, choiceCLabel]
         
-        //playSoundWith(fileName: "backgroundAudio", fileExtension: "mp3")
-        
         // TODO: Refactor to separate view class?
         UIView.animate(withDuration: 1.7, delay: 0.5, animations: {
             self.ageScaleLabel.text = "Month"
@@ -51,8 +48,9 @@ class GameViewController: UIViewController {
         })
        
         //load first scene
-        Parent.shared.addJourney()
-        scenario = Scenario(fileName: "scenario_pertussis")
+        journey = Parent.shared.addJourney()
+        // TODO: Handle any load errors gracefully
+        scenario = try! Scenario(fileName: "scenario_pertussis")
         loadScene( scenario.currentScene )
     }
     
@@ -61,9 +59,15 @@ class GameViewController: UIViewController {
         //load background
         backgroundImage.image = UIImage(named: scene.setting)
         
-        // Play audio
+        // Stop old audio
+        if let player = sceneAudioPlayer {
+            AudioPlayerManager.remove(player: player)
+            sceneAudioPlayer = nil
+        }
+        
+        // Play new audio
         if let audioFile = scene.audio {
-            playSoundWith(fileName: audioFile, fileExtension: "mp3")
+            sceneAudioPlayer = try? AudioPlayerManager.play(fileName: audioFile + ".mp3", discardOnCompletion: true)
         }
         
         // TODO: Add image animation
@@ -86,15 +90,6 @@ class GameViewController: UIViewController {
             moreInfoLabel.isHidden = true
         }
         
-        // Change score with animations
-        ScoreItems.allCases.forEach { (item) in
-            if let currentScore = scoreView.score(for: item),
-               let adjustment = scene.scoreDelta(for: item)
-                {
-                scoreView.setScore(score: currentScore + adjustment, for: item)
-            }
-        }
-        
         // Update choices
         choiceButtons.forEach { (button) in
             button.setTitle("", for: .normal)
@@ -105,25 +100,6 @@ class GameViewController: UIViewController {
         
         // Update our journey
         journey?.append( JourneyStep(baseScene: scenario.currentScene) )
-    }
-    
-    fileprivate func playSoundWith(fileName: String, fileExtension: String) -> Void {
-        let audioSourceURL:URL!
-        audioSourceURL = Bundle.main.url(forResource: fileName, withExtension: fileExtension)
-        
-        if audioSourceURL == nil {
-            print("This is not a valid song")
-        }
-        else {
-            do {
-                audioPlayer = try AVAudioPlayer.init(contentsOf: audioSourceURL!)
-                audioPlayer.prepareToPlay()
-                audioPlayer.play()
-            }
-            catch {
-                print(error)
-            }
-        }
     }
     
     // MARK: Button Actions
@@ -140,21 +116,29 @@ class GameViewController: UIViewController {
     }
     
     fileprivate func switchSceneForChoice(_ choice: Int) {
-        let nextSceneId = scenario.currentScene.next[choice]
         journey?.currentStep?.response = choice
-        // TODO: Handle end of scenario
-        loadScene( scenario.advance(to: nextSceneId)! )
+        
+        if scenario.currentScene.isLastScene {
+            // TODO: Handle end of scenario -> GOTO FAQs
+            print("Scenario ended")
+            journey?.finish()
+            Parent.shared.updatePlaytime()
+            
+        } else {
+            let nextSceneId = scenario.currentScene.next[choice]
+            loadScene( scenario.advance(to: nextSceneId)! )
+        }
     }
     
     @IBAction func restartButton(_ sender: Any) {
-        // TODO: Reconnect restart button
-        /*currNode = 0
-        currScores = ["moneyScore":3,"timeScore":3,"healthScore":3,"communityScore":3]
-        healthScore.image = UIImage(named:"good-health")
-        timeScore.image = UIImage(named:"good-health")
-        moneyScore.image = UIImage(named:"good-health")
-        communityScore.image = UIImage(named:"good-health")
-        loadScene(node:wholeScene[0])*/
+        // TODO: Hide this button in release version
+        print("Scenario restarting")
+        journey?.finish()
+        Parent.shared.updatePlaytime()
+        
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeController") as! ViewController
+        vc.modalTransitionStyle = .flipHorizontal
+        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func moreInfo(_ sender: Any) {

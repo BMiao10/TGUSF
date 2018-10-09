@@ -22,8 +22,5 @@ target 'TheyGrowUp' do
     
     # https://github.com/tbaranes/SwiftyUtils
     # pod SwiftyUtils, '~>2.0'
-    
-    # Audio Player
-    # https://github.com/tbaranes/AudioPlayerSwift
-    pod 'AudioPlayerSwift', '~>1.6.1'
+
 end

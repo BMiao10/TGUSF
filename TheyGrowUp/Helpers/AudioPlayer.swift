@@ -1,6 +1,7 @@
 // AudioPlayerSwift.swift
 //
 // Copyright (c) 2016 Tom Baranes
+// Modifications (c) 2018 Jared Shenson
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -30,6 +31,7 @@ public enum AudioPlayerError: Error {
 public class AudioPlayer: NSObject {
 
     public static let SoundDidFinishPlayingNotification = Notification.Name(rawValue: "SoundDidFinishPlayingNotification")
+    public static let SoundDidFinishPlayingSuccessfully = "success"
     public typealias SoundDidFinishCompletion = (_ didFinish: Bool) -> Void
 
     // MARK: Properties
@@ -114,16 +116,15 @@ public class AudioPlayer: NSObject {
     // MARK: Init
 
     public convenience init(fileName: String) throws {
-        let fixedFileName = fileName.trimmingCharacters(in: .whitespacesAndNewlines)
-        var soundFileComponents = fixedFileName.components(separatedBy: ".")
-        if soundFileComponents.count == 1 {
+        let soundFileComponents = fileName.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: ".")
+        guard soundFileComponents.count == 2 else {
             throw AudioPlayerError.fileExtension
         }
 
-        guard let path = Bundle.main.path(forResource: soundFileComponents[0], ofType: soundFileComponents[1]) else {
+        guard let url = Bundle.main.url(forResource: soundFileComponents[0], withExtension: soundFileComponents[1]) else {
             throw AudioPlayerError.fileNotFound
         }
-        try self.init(contentsOfPath: path)
+        try self.init(contentsOf: url)
     }
 
     public convenience init(contentsOfPath path: String) throws {
@@ -224,7 +225,8 @@ extension AudioPlayer: AVAudioPlayerDelegate {
             nonNilCompletionHandler(flag)
         }
 
-        NotificationCenter.default.post(name: AudioPlayer.SoundDidFinishPlayingNotification, object: self)
+        let success = [ AudioPlayer.SoundDidFinishPlayingSuccessfully: flag ]
+        NotificationCenter.default.post(name: AudioPlayer.SoundDidFinishPlayingNotification, object: self, userInfo: success)
     }
 
 }
