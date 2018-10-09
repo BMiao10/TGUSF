@@ -136,7 +136,7 @@ class GameViewController: UIViewController {
         journey?.finish()
         Parent.shared.updatePlaytime()
         
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeController") as! ViewController
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeController") as! HomeViewController
         vc.modalTransitionStyle = .flipHorizontal
         self.present(vc, animated: true, completion: nil)
     }
