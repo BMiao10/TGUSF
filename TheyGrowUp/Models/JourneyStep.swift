@@ -8,7 +8,7 @@
 
 import Foundation
 
-class JourneyStep {
+class JourneyStep: TimeTrackable {
     
     // UUID set by server
     private var id: String?

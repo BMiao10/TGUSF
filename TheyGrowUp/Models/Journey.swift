@@ -8,15 +8,15 @@
 
 import Foundation
 
-class Journey {
+class Journey: TimeTrackable {
     
     // UUID set by server
     private var id: String?
     
     public let player: Parent
     
-    private let startTime = Date()
-    private var endTime = Date()
+    internal let startTime = Date()
+    internal var endTime = Date()
     
     typealias JourneySteps = [JourneyStep]
     private var steps = JourneySteps()

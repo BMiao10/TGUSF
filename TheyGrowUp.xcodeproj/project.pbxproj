@@ -44,6 +44,7 @@
 		4AFBCC51216BF7F800054777 /* Better-Days-Ahead.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4AFBCC50216BF7F700054777 /* Better-Days-Ahead.mp3 */; };
 		4AFBCC53216C00CD00054777 /* StringRenderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBCC52216C00CD00054777 /* StringRenderService.swift */; };
 		4AFBCC55216C5E8300054777 /* ScoreKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBCC54216C5E8300054777 /* ScoreKeeper.swift */; };
+		4AFBCC57216C7C1700054777 /* TimeTrackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBCC56216C7C1700054777 /* TimeTrackable.swift */; };
 		5ADF08D7AF698B943822C015 /* Pods_TheyGrowUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 191559A6D43CF01F939C7495 /* Pods_TheyGrowUp.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		4AFBCC50216BF7F700054777 /* Better-Days-Ahead.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Better-Days-Ahead.mp3"; sourceTree = "<group>"; };
 		4AFBCC52216C00CD00054777 /* StringRenderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringRenderService.swift; sourceTree = "<group>"; };
 		4AFBCC54216C5E8300054777 /* ScoreKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreKeeper.swift; sourceTree = "<group>"; };
+		4AFBCC56216C7C1700054777 /* TimeTrackable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackable.swift; sourceTree = "<group>"; };
 		6B69D960958F0F0AC44C4235 /* Pods-TheyGrowUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheyGrowUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheyGrowUp/Pods-TheyGrowUp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,6 +229,7 @@
 				4AFBCC4A216BE45C00054777 /* AudioPlayer.swift */,
 				4AFBCC4B216BE45C00054777 /* AudioPlayerManager.swift */,
 				4AFBCC52216C00CD00054777 /* StringRenderService.swift */,
+				4AFBCC56216C7C1700054777 /* TimeTrackable.swift */,
 			);
 			name = Helpers;
 			path = /Users/jshenson/Sites/TGUSF/TheyGrowUp/Helpers;
@@ -416,6 +419,7 @@
 				4AECB6482166B173004CB1EC /* Child.swift in Sources */,
 				4A11A3F62168291100E9B9F2 /* ScoreView.swift in Sources */,
 				4AECB6462166B16B004CB1EC /* Parent.swift in Sources */,
+				4AFBCC57216C7C1700054777 /* TimeTrackable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
