@@ -122,6 +122,7 @@ class GameViewController: UIViewController {
             // TODO: Handle end of scenario -> GOTO FAQs
             print("Scenario ended")
             journey?.finish()
+            Parent.shared.updatePlaytime()
             
         } else {
             let nextSceneId = scenario.currentScene.next[choice]
@@ -130,7 +131,14 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func restartButton(_ sender: Any) {
+        // TODO: Hide this button in release version
+        print("Scenario restarting")
+        journey?.finish()
+        Parent.shared.updatePlaytime()
         
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeController") as! ViewController
+        vc.modalTransitionStyle = .flipHorizontal
+        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func moreInfo(_ sender: Any) {

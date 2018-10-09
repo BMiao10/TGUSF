@@ -69,6 +69,7 @@ extension Journey: Collection {
     
     func append(_ step:JourneyStep) {
         if !isFinished {
+            // Set up our steps' relationships
             steps.last?.next = step
             step.previous = steps.last
             
@@ -78,7 +79,10 @@ extension Journey: Collection {
             // Update our intent to vaccinate tracker
             changeIntent(by: step.baseScene.intent)
             
+            // Update our time tracking
+            steps.last?.endTime = Date()
             endTime = Date()
+            
             return steps.append(step)
         }
     }
