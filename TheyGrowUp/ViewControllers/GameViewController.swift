@@ -34,6 +34,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var textboxImage: UIImageView!
     
     @IBOutlet weak var scoreView: ScoreView!
+    @IBOutlet var moreInfoView: UIView!
+    
+    @IBOutlet weak var moreInfoContent: UILabel!
     
     override func viewDidLoad() {
         
@@ -142,8 +145,12 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func moreInfo(_ sender: Any) {
-        //TODO:figure out moreInfo stuff
-        moreInfoLabel.setTitle("Info not written yet", for: .normal)
+        moreInfoContent.text = scenario.currentScene.moreInfo
+        self.view.addSubview(moreInfoView)
     }
-
+    
+    @IBAction func closeMoreInfo(_ sender: Any) {
+        self.moreInfoView.removeFromSuperview()
+    }
+    
 }
