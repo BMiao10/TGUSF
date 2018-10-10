@@ -76,8 +76,6 @@ class HomeViewController: UIViewController {
                 
                 self.textboxText.alpha = 1.0
                 self.textboxImage.alpha = 1.0
-                
-                
             })
             
             //animate scoring bars

@@ -22,5 +22,9 @@ target 'TheyGrowUp' do
     
     # https://github.com/tbaranes/SwiftyUtils
     # pod SwiftyUtils, '~>2.0'
+    
+    # Location services
+    # https://github.com/malcommac/SwiftLocation
+    pod 'SwiftLocation', '~> 3.2.3'
 
 end

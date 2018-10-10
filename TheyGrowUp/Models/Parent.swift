@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import SwiftLocation
+import CoreLocation
 
 class Parent {
     
@@ -20,7 +22,7 @@ class Parent {
     private var createdAt: Date
     
     // TODO: Location
-    // private var location
+    private var location: CLLocationCoordinate2D?
     
     // TODO: Registration info
     // private var registrationId: String?
@@ -40,6 +42,13 @@ class Parent {
         self.id = UUID().uuidString
         self.createdAt = Date()
         self.lastPlayed = Date()
+        
+        Locator.currentPosition(accuracy: .neighborhood, timeout: nil, onSuccess: { [weak self] location in
+            print("Location found: \(location)")
+            self?.location = location.coordinate
+        }, onFail: { err, last in
+            print("Failed to get location: \(err)")
+        })
     }
     
     public func updatePlaytime() {
