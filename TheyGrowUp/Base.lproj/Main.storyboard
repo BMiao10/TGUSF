@@ -323,7 +323,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="textbox" translatesAutoresizingMaskIntoConstraints="NO" id="kwN-LN-Alz">
-                                        <rect key="frame" x="-38" y="21" width="581" height="713"/>
+                                        <rect key="frame" x="-37" y="21" width="581" height="713"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPY-Oj-Q7W" userLabel="textboxText">
@@ -410,7 +410,8 @@
                         <outlet property="choiceALabel" destination="aVB-8A-6Eo" id="pHa-0y-ENI"/>
                         <outlet property="choiceBLabel" destination="8bk-zy-8Mr" id="iTd-q7-vnl"/>
                         <outlet property="choiceCLabel" destination="hvQ-Fh-7bP" id="hst-FR-fTJ"/>
-                        <outlet property="moreInfoLabel" destination="Zic-cL-iIV" id="5Bs-e1-4cp"/>
+                        <outlet property="moreInfoContent" destination="Zic-cL-iIV" id="gJw-IV-qY6"/>
+                        <outlet property="moreInfoLabel" destination="Sst-lD-sZB" id="2YZ-vT-ZrK"/>
                         <outlet property="moreInfoView" destination="Qhu-WQ-2VE" id="hkw-yi-EOS"/>
                         <outlet property="scoreView" destination="fvJ-iy-1CR" id="Fw8-mK-YP5"/>
                         <outlet property="textboxImage" destination="OHO-w8-ANJ" id="B5W-iK-k02"/>
@@ -448,6 +449,43 @@
                 </view>
             </objects>
             <point key="canvasLocation" x="867.7734375" y="133.59375"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gVv-FT-FRg">
+            <objects>
+                <viewController restorationIdentifier="FAQViewController" storyboardIdentifier="FAQViewController" id="uJD-22-Qne" customClass="FAQViewController" customModule="TheyGrowUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MFJ-eU-eEZ">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucI-3C-WvR">
+                                <rect key="frame" x="46" y="689" width="958" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="I21-Hy-K52"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">This information is for educational purposes only and is not intended to replace the advice of your doctor or health care provider. We encourage you to discuss with your doctor any questions or concerns you may have.</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ucI-3C-WvR" secondAttribute="bottom" constant="20" symbolic="YES" id="Cs1-bH-Htk"/>
+                            <constraint firstItem="ucI-3C-WvR" firstAttribute="leading" secondItem="P4c-Cr-wTl" secondAttribute="leading" constant="46" id="JHh-dn-ZqF"/>
+                            <constraint firstItem="ucI-3C-WvR" firstAttribute="trailing" secondItem="MFJ-eU-eEZ" secondAttribute="trailingMargin" id="Yen-NL-Fas"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="P4c-Cr-wTl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="onw-3L-BZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868.9453125" y="861.71875"/>
         </scene>
     </scenes>
     <resources>

@@ -22,7 +22,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var choiceBLabel: UIButton!
     @IBOutlet weak var choiceCLabel: UIButton!
     private var choiceButtons: [UIButton]!
-    
+
     @IBOutlet weak var moreInfoLabel: UIButton!
     
     @IBOutlet weak var ageScaleLabel: UILabel!
@@ -37,7 +37,7 @@ class GameViewController: UIViewController {
     @IBOutlet var moreInfoView: UIView!
     
     @IBOutlet weak var moreInfoContent: UILabel!
-    
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -83,7 +83,7 @@ class GameViewController: UIViewController {
         
         // More info
         if let moreInfo = scene.moreInfo {
-            // TODO: Make this do something
+            // Show more info
             moreInfoLabel.setTitle("More Info", for: .normal)
             moreInfoLabel.isHidden = false
             journey?.changeIntent(by: 1)
@@ -126,6 +126,10 @@ class GameViewController: UIViewController {
             print("Scenario ended")
             journey?.finish()
             Parent.shared.updatePlaytime()
+
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FAQViewController") as! FAQViewController
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true, completion: nil)
             
         } else {
             let nextSceneId = scenario.currentScene.next[choice]

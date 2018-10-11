@@ -1,0 +1,66 @@
+[
+    {
+        "intentType":false,
+        "questions": [
+            "Are vaccines safe?",
+            "What are the side effects of the vaccines?",
+            "Can vaccines overload my baby’s immune system?",
+            "Why are so many doses needed for each vaccine?",
+            "Why do vaccines start so early?",
+            "What do you think of delaying some vaccines or following a non-standard schedule?",
+            "What are combination vaccines? Why are they used?",
+            "My child is sick right now. Is it okay for her to still get shots?",
+            "What are the ingredients in vaccines and what do they do?",
+            "Don’t infants have natural immunity?",
+            "Do I have to vaccinate my baby on schedule if I’m breastfeeding him?",
+            "I got the whooping cough and flu vaccines during my pregnancy. Why does my baby need these vaccines too?"
+            
+        ],
+        "answers" : [
+            "Currently, the United States has the safest vaccine supply in its history. Millions of children safely receive vaccines each year. The most common side effects are typically very mild, such as pain or swelling at the injection site.",
+            "Vaccines, like any medication, may cause some side effects. Most of these side effects are very minor, like soreness where the shot was given, fussiness, or a low-grade fever. If your child experiences any reactions that concern you, call the doctor’s office.",
+            "Vaccines do not overload the immune system. Even if babies receive several vaccinations in one day, vaccines contain only a tiny fraction of the germs they encounter every day in their environment. Vaccines give your child the antibodies they need to fight off serious diseases.",
+            "Depending on the vaccine, your child will need more than one dose to build high enough immunity to prevent disease or to boost immunity that fades over time. Your child may also receive more than one dose to make sure they are protected if they did not get immunity from a first dose, or to protect them against germs that change over time, like flu. Every dose is important because each protects against infectious diseases that can be especially serious for infants and very young children.",
+            "The recommended schedule protects infants and children by providing immunity early in life, before they come into contact with life-threatening diseases. Children receive immunization early because they are susceptible to diseases at a young age. The consequences of these diseases can be very serious, even life-threatening, for infants and young children.",
+            "Children do not receive any known benefits from following schedules that delay vaccines. Infants and young children who follow immunization schedules that spread out or leave out shots are at risk of developing diseases during the time you delay their shots. Some vaccine-preventable diseases remain common in the United States and children may be exposed to these diseases during the time they are not protected by vaccines, placing them at risk for a serious case of the disease that might cause hospitalization or death.",
+            "Combination vaccines protect your child against more than one disease with a single shot. They reduce the number of shots and office visits your child would need, which not only saves you time and money, but also is easier on your child. Some common combination vaccines are Pediarix® which combines DTap, Hep B, and IPV (polio) and ProQuad® which combines MMR and varicella (chickenpox).",
+            "Talk with your child’s doctor, but children can usually get vaccinated even if they have a mild illness like a cold, earache, mild fever, or diarrhea. If the doctor says it is okay, your child can still get vaccinated.",
+            "Vaccines contain ingredients that cause the body to develop immunity. Vaccines also contain very small amounts of other ingredients. All ingredients play necessary roles either in making the vaccine, or in ensuring that the final product is safe and effective.",
+            "Babies may get some temporary immunity (protection) from mom during the last few weeks of pregnancy, but only for diseases to which mom is immune. Breastfeeding may also protect your baby temporarily from minor infections, like colds. These antibodies do not last long, leaving your baby vulnerable to disease.",
+            "Yes, even breastfed babies need to be protected with vaccines at the recommended ages. The immune system is not fully developed at birth, which puts newborns at greater risk for infections.",
+            "The protection (antibodies) you passed to your baby before birth will give him some early protection against whooping cough and flu. However, these antibodies will only give him short-term protection. It is very important for your baby to get vaccines on time so he can start building his own protection against these serious diseases."
+        ]
+    },
+    {
+        "intentType":true,
+        "questions": [
+            "Are vaccines safe?",
+            "What are the side effects of the vaccines?",
+            "Can vaccines overload my baby’s immune system?",
+            "Why are so many doses needed for each vaccine?",
+            "Why do vaccines start so early?",
+            "What do you think of delaying some vaccines or following a non-standard schedule?",
+            "What are combination vaccines? Why are they used?",
+            "My child is sick right now. Is it okay for her to still get shots?",
+            "What are the ingredients in vaccines and what do they do?",
+            "Don’t infants have natural immunity?",
+            "Do I have to vaccinate my baby on schedule if I’m breastfeeding him?",
+            "I got the whooping cough and flu vaccines during my pregnancy. Why does my baby need these vaccines too?"
+            
+        ],
+        "answers" : [
+            "Currently, the United States has the safest vaccine supply in its history. Millions of children safely receive vaccines each year. The most common side effects are typically very mild, such as pain or swelling at the injection site.",
+            "Vaccines, like any medication, may cause some side effects. Most of these side effects are very minor, like soreness where the shot was given, fussiness, or a low-grade fever. If your child experiences any reactions that concern you, call the doctor’s office.",
+            "Vaccines do not overload the immune system. Even if babies receive several vaccinations in one day, vaccines contain only a tiny fraction of the germs they encounter every day in their environment. Vaccines give your child the antibodies they need to fight off serious diseases.",
+            "Depending on the vaccine, your child will need more than one dose to build high enough immunity to prevent disease or to boost immunity that fades over time. Your child may also receive more than one dose to make sure they are protected if they did not get immunity from a first dose, or to protect them against germs that change over time, like flu. Every dose is important because each protects against infectious diseases that can be especially serious for infants and very young children.",
+            "The recommended schedule protects infants and children by providing immunity early in life, before they come into contact with life-threatening diseases. Children receive immunization early because they are susceptible to diseases at a young age. The consequences of these diseases can be very serious, even life-threatening, for infants and young children.",
+            "Children do not receive any known benefits from following schedules that delay vaccines. Infants and young children who follow immunization schedules that spread out or leave out shots are at risk of developing diseases during the time you delay their shots. Some vaccine-preventable diseases remain common in the United States and children may be exposed to these diseases during the time they are not protected by vaccines, placing them at risk for a serious case of the disease that might cause hospitalization or death.",
+            "Combination vaccines protect your child against more than one disease with a single shot. They reduce the number of shots and office visits your child would need, which not only saves you time and money, but also is easier on your child. Some common combination vaccines are Pediarix® which combines DTap, Hep B, and IPV (polio) and ProQuad® which combines MMR and varicella (chickenpox).",
+            "Talk with your child’s doctor, but children can usually get vaccinated even if they have a mild illness like a cold, earache, mild fever, or diarrhea. If the doctor says it is okay, your child can still get vaccinated.",
+            "Vaccines contain ingredients that cause the body to develop immunity. Vaccines also contain very small amounts of other ingredients. All ingredients play necessary roles either in making the vaccine, or in ensuring that the final product is safe and effective.",
+            "Babies may get some temporary immunity (protection) from mom during the last few weeks of pregnancy, but only for diseases to which mom is immune. Breastfeeding may also protect your baby temporarily from minor infections, like colds. These antibodies do not last long, leaving your baby vulnerable to disease.",
+            "Yes, even breastfed babies need to be protected with vaccines at the recommended ages. The immune system is not fully developed at birth, which puts newborns at greater risk for infections.",
+            "The protection (antibodies) you passed to your baby before birth will give him some early protection against whooping cough and flu. However, these antibodies will only give him short-term protection. It is very important for your baby to get vaccines on time so he can start building his own protection against these serious diseases."
+        ]
+    }
+]

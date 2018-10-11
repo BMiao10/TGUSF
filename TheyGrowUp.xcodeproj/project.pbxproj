@@ -32,6 +32,10 @@
 		40A8C716216E858F00730891 /* AudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8C712216E858F00730891 /* AudioPlayerManager.swift */; };
 		40A8C717216E858F00730891 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8C713216E858F00730891 /* AudioPlayer.swift */; };
 		40A8C718216E858F00730891 /* TimeTrackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8C714216E858F00730891 /* TimeTrackable.swift */; };
+		40A8C71F216E91EC00730891 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8C71E216E91EC00730891 /* FAQViewController.swift */; };
+		40A8C721216E960900730891 /* faqs.json in Resources */ = {isa = PBXBuildFile; fileRef = 40A8C720216E960900730891 /* faqs.json */; };
+		40A8C723216E9F3C00730891 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8C722216E9F3C00730891 /* FAQView.swift */; };
+		40A8C725216EA66100730891 /* FAQs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8C724216EA66100730891 /* FAQs.swift */; };
 		4A11A3EF2167F96500E9B9F2 /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A11A3EE2167F96500E9B9F2 /* Scenario.swift */; };
 		4A11A3F12168009E00E9B9F2 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A11A3F02168009E00E9B9F2 /* Scene.swift */; };
 		4A11A3F62168291100E9B9F2 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A11A3F52168291100E9B9F2 /* ScoreView.swift */; };
@@ -78,6 +82,10 @@
 		40A8C712216E858F00730891 /* AudioPlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayerManager.swift; sourceTree = "<group>"; };
 		40A8C713216E858F00730891 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		40A8C714216E858F00730891 /* TimeTrackable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTrackable.swift; sourceTree = "<group>"; };
+		40A8C71E216E91EC00730891 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
+		40A8C720216E960900730891 /* faqs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = faqs.json; sourceTree = "<group>"; };
+		40A8C722216E9F3C00730891 /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
+		40A8C724216EA66100730891 /* FAQs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQs.swift; sourceTree = "<group>"; };
 		4A11A3EE2167F96500E9B9F2 /* Scenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
 		4A11A3F02168009E00E9B9F2 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		4A11A3F52168291100E9B9F2 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
@@ -179,6 +187,7 @@
 				4067CAA420FAE47900C6A7FE /* ViewController.swift */,
 				40038E83213F903F00D7FBA2 /* SetupViewController.swift */,
 				40038E85213F914700D7FBA2 /* GameViewController.swift */,
+				40A8C71E216E91EC00730891 /* FAQViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -205,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				406C706A21471BB700065B6F /* scenario_pertussis.json */,
+				40A8C720216E960900730891 /* faqs.json */,
 			);
 			path = Scenarios;
 			sourceTree = "<group>";
@@ -220,6 +230,7 @@
 				4A11A3EE2167F96500E9B9F2 /* Scenario.swift */,
 				4A11A3FE216A89AE00E9B9F2 /* Gender.swift */,
 				4AFBCC54216C5E8300054777 /* ScoreKeeper.swift */,
+				40A8C724216EA66100730891 /* FAQs.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -230,6 +241,7 @@
 				4AECB6562166BC3D004CB1EC /* LinearProgressBar.swift */,
 				4A11A3F52168291100E9B9F2 /* ScoreView.swift */,
 				4A11A3F821682DA900E9B9F2 /* ScoreView.xib */,
+				40A8C722216E9F3C00730891 /* FAQView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -324,6 +336,7 @@
 				403601E0212DE3D30082E29C /* health_9.png in Resources */,
 				403601DF212DE3D30082E29C /* health_6.png in Resources */,
 				4067CAA820FAE47900C6A7FE /* Main.storyboard in Resources */,
+				40A8C721216E960900730891 /* faqs.json in Resources */,
 				403601DD212DE3D30082E29C /* health_7.png in Resources */,
 				403601DB212DE3D30082E29C /* health_2.png in Resources */,
 				4AFBCC51216BF7F800054777 /* Better-Days-Ahead.mp3 in Resources */,
@@ -404,15 +417,18 @@
 				4AECB6572166BC3D004CB1EC /* LinearProgressBar.swift in Sources */,
 				4AECB64E2166B1DF004CB1EC /* JourneyStep.swift in Sources */,
 				40038E84213F903F00D7FBA2 /* SetupViewController.swift in Sources */,
+				40A8C723216E9F3C00730891 /* FAQView.swift in Sources */,
 				4067CAA520FAE47900C6A7FE /* ViewController.swift in Sources */,
 				4067CAA320FAE47900C6A7FE /* AppDelegate.swift in Sources */,
 				4A11A3FF216A89AE00E9B9F2 /* Gender.swift in Sources */,
+				40A8C725216EA66100730891 /* FAQs.swift in Sources */,
 				4AECB64A2166B183004CB1EC /* Journey.swift in Sources */,
 				4A11A3EF2167F96500E9B9F2 /* Scenario.swift in Sources */,
 				4A11A3F12168009E00E9B9F2 /* Scene.swift in Sources */,
 				4AFBCC55216C5E8300054777 /* ScoreKeeper.swift in Sources */,
 				40A8C717216E858F00730891 /* AudioPlayer.swift in Sources */,
 				4067CAAB20FAE47900C6A7FE /* TheyGrowUp.xcdatamodeld in Sources */,
+				40A8C71F216E91EC00730891 /* FAQViewController.swift in Sources */,
 				40A8C715216E858F00730891 /* StringRenderService.swift in Sources */,
 				4AECB6482166B173004CB1EC /* Child.swift in Sources */,
 				4A11A3F62168291100E9B9F2 /* ScoreView.swift in Sources */,
