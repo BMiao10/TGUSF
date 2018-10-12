@@ -18,6 +18,8 @@ class GameViewController: UIViewController {
     private var scenario: Scenario!
     private weak var journey: Journey?
     
+    public var shouldResumeJourney: Bool = false
+    
     @IBOutlet weak var choiceALabel: UIButton!
     @IBOutlet weak var choiceBLabel: UIButton!
     @IBOutlet weak var choiceCLabel: UIButton!
@@ -46,16 +48,34 @@ class GameViewController: UIViewController {
             self.ageScaleLabel.text = "Month"
             self.ageLabel.text = "2"
         })
-       
-        //load first scene
-        journey = Parent.shared.addJourney()
+
         // TODO: Handle any load errors gracefully
-        scenario = try! Scenario(fileName: "scenario_pertussis")
-        loadScene( scenario.currentScene )
+        // TODO: Remove hard coding of scene name
+        scenario = try! Scenario(named: .pertussis)
+        
+        if shouldResumeJourney {
+            // Load scene where user left off
+            journey = Parent.shared.journeys.last
+            scenario.advance(to: journey!.currentStep!.baseSceneId)
+            
+            // Load up the scoreView
+            let sk = journey!.scoreKeeper
+            scoreView.setProgress(for: .health, score: sk.score(for: .health))
+            scoreView.setProgress(for: .money, score: sk.score(for: .money))
+            scoreView.setProgress(for: .time, score: sk.score(for: .time))
+            scoreView.setProgress(for: .community, score: sk.score(for: .community))
+            
+            // Load up where we left off
+            loadScene( scenario.currentScene, addToJourney: false )
+        } else {
+            // Create new journey and will load first scene
+            journey = Parent.shared.addJourney()
+            loadScene( scenario.currentScene )
+        }
     }
     
     
-    fileprivate func loadScene(_ scene:Scene) {
+    fileprivate func loadScene(_ scene:Scene, addToJourney: Bool = true) {
         //load background
         backgroundImage.image = UIImage(named: scene.setting)
         
@@ -99,7 +119,9 @@ class GameViewController: UIViewController {
         }
         
         // Update our journey
-        journey?.append( JourneyStep(baseScene: scenario.currentScene) )
+        if addToJourney {
+            journey?.addStep(with: scenario.currentScene)
+        }
     }
     
     // MARK: Button Actions
@@ -126,7 +148,8 @@ class GameViewController: UIViewController {
             
         } else {
             let nextSceneId = scenario.currentScene.next[choice]
-            loadScene( scenario.advance(to: nextSceneId)! )
+            scenario.advance(to: nextSceneId)
+            loadScene( scenario.currentScene )
         }
     }
     
@@ -136,7 +159,7 @@ class GameViewController: UIViewController {
         journey?.finish()
         Parent.shared.updatePlaytime()
         
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeController") as! ViewController
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeController") as! HomeViewController
         vc.modalTransitionStyle = .flipHorizontal
         self.present(vc, animated: true, completion: nil)
     }

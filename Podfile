@@ -11,7 +11,7 @@ target 'TheyGrowUp' do
     pod 'AlamofireObjectMapper', '~> 5.0'
 
     # Facebook POP animation library
-    pod 'pop', '~> 1.0'
+    #pod 'pop', '~> 1.0'
     
     # Easy load custom fonts
     pod 'FontBlaster', '~>4.1'
@@ -22,5 +22,13 @@ target 'TheyGrowUp' do
     
     # https://github.com/tbaranes/SwiftyUtils
     # pod SwiftyUtils, '~>2.0'
+    
+    # Location services
+    # https://github.com/malcommac/SwiftLocation
+    pod 'SwiftLocation', '~> 3.2.3'
+    
+    # Data persistence layer
+    # https://github.com/saoudrizwan/Disk
+    pod 'Disk', '~> 0.4.0'
 
 end

@@ -8,12 +8,13 @@
 
 import Foundation
 
-class Journey: TimeTrackable {
+class Journey: TimeTrackable, Codable {
     
-    // UUID set by server
-    private var id: String?
+    // UUID
+    // TODO: Sync with server
+    private(set) var id: String = UUID().uuidString
     
-    public let player: Parent
+    private let playerId: String
     
     internal let startTime = Date()
     internal var endTime = Date()
@@ -27,13 +28,8 @@ class Journey: TimeTrackable {
     
     private(set) var scoreKeeper = ScoreKeeper()
     
-    init( player: Parent ) {
-        self.player = player
-    }
-    
-    convenience init( player: Parent, steps: JourneySteps ) {
-        self.init( player: player )
-        self.steps = steps
+    init( playerId: String ) {
+        self.playerId = playerId
     }
     
     func finish() {
@@ -68,22 +64,28 @@ extension Journey: Collection {
     }
     
     func append(_ step:JourneyStep) {
+        if !isFinished { steps.append(step) }
+    }
+    
+    func addStep(with scene:Scene) {
         if !isFinished {
+            let step = JourneyStep(baseScene: scene)
+            
             // Set up our steps' relationships
             steps.last?.next = step
             step.previous = steps.last
             
             // Update our ScoreKeeper
-            scoreKeeper.changeScores(step.baseScene.scoreDeltas())
+            scoreKeeper.changeScores(scene.scoreDeltas())
             
             // Update our intent to vaccinate tracker
-            changeIntent(by: step.baseScene.intent)
+            changeIntent(by: scene.intent)
             
             // Update our time tracking
             steps.last?.endTime = Date()
             endTime = Date()
             
-            return steps.append(step)
+            append(step)
         }
     }
 

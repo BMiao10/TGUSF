@@ -83,12 +83,16 @@ class ScoreView: UIView {
         let scoreItem = notification.userInfo?[ ScoreKeeper.ScoreDidChangeNotificationKeys.scoreItem ] as! ScoreKeeper.ScoreItems
         let newScore = notification.userInfo?[ ScoreKeeper.ScoreDidChangeNotificationKeys.newScore ] as! Int
         
-        let progress = Float(newScore) / Float(ScoreKeeper.maxScore) * 100
-        scoreBar(for: scoreItem).setProgress(CGFloat(progress), animated: true, duration: 2.5)
-        
+        setProgress(for: scoreItem, score: newScore)
     }
     
     // MARK - Helpers
+    
+    // Warning: Only exposed publicly for manual override of ScoreKeeper
+    func setProgress(for item:ScoreKeeper.ScoreItems, score:Int) {
+        let progress = Float(score) / Float(ScoreKeeper.maxScore) * 100
+        scoreBar(for: item).setProgress(CGFloat(progress), animated: true, duration: 2.5)
+    }
     
     fileprivate func label(for item:ScoreKeeper.ScoreItems) -> UILabel {
         switch item {

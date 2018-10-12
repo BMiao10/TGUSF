@@ -15,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="HomeController" id="BYZ-38-t0r" customClass="ViewController" customModule="TheyGrowUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="TheyGrowUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NT6-wQ-Vfl" userLabel="girlButton">
-                                <rect key="frame" x="549" y="261" width="36" height="36"/>
+                                <rect key="frame" x="549" y="260" width="36" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="girlSwitch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gkf-j4-LmK"/>
@@ -45,93 +45,12 @@
                                 <rect key="frame" x="443" y="60" width="506" height="672"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="health_icon" translatesAutoresizingMaskIntoConstraints="NO" id="qFS-JY-XHn" userLabel="health">
-                                <rect key="frame" x="54" y="196" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="good-health" translatesAutoresizingMaskIntoConstraints="NO" id="hWe-W1-Zp0" userLabel="moneyScore">
-                                <rect key="frame" x="142" y="277" width="35" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="good-health" translatesAutoresizingMaskIntoConstraints="NO" id="TvD-pi-Yzl" userLabel="timeScore">
-                                <rect key="frame" x="142" y="371" width="35" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="good-health" translatesAutoresizingMaskIntoConstraints="NO" id="6Rb-aX-vg9" userLabel="communityScore">
-                                <rect key="frame" x="142" y="465" width="35" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="good-health" translatesAutoresizingMaskIntoConstraints="NO" id="N0V-vk-hQe" userLabel="healthScore">
-                                <rect key="frame" x="142" y="183" width="35" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" notEnabled="YES"/>
-                                </accessibility>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="babyImage" translatesAutoresizingMaskIntoConstraints="NO" id="p8V-ti-wig" userLabel="babyImage">
-                                <rect key="frame" x="27" y="33" width="114" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="money_icon" translatesAutoresizingMaskIntoConstraints="NO" id="1d3-cv-kx5" userLabel="money">
-                                <rect key="frame" x="58" y="282" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="time_icon" translatesAutoresizingMaskIntoConstraints="NO" id="kdn-c5-3ez" userLabel="time">
-                                <rect key="frame" x="57" y="375" width="75" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="community_icon" translatesAutoresizingMaskIntoConstraints="NO" id="cOV-iS-dhB" userLabel="community">
-                                <rect key="frame" x="62" y="474" width="65" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Child's Health" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wq8-n1-9fU" userLabel="healthLabel">
-                                <rect key="frame" x="189" y="189" width="170" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <color key="textColor" red="0.14117647058823529" green="0.40392156862745099" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyi-sH-odB" userLabel="moneyLabel">
-                                <rect key="frame" x="189" y="285" width="83" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <color key="textColor" red="0.15686274509803921" green="0.40784313725490196" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Free Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNi-Mu-oHV" userLabel="timeLabel">
-                                <rect key="frame" x="189" y="377" width="119" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <color key="textColor" red="0.15686274509803921" green="0.40784313725490196" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Community Health" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGZ-Ug-lBI" userLabel="communityLabel">
-                                <rect key="frame" x="186" y="458" width="173" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <color key="textColor" red="0.15686274509803921" green="0.40784313725490196" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qen-X4-7en" userLabel="ageLabel">
-                                <rect key="frame" x="183" y="84" width="31" height="82"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="68"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oub-Bz-8cC" userLabel="ageScaleLabel">
-                                <rect key="frame" x="174" y="60" width="48" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hmf-J8-LjI" userLabel="textboxImage">
-                                <rect key="frame" x="625" y="91" width="142" height="280"/>
+                                <rect key="frame" x="625" y="91" width="141" height="280"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osy-yM-A0Y" userLabel="textboxText">
-                                <rect key="frame" x="464" y="386" width="465" height="273"/>
+                                <rect key="frame" x="463" y="386" width="465" height="273"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content=" ">
@@ -144,7 +63,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sdb-4x-dHe" userLabel="nextButton">
-                                <rect key="frame" x="779" y="658" width="136" height="52"/>
+                                <rect key="frame" x="778" y="658" width="137" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="nextButton">
                                     <attributedString key="attributedTitle"/>
@@ -154,37 +73,67 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yds-kI-UIJ" userLabel="boyButton">
-                                <rect key="frame" x="386" y="261" width="36" height="36"/>
+                                <rect key="frame" x="386" y="260" width="36" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="boySwitch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Q1-BK-Bwo"/>
                                 </connections>
                             </button>
+                            <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I87-Sc-KcJ" userLabel="childAge">
+                                <rect key="frame" x="0.0" y="20" width="300" height="200"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="babyImage" translatesAutoresizingMaskIntoConstraints="NO" id="OPd-Pv-YO0" userLabel="babyImage">
+                                        <rect key="frame" x="20" y="40" width="114" height="140"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0G2-Jf-vyT" userLabel="ageScaleLabel">
+                                        <rect key="frame" x="150" y="20" width="215" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rjd-91-4YS" userLabel="ageLabel">
+                                        <rect key="frame" x="166" y="68" width="173" height="82"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="68"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="5hN-MY-2B8"/>
+                                    <constraint firstAttribute="height" constant="200" id="Yez-UD-Nmf"/>
+                                </constraints>
+                            </view>
+                            <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sma-Dt-pdU" userLabel="scores" customClass="ScoreView" customModule="TheyGrowUp" customModuleProvider="target">
+                                <rect key="frame" x="10" y="230" width="330" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="330" id="n3U-3L-IAt"/>
+                                    <constraint firstAttribute="height" constant="400" id="qFY-92-e1c"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Sma-Dt-pdU" firstAttribute="top" secondItem="I87-Sc-KcJ" secondAttribute="bottom" constant="10" id="KIV-FY-msf"/>
+                            <constraint firstItem="Sma-Dt-pdU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="crC-Uc-7mu"/>
+                            <constraint firstItem="I87-Sc-KcJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="h4j-0H-PaH"/>
+                            <constraint firstItem="I87-Sc-KcJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="psC-Wd-4z0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="ageLabel" destination="Qen-X4-7en" id="mQq-Jo-Xoi"/>
-                        <outlet property="ageScaleLabel" destination="Oub-Bz-8cC" id="s2r-SQ-tx4"/>
-                        <outlet property="babyImage" destination="p8V-ti-wig" id="c7v-XJ-xi9"/>
-                        <outlet property="communityIcon" destination="cOV-iS-dhB" id="nMr-v1-oJy"/>
-                        <outlet property="communityLabel" destination="lGZ-Ug-lBI" id="I7b-ZK-QV5"/>
-                        <outlet property="communityScore" destination="6Rb-aX-vg9" id="sNW-my-nHG"/>
-                        <outlet property="healthIcon" destination="qFS-JY-XHn" id="yqJ-oL-wnw"/>
-                        <outlet property="healthLabel" destination="Wq8-n1-9fU" id="XII-VA-pQK"/>
-                        <outlet property="healthScore" destination="N0V-vk-hQe" id="EBz-AR-Y8i"/>
-                        <outlet property="moneyIcon" destination="1d3-cv-kx5" id="0Me-V0-ccE"/>
-                        <outlet property="moneyLabel" destination="Tyi-sH-odB" id="TFD-93-hFf"/>
-                        <outlet property="moneyScore" destination="hWe-W1-Zp0" id="swZ-1G-72A"/>
+                        <outlet property="childAge" destination="I87-Sc-KcJ" id="48s-wE-86W"/>
                         <outlet property="nextButton" destination="Sdb-4x-dHe" id="asD-k5-liL"/>
+                        <outlet property="scoreView" destination="Sma-Dt-pdU" id="Lb4-Ql-B5e"/>
                         <outlet property="startBackground" destination="Syv-Nq-tFE" id="h1a-7s-auA"/>
                         <outlet property="textbox" destination="bbV-53-uYx" id="1rh-h9-nfF"/>
                         <outlet property="textboxImage" destination="hmf-J8-LjI" id="Jlf-xp-rJD"/>
                         <outlet property="textboxText" destination="osy-yM-A0Y" id="Qsl-i8-65q"/>
-                        <outlet property="timeIcon" destination="kdn-c5-3ez" id="NwI-n8-U2x"/>
-                        <outlet property="timeLabel" destination="yNi-Mu-oHV" id="sAw-9K-Bfp"/>
-                        <outlet property="timeScore" destination="TvD-pi-Yzl" id="VI9-kU-LUd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -213,11 +162,11 @@
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setupPopup" translatesAutoresizingMaskIntoConstraints="NO" id="SgW-xU-vhz">
-                                <rect key="frame" x="109" y="111" width="806" height="547"/>
+                                <rect key="frame" x="108" y="111" width="807" height="547"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Type your baby's name here!" minimumFontSize="25" background="white" translatesAutoresizingMaskIntoConstraints="NO" id="eo0-T2-rqI">
-                                <rect key="frame" x="451" y="494" width="266" height="41"/>
+                                <rect key="frame" x="451" y="494" width="424" height="41"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
                                 <nil key="textColor"/>
@@ -425,15 +374,10 @@
         <image name="Neighborhood" width="2048" height="1536"/>
         <image name="babyImage" width="499" height="642"/>
         <image name="boy_homeScreen" width="2136" height="1600"/>
-        <image name="community_icon" width="157" height="185"/>
-        <image name="good-health" width="58" height="181"/>
-        <image name="health_icon" width="213" height="192"/>
-        <image name="money_icon" width="157" height="157"/>
         <image name="nextButton" width="357" height="137"/>
         <image name="setupPopup" width="1612" height="1131"/>
         <image name="setupScreen" width="2660" height="1536"/>
         <image name="textbox" width="939" height="1250"/>
-        <image name="time_icon" width="187" height="184"/>
         <image name="white" width="1272" height="342"/>
     </resources>
 </document>

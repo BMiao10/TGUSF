@@ -8,11 +8,11 @@
 
 import Foundation
 
-public enum Gender: String {
+public enum Gender: String, Codable {
     case male
     case female
     
-    public enum Pronouns: String {
+    public enum Pronouns: String, Codable {
         case he, him, his
     }
     
