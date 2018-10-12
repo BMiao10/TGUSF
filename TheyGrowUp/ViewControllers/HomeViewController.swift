@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Disk
 
 //initial home screen view
 //allows customization of gender
@@ -47,6 +48,8 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func startButton(_ sender: Any) {
+        //loadUserdataButton.isHidden = true
+        
         // initialize background, animate scrolling effect
         startBackground.image = UIImage(named: "setupScreen")
         startBackground.frame = CGRect(x: 0, y: 0, width: 1330, height: 768)
@@ -111,5 +114,38 @@ class HomeViewController: UIViewController {
         scoreView.setProgress(for: .money, score: 0)
         scoreView.setProgress(for: .time, score: 0)
         scoreView.setProgress(for: .community, score: 0)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // Check for existing data
+        loadUserdata()
+    }
+    
+    fileprivate func loadUserdata() {
+        if Parent.loadSharedFromDisk()
+            && Parent.shared.child != nil
+            && Parent.shared.journeys.count > 0
+            && Parent.shared.journeys.last!.isFinished == false
+        {
+            let alert = UIAlertController(title: "Continue play?", message: "Would you like to continue playing where you left off with your child \(Parent.shared.child!.name)?", preferredStyle: .alert)
+            let yes = UIAlertAction(title: "Yes", style: .default, handler: didChooseContinueAction(action:))
+            let no = UIAlertAction(title: "No", style: .cancel, handler: didChooseContinueAction(action:))
+            alert.addAction(yes)
+            alert.addAction(no)
+            alert.preferredAction = yes
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    fileprivate func didChooseContinueAction (action: UIAlertAction) {
+        if action.title == "Yes" {
+            // Configure controllers
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
+            vc.modalTransitionStyle = .partialCurl
+            vc.shouldResumeJourney = true
+            self.present(vc, animated: true, completion: nil)
+        } else {
+            Parent.makeNewParent()
+        }
     }
 }

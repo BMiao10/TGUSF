@@ -8,12 +8,20 @@
 
 import Foundation
 
-class Child {
+class Child: Codable {
     
-    // UUID set by server
-    private var id: String?
+    enum CodingKeys: String, CodingKey {
+        case id
+        case parentId
+        case name
+        case gender
+    }
     
-    public let parent: Parent
+    // UUID
+    // TODO: Sync with server
+    private(set) var id: String = UUID().uuidString
+    
+    private let parentId: String
     
     // TODO: Ask for age
     //public let age: Int?
@@ -32,8 +40,8 @@ class Child {
         self.vaccinesUTD = vaccinesUTD
     }*/
     
-    init( parent: Parent, name: String, gender: Gender ) {
-        self.parent = parent
+    init( parentId: String, name: String, gender: Gender ) {
+        self.parentId = parentId
         self.name = name
         self.gender = gender
     }

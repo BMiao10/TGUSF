@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Scene: Decodable {
+struct Scene: Codable {
     
-    let id: UInt
+    let id: Int
     let setting: String
     private(set) var audio: String?
     let speaker: String
@@ -47,7 +47,7 @@ struct Scene: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        self.id = try container.decode(UInt.self, forKey: .id)
+        self.id = try container.decode(Int.self, forKey: .id)
         self.setting = try container.decode(String.self, forKey: .setting)
         self.audio = try? container.decode(String.self, forKey: .audio)
         self.speaker = try container.decode(String.self, forKey: .speaker)
@@ -64,7 +64,7 @@ struct Scene: Decodable {
         renderText()
     }
 //
-//    init( id: UInt, setting: String, audio: String, speaker: String, text: String, moreInfo: String, choices: [String], next: [Int], health: Int, money: Int, time: Int, community: Int, intent: Int ) {
+//    init( id: Int, setting: String, audio: String, speaker: String, text: String, moreInfo: String, choices: [String], next: [Int], health: Int, money: Int, time: Int, community: Int, intent: Int ) {
 //        self.id = id
 //        self.setting = setting
 //        self.audio = audio
@@ -79,6 +79,24 @@ struct Scene: Decodable {
 //        self.community = community
 //        self.intent = intent
 //    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(id, forKey: .id)
+        try container.encode(setting, forKey: .setting)
+        try container.encode(audio, forKey: .audio)
+        try container.encode(speaker, forKey: .speaker)
+        try container.encode(text, forKey: .text)
+        try container.encode(moreInfo, forKey: .moreInfo)
+        try container.encode(choices, forKey: .choices)
+        try container.encode(next, forKey: .next)
+        try container.encode(health, forKey: .health)
+        try container.encode(money, forKey: .money)
+        try container.encode(time, forKey: .time)
+        try container.encode(community, forKey: .community)
+        try container.encode(intent, forKey: .intent)
+    }
     
     /// Called after scene initialized to render text elements
     mutating func renderText() {

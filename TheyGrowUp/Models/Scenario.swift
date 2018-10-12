@@ -15,21 +15,24 @@ struct Scenario {
         case DataCorrupted(url: URL)
     }
     
-    var scenes: [Scene] = []
-    
-    private(set) var currentScene: Scene!
-    private(set) var currentIndex: Int = 0 {
-        didSet (newIndex) {
-            if newIndex >= scenes.count {
-                currentIndex = scenes.count - 1
-            }
+    enum Names: String {
+        case pertussis
+        
+        var fileName: String {
+            return "scenario_" + self.rawValue
         }
     }
+    
+    private(set) var id: String!
+    
+    var scenes: [Int: Scene]!
+    
+    private(set) var currentScene: Scene!
     private(set) var previousScene: Scene?
     
-    init( fileName: String ) throws {
-        guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
-            throw ScenarioError.FileUnavailable(fileName: fileName)
+    init( named scenario: Names ) throws {
+        guard let url = Bundle.main.url(forResource: scenario.fileName, withExtension: "json") else {
+            throw ScenarioError.FileUnavailable(fileName: scenario.fileName)
         }
             
         guard let data = try? Data(contentsOf: url),
@@ -38,25 +41,24 @@ struct Scenario {
             throw ScenarioError.DataCorrupted(url: url)
         }
         
-        self.scenes = jsonData
-        self.currentScene = self.scenes[0]
+        self.id = scenario.fileName
+        self.scenes = jsonData.reduce(into: [:]) { scenes, scene in
+            scenes[ scene.id ] = scene
+        }
+        self.currentScene = jsonData[0]
     }
     
-    mutating func advance( by steps:Int = 1 ) -> Scene? {
-        return advance(to:(currentIndex + steps))
+    mutating func advance( to scene:Scene ) {
+        return advance(to: scene.id)
     }
     
-    mutating func advance( to sceneIndex:Int ) -> Scene? {
-        if sceneIndex == -1 {
+    mutating func advance( to sceneId:Int ) {
+        if sceneId == -1 {
             // TODO: End gameplay
-            return nil
-        } else if sceneIndex < scenes.count {
+            return
+        } else if let validScene = scenes[ sceneId ] {
             previousScene = currentScene
-            currentIndex = sceneIndex
-            currentScene = scenes[ currentIndex ]
-            return currentScene
-        } else {
-            return nil
+            currentScene = validScene
         }
     }
     
