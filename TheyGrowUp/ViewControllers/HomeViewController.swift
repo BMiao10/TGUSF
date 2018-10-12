@@ -47,9 +47,7 @@ class HomeViewController: UIViewController {
         gender = Gender.female
     }
     
-    @IBAction func startButton(_ sender: Any) {
-        //loadUserdataButton.isHidden = true
-        
+    @IBAction func startButton(_ sender: Any) {        
         // initialize background, animate scrolling effect
         startBackground.image = UIImage(named: "setupScreen")
         startBackground.frame = CGRect(x: 0, y: 0, width: 1330, height: 768)
