@@ -13,7 +13,8 @@ struct Scene: Codable {
     let id: Int
     let setting: String
     private(set) var audio: String?
-    let speaker: String
+    let speaker: String?
+    let image: String?
     private(set) var text: String
     private(set) var moreInfo: String?
     private(set) var choices: [String]
@@ -33,6 +34,7 @@ struct Scene: Codable {
         case setting
         case audio
         case speaker
+        case image
         case text
         case moreInfo
         case choices
@@ -50,7 +52,8 @@ struct Scene: Codable {
         self.id = try container.decode(Int.self, forKey: .id)
         self.setting = try container.decode(String.self, forKey: .setting)
         self.audio = try? container.decode(String.self, forKey: .audio)
-        self.speaker = try container.decode(String.self, forKey: .speaker)
+        self.speaker = try? container.decode(String.self, forKey: .speaker)
+        self.image = try? container.decode(String.self, forKey: .image)
         self.text = try container.decode(String.self, forKey: .text)
         self.moreInfo = try? container.decode(String.self, forKey: .moreInfo)
         self.choices = try container.decode([String].self, forKey:.choices)
@@ -87,6 +90,7 @@ struct Scene: Codable {
         try container.encode(setting, forKey: .setting)
         try container.encode(audio, forKey: .audio)
         try container.encode(speaker, forKey: .speaker)
+        try container.encode(image, forKey: .image)
         try container.encode(text, forKey: .text)
         try container.encode(moreInfo, forKey: .moreInfo)
         try container.encode(choices, forKey: .choices)

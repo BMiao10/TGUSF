@@ -36,6 +36,10 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var startBackground: UIImageView!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     @IBAction func boySwitch(_ sender: Any) {
         startBackground.image = UIImage(named: "boy_homeScreen")
         gender = Gender.male

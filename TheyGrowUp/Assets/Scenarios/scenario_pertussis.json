@@ -3,7 +3,7 @@
    "id": 0,
    "setting": "Neighborhood",
    "audio": "carAudio",
-   "speaker": "Neighborhood",
+   "image": "Neighborhood",
    "text": "You pull into your driveway, excited to be home after such a long day. Your neighbor John, who works as a nurse at the local hospital, has also just gotten home.",
    "choices": [
         "Wave and say hello!",
@@ -243,7 +243,7 @@
  {
    "id": 13,
    "setting": "Neighborhood",
-   "speaker": "bbq",
+   "image": "bbq",
    "text": "Feeling reassured that there is little risk, your family has a great time at the barbecue! Everyone compliments the cornbread your family brought and {{Child.name}} had a lot of fun playing at the park! (+1 community health, +1 health)",
    "choices": [
        "Fantastic!"
@@ -260,7 +260,7 @@
  {
    "id": 14,
    "setting": "Neighborhood",
-   "speaker": "bbq",
+   "image": "bbq",
    "text": "Your family has a great time at the barbecue, but you see a child coughing and worry it could be something serious, like whooping cough. You end up leaving the event early, and stocking up on chicken soup just in case. (-1 community health, -1 time)",
    "choices": [
        "Next"
@@ -277,7 +277,7 @@
  {
    "id": 15,
    "setting": "DisneylandGood",
-   "speaker": "disneyPertussis",
+   "image": "disneyPertussis",
    "text": "The whooping cough outbreak gets worse, and you are grateful that {{Child.name}} is at little risk. (+1 health) As a precaution, you head home early, and are angry when you learn that the outbreak spread among unvaccinated children. (-1 money, -1 time)",
    "choices": [
        "I'm just glad {{Child.name}} is safe..."
@@ -294,7 +294,7 @@
  {
    "id": 16,
    "setting": "DisneylandBad",
-   "speaker": "disneyPertussis",
+   "image": "disneyPertussis",
    "text": "When the whooping cough outbreak gets worse, you are afraid to stay. Later, when the news says the outbreak originated from an unvaccinated child, you feel angry that your family trip was ruined. (-1 money, -1 time, -1 community health).",
    "choices": [
        "Oh no! :("
@@ -331,7 +331,7 @@
    "id": 18,
    "setting": "Hospital",
    "audio": "coughAudio",
-   "speaker": "sickChild",
+   "image": "sickChild",
    "text": "It turns out the child had not been vaccinated and did have whooping cough, which {{Child.name}} caught. You spend the night in the hospital, listening to {{Child.pronoun.him}} struggle to breathe. (-2 health, -1 time, -1 money)",
    "choices": [
        "I know this could have been prevented.",

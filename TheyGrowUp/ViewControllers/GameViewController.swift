@@ -10,6 +10,7 @@
 
 import UIKit
 import AVFoundation
+import PMSuperButton
 
 class GameViewController: UIViewController {
     
@@ -20,28 +21,33 @@ class GameViewController: UIViewController {
     
     public var shouldResumeJourney: Bool = false
     
-    @IBOutlet weak var choiceALabel: UIButton!
-    @IBOutlet weak var choiceBLabel: UIButton!
-    @IBOutlet weak var choiceCLabel: UIButton!
-    private var choiceButtons: [UIButton]!
-    
-    @IBOutlet weak var moreInfoLabel: UIButton!
-    
     @IBOutlet weak var ageScaleLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     
     @IBOutlet weak var backgroundImage: UIImageView!
     
+    @IBOutlet weak var speakerImage: UIImageView!
     @IBOutlet weak var textboxText: UILabel!
     @IBOutlet weak var textboxImage: UIImageView!
     
+    @IBOutlet weak var choiceA: PMSuperButton!
+    @IBOutlet weak var choiceB: PMSuperButton!
+    @IBOutlet weak var choiceC: PMSuperButton!
+    private var choiceButtons: [UIButton]!
+    
+    @IBOutlet weak var moreInfo: PMSuperButton!
+    
     @IBOutlet weak var scoreView: ScoreView!
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        choiceButtons = [choiceALabel, choiceBLabel, choiceCLabel]
+        choiceButtons = [choiceA, choiceB, choiceC]
         
         // TODO: Refactor to separate view class?
         UIView.animate(withDuration: 1.7, delay: 0.5, animations: {
@@ -74,6 +80,10 @@ class GameViewController: UIViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        scoreView.hideLabels(true, animated: animated)
+    }
+    
     
     fileprivate func loadScene(_ scene:Scene, addToJourney: Bool = true) {
         //load background
@@ -92,30 +102,48 @@ class GameViewController: UIViewController {
         
         // TODO: Add image animation
         
-        //show speaker images
-        textboxImage.image = UIImage(named: scene.speaker)
+        // Show speaker images
+        if let speaker = scene.speaker,
+            let validSpeaker = UIImage(named: speaker) {
+            speakerImage.image = validSpeaker
+            speakerImage.isHidden = false
+        } else {
+            speakerImage.image = nil
+            speakerImage.isHidden = true
+        }
+        
+        // Show text image
+        if let sceneImage = scene.image,
+            let validImage = UIImage(named: sceneImage) {
+            textboxImage.image = validImage
+            textboxImage.isHidden = false
+        } else {
+            textboxImage.image = nil
+            textboxImage.isHidden = true
+        }
         
         //show dialogue
         textboxText.text = scene.text
         
         // More info
-        if let moreInfo = scene.moreInfo {
+        if let moreInfoText = scene.moreInfo {
             // TODO: Make this do something
-            moreInfoLabel.setTitle("More Info", for: .normal)
-            moreInfoLabel.isHidden = false
-            journey?.changeIntent(by: 1)
+            moreInfo.setTitle("More Info", for: .normal)
+            moreInfo.isHidden = false
         } else {
             // Hide more info
-            moreInfoLabel.setTitle("", for: .normal)
-            moreInfoLabel.isHidden = true
+            moreInfo.setTitle("", for: .normal)
+            moreInfo.isHidden = true
         }
         
         // Update choices
         choiceButtons.forEach { (button) in
             button.setTitle("", for: .normal)
+            button.isHidden = true
         }
         for (index, choiceLabel) in scene.choices.enumerated() {
             choiceButtons[index].setTitle(choiceLabel, for: .normal)
+            choiceButtons[index].isHidden = false
         }
         
         // Update our journey
@@ -125,16 +153,9 @@ class GameViewController: UIViewController {
     }
     
     // MARK: Button Actions
-    @IBAction func choiceAButton(_ sender: Any) {
-        switchSceneForChoice(0)
-    }
-    
-    @IBAction func choiceBButton(_ sender: Any) {
-        switchSceneForChoice(1)
-    }
-    
-    @IBAction func choiceCButton(_ sender: Any) {
-        switchSceneForChoice(2)
+    @IBAction func didMakeChoice(_ sender: Any) {
+        let index = choiceButtons.firstIndex(of: sender as! UIButton)
+        switchSceneForChoice(index!)
     }
     
     fileprivate func switchSceneForChoice(_ choice: Int) {
@@ -145,11 +166,12 @@ class GameViewController: UIViewController {
             print("Scenario ended")
             journey?.finish()
             Parent.shared.updatePlaytime()
-            
         } else {
             let nextSceneId = scenario.currentScene.next[choice]
             scenario.advance(to: nextSceneId)
-            loadScene( scenario.currentScene )
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200)) {
+                self.loadScene( self.scenario.currentScene )
+            }
         }
     }
     
@@ -166,7 +188,7 @@ class GameViewController: UIViewController {
     
     @IBAction func moreInfo(_ sender: Any) {
         //TODO:figure out moreInfo stuff
-        moreInfoLabel.setTitle("Info not written yet", for: .normal)
+        journey?.changeIntent(by: 1)
     }
 
 }

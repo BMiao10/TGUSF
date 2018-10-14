@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "698743BD025D31B9A9C37F904919988D"
-               BlueprintName = "SwiftLocation"
+               BlueprintIdentifier = "F6EE52D0D72DF7A35B37669DC3D33E57"
+               BlueprintName = "PMSuperButton"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "SwiftLocation.framework">
+               BuildableName = "PMSuperButton.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

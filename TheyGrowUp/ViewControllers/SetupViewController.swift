@@ -32,7 +32,10 @@ class SetupViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     
-
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     /*
     // MARK: - Navigation
 

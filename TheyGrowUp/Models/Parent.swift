@@ -16,6 +16,8 @@ class Parent: Codable {
     // SINGLETON
     static private(set) var shared = Parent()
     
+    static private let diskFilename = "parent.json"
+    
     // UUID
     // TODO: Sync with server
     private(set) var id: String = UUID().uuidString
@@ -45,6 +47,7 @@ class Parent: Codable {
     
     static func makeNewParent() {
         self.shared = Parent()
+        try? Disk.remove(diskFilename, from: .applicationSupport)
     }
     
     public func updatePlaytime() {
@@ -82,7 +85,7 @@ class Parent: Codable {
         }
         
         do {
-            try Disk.save(Parent.shared, to: .applicationSupport, as: "parent.json")
+            try Disk.save(Parent.shared, to: .applicationSupport, as: diskFilename)
         } catch let error as NSError {
             fatalError("""
                 Domain: \(error.domain)
@@ -94,13 +97,13 @@ class Parent: Codable {
         }
         
         if Disk.exists("parent.json", in: .applicationSupport) {
-            print("Successfully saved userData to 'parent.json'")
+            print("Successfully saved userData to '\(diskFilename)'")
         }
     }
     
     @discardableResult
     public static func loadSharedFromDisk () -> Bool {
-        guard let data = try? Disk.retrieve("parent.json", from: .applicationSupport, as: Parent.self) else {
+        guard let data = try? Disk.retrieve(diskFilename, from: .applicationSupport, as: Parent.self) else {
             print("Unable to load data")
             return false
         }
