@@ -175,20 +175,22 @@ class GameViewController: UIViewController {
         }
     }
     
-    @IBAction func restartButton(_ sender: Any) {
+    private func prepareForRestart() {
         // TODO: Hide this button in release version
         print("Scenario restarting")
         journey?.finish()
         Parent.shared.updatePlaytime()
-        
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeController") as! HomeViewController
-        vc.modalTransitionStyle = .flipHorizontal
-        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func moreInfo(_ sender: Any) {
         //TODO:figure out moreInfo stuff
         journey?.changeIntent(by: 1)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "restartGame" {
+            prepareForRestart()
+        }
     }
 
 }

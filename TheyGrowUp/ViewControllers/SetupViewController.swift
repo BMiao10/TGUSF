@@ -37,46 +37,43 @@ class SetupViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: nameTextField)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        // Position our modal off screen
+        contentAreaTopConstraint.constant = self.view.frame.height
     }
     
-    @IBAction func didChooseBackButton(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        vc.modalTransitionStyle = .coverVertical
-        self.present(vc, animated: true, completion: nil)
+    override func viewDidAppear(_ animated: Bool) {
+        self.contentAreaTopConstraint.constant = 0
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
     
-    @IBAction func didChooseNextButton(_ sender: Any) {
-        advanceToGame()
-    }
-    
-    private func advanceToGame() {
-        if self.nameTextField.text?.isEmpty == true {
-            self.errorMessage.text = "Please type a name"
-        } else {
-            nameTextField.resignFirstResponder()
-            
-            let babyName = self.nameTextField.text!
-            Parent.shared.addChild(name: babyName, gender: gender)
-            
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
-            vc.modalTransitionStyle = .partialCurl
-            self.present(vc, animated: true, completion: nil)
-        }
+    private func prepareForSegue() {
+        let babyName = self.nameTextField.text!
+        Parent.shared.addChild(name: babyName, gender: gender)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showIntro" {
+            prepareForSegue()
+        }
     }
-    */
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        switch identifier {
+        case "showIntro":
+            return isValidName()
+        default:
+            return true
+        }
+    }
 
 }
 
@@ -88,11 +85,12 @@ extension SetupViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if isValidName() {
-            advanceToGame()
+            nameTextField.resignFirstResponder()
+            performSegue(withIdentifier: "showIntro", sender: self)
+            return true
+        } else {
+            return false
         }
-        
-        nameTextField.resignFirstResponder()
-        return true
     }
     
     private func isValidName() -> Bool {
@@ -112,8 +110,9 @@ extension SetupViewController {
             let keyboardHeight = keyboardSize.height
             let animationDuration = (notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue
             
+            self.contentAreaTopConstraint.constant = -1 * keyboardHeight + 40
             UIView.animate(withDuration: animationDuration!) {
-                self.contentAreaTopConstraint.constant = -1 * keyboardHeight + 40
+                self.view.layoutIfNeeded()
             }
         }
     }
@@ -121,8 +120,9 @@ extension SetupViewController {
     @objc private func keyboardWillHide(_ notification: Notification) {
         let animationDuration = (notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue
         
+        self.contentAreaTopConstraint.constant = 0
         UIView.animate(withDuration: animationDuration!) {
-            self.contentAreaTopConstraint.constant = 0
+            self.view.layoutIfNeeded()
         }
     }
 }

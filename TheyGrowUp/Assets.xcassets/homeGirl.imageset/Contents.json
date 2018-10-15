@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Screen Shot 2018-08-20 at 12.10.22 PM.png",
+      "filename" : "homeGirl.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "homeGirl@2x.png",
       "scale" : "2x"
     },
     {

@@ -13,128 +13,42 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="HomeController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="TheyGrowUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="HomeViewController" customModule="TheyGrowUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boy_homeScreen" translatesAutoresizingMaskIntoConstraints="NO" id="Syv-Nq-tFE">
-                                <rect key="frame" x="0.0" y="-21" width="1024" height="789"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="homeBoy" translatesAutoresizingMaskIntoConstraints="NO" id="Syv-Nq-tFE">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NT6-wQ-Vfl" userLabel="girlButton">
-                                <rect key="frame" x="549" y="260" width="36" height="37"/>
+                                <rect key="frame" x="549" y="276" width="36" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="girlSwitch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gkf-j4-LmK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZY3-2n-o9x" userLabel="startButton">
-                                <rect key="frame" x="443" y="326" width="142" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3EY-92-fih"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="textbox" translatesAutoresizingMaskIntoConstraints="NO" id="bbV-53-uYx">
-                                <rect key="frame" x="443" y="60" width="506" height="672"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hmf-J8-LjI" userLabel="textboxImage">
-                                <rect key="frame" x="625" y="91" width="141" height="280"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osy-yM-A0Y" userLabel="textboxText">
-                                <rect key="frame" x="463" y="386" width="465" height="273"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content=" ">
-                                        <attributes>
-                                            <font key="NSFont" metaFont="system" size="25"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sdb-4x-dHe" userLabel="nextButton" customClass="PMSuperButton" customModule="PMSuperButton">
-                                <rect key="frame" x="778" y="658" width="137" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.2784313725" green="0.56470588239999997" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Next"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="27"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="nextButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qrs-OX-GlP"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yds-kI-UIJ" userLabel="boyButton">
-                                <rect key="frame" x="386" y="260" width="36" height="37"/>
+                                <rect key="frame" x="386" y="276" width="36" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="boySwitch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Q1-BK-Bwo"/>
                                 </connections>
                             </button>
-                            <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I87-Sc-KcJ" userLabel="childAge">
-                                <rect key="frame" x="0.0" y="20" width="300" height="200"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="babyImage" translatesAutoresizingMaskIntoConstraints="NO" id="OPd-Pv-YO0" userLabel="babyImage">
-                                        <rect key="frame" x="20" y="40" width="114" height="140"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0G2-Jf-vyT" userLabel="ageScaleLabel">
-                                        <rect key="frame" x="150" y="20" width="215" height="54"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rjd-91-4YS" userLabel="ageLabel">
-                                        <rect key="frame" x="166" y="68" width="173" height="82"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="68"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" notEnabled="YES"/>
-                                </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="5hN-MY-2B8"/>
-                                    <constraint firstAttribute="height" constant="200" id="Yez-UD-Nmf"/>
-                                </constraints>
-                            </view>
-                            <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sma-Dt-pdU" userLabel="scores" customClass="ScoreView" customModule="TheyGrowUp" customModuleProvider="target">
-                                <rect key="frame" x="10" y="230" width="330" height="400"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="330" id="n3U-3L-IAt"/>
-                                    <constraint firstAttribute="height" constant="400" id="qFY-92-e1c"/>
-                                </constraints>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZY3-2n-o9x" userLabel="startButton">
+                                <rect key="frame" x="443" y="341" width="142" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="f5W-mA-vf0" kind="presentation" identifier="showSetupName" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="1Dj-QN-cW9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Sma-Dt-pdU" firstAttribute="top" secondItem="I87-Sc-KcJ" secondAttribute="bottom" constant="10" id="KIV-FY-msf"/>
-                            <constraint firstItem="Sma-Dt-pdU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="crC-Uc-7mu"/>
-                            <constraint firstItem="I87-Sc-KcJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="h4j-0H-PaH"/>
-                            <constraint firstItem="I87-Sc-KcJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="psC-Wd-4z0"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="childAge" destination="I87-Sc-KcJ" id="48s-wE-86W"/>
-                        <outlet property="nextButton" destination="Sdb-4x-dHe" id="asD-k5-liL"/>
-                        <outlet property="scoreView" destination="Sma-Dt-pdU" id="Lb4-Ql-B5e"/>
-                        <outlet property="startBackground" destination="Syv-Nq-tFE" id="h1a-7s-auA"/>
-                        <outlet property="textbox" destination="bbV-53-uYx" id="1rh-h9-nfF"/>
-                        <outlet property="textboxImage" destination="hmf-J8-LjI" id="Jlf-xp-rJD"/>
-                        <outlet property="textboxText" destination="osy-yM-A0Y" id="Qsl-i8-65q"/>
+                        <outlet property="backgroundImage" destination="Syv-Nq-tFE" id="d8i-1h-lzf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -144,12 +58,12 @@
         <!--Setup View Controller-->
         <scene sceneID="fL5-om-LNs">
             <objects>
-                <viewController storyboardIdentifier="SetupViewController" id="f5W-mA-vf0" customClass="SetupViewController" customModule="TheyGrowUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetupViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="f5W-mA-vf0" customClass="SetupViewController" customModule="TheyGrowUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OZc-vd-b6i">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="340-RV-yP5">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBackground" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="340-RV-yP5">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
                             <view autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6q-lD-6ok" userLabel="contentArea">
@@ -216,7 +130,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="didChooseNextButton:" destination="f5W-mA-vf0" eventType="touchUpInside" id="8fC-Wm-qYf"/>
+                                            <segue destination="6h9-EU-1TE" kind="presentation" identifier="showIntro" modalTransitionStyle="crossDissolve" id="WzO-GU-ol7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzw-nG-1gG" userLabel="backButton" customClass="PMSuperButton" customModule="PMSuperButton">
@@ -235,7 +149,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="didChooseBackButton:" destination="f5W-mA-vf0" eventType="touchUpInside" id="CFu-ix-4NP"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" identifier="returnToHome" modalTransitionStyle="crossDissolve" id="qNI-pn-F5I"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -282,12 +196,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Fg-ia-rdT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856.640625" y="133.59375"/>
+            <point key="canvasLocation" x="138" y="848"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="mZI-M5-2Dh">
             <objects>
-                <viewController storyboardIdentifier="GameViewController" id="tKk-aN-wJO" customClass="GameViewController" customModule="TheyGrowUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tKk-aN-wJO" customClass="GameViewController" customModule="TheyGrowUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vXz-Nr-BUG">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -491,7 +405,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Restart"/>
                                 <connections>
-                                    <action selector="restartButton:" destination="tKk-aN-wJO" eventType="touchUpInside" id="rME-bO-cAs"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="restartGame" modalTransitionStyle="flipHorizontal" id="g2e-aS-s5i"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -523,7 +437,111 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Osc-e1-e5S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1563.8671875" y="133.59375"/>
+            <point key="canvasLocation" x="898" y="134"/>
+        </scene>
+        <!--Intro View Controller-->
+        <scene sceneID="lmO-AM-qQ9">
+            <objects>
+                <viewController storyboardIdentifier="IntroController" modalTransitionStyle="crossDissolve" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6h9-EU-1TE" customClass="IntroViewController" customModule="TheyGrowUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MOH-8W-uLs">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="homeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="CaF-Rx-xDl">
+                                <rect key="frame" x="0.0" y="-21" width="1024" height="789"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="textbox" translatesAutoresizingMaskIntoConstraints="NO" id="jcA-ps-4pE">
+                                <rect key="frame" x="443" y="60" width="506" height="672"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="babyBoy" translatesAutoresizingMaskIntoConstraints="NO" id="Gpo-yW-9zd" userLabel="textboxImage">
+                                <rect key="frame" x="625" y="77" width="141" height="280"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNC-xY-cFN" userLabel="nextButton" customClass="PMSuperButton" customModule="PMSuperButton">
+                                <rect key="frame" x="778" y="658" width="137" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.2784313725" green="0.56470588239999997" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="27"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="tKk-aN-wJO" kind="presentation" identifier="startGame" modalTransitionStyle="coverVertical" id="xkB-4M-kao"/>
+                                </connections>
+                            </button>
+                            <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdC-ZH-tJd" userLabel="childAge">
+                                <rect key="frame" x="0.0" y="20" width="300" height="200"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="babyImage" translatesAutoresizingMaskIntoConstraints="NO" id="Tna-vp-rdv" userLabel="babyImage">
+                                        <rect key="frame" x="20" y="40" width="114" height="140"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83I-k7-kt3" userLabel="ageScaleLabel">
+                                        <rect key="frame" x="150" y="20" width="215" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWw-jQ-eXi" userLabel="ageLabel">
+                                        <rect key="frame" x="166" y="68" width="173" height="82"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="68"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="DRA-Od-GyH"/>
+                                    <constraint firstAttribute="width" constant="300" id="NRa-XM-CGo"/>
+                                </constraints>
+                            </view>
+                            <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mVv-7c-IFR" userLabel="scores" customClass="ScoreView" customModule="TheyGrowUp" customModuleProvider="target">
+                                <rect key="frame" x="10" y="230" width="330" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="330" id="Cr9-ES-Da7"/>
+                                    <constraint firstAttribute="height" constant="400" id="w8Y-pK-uXv"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pe9-lU-kep" userLabel="textboxText">
+                                <rect key="frame" x="482" y="377" width="433" height="273"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <mutableString key="text">Congratulations! As the new parent of your healthy baby {{Child.gender}}, {{Child.name}}, your task is to make the best choices to protect {{Child.pronoun.his}} health, as well as your own money, time, and community.   Your progress will measured by the bars shown on the left. Good luck!</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.23137254900000001" green="0.31372549020000001" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mVv-7c-IFR" firstAttribute="top" secondItem="cdC-ZH-tJd" secondAttribute="bottom" constant="10" id="49i-5O-QXl"/>
+                            <constraint firstItem="cdC-ZH-tJd" firstAttribute="top" secondItem="0W7-S3-KSf" secondAttribute="top" id="ALl-hg-clX"/>
+                            <constraint firstItem="cdC-ZH-tJd" firstAttribute="leading" secondItem="0W7-S3-KSf" secondAttribute="leading" id="Sjo-3n-Ey1"/>
+                            <constraint firstItem="mVv-7c-IFR" firstAttribute="leading" secondItem="0W7-S3-KSf" secondAttribute="leading" constant="10" id="p0A-La-78A"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0W7-S3-KSf"/>
+                    </view>
+                    <connections>
+                        <outlet property="childAge" destination="cdC-ZH-tJd" id="537-xa-fvQ"/>
+                        <outlet property="nextButton" destination="wNC-xY-cFN" id="35x-H2-rs6"/>
+                        <outlet property="scoreView" destination="mVv-7c-IFR" id="zki-26-VEP"/>
+                        <outlet property="textbox" destination="jcA-ps-4pE" id="llO-64-5M4"/>
+                        <outlet property="textboxImage" destination="Gpo-yW-9zd" id="8sg-VN-0xF"/>
+                        <outlet property="textboxText" destination="pe9-lU-kep" id="WLL-UU-WNj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iAg-qb-g1G" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.6953125" y="1561.71875"/>
         </scene>
     </scenes>
     <resources>
@@ -533,8 +551,11 @@
         <image name="SetupName" width="1024" height="768"/>
         <image name="babyBoy" width="293" height="575"/>
         <image name="babyImage" width="499" height="642"/>
-        <image name="boy_homeScreen" width="2136" height="1600"/>
-        <image name="mainBackground" width="2048" height="1536"/>
+        <image name="homeBackground" width="1453" height="768"/>
+        <image name="homeBoy" width="1024" height="768"/>
         <image name="textbox" width="939" height="1250"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="g2e-aS-s5i"/>
+    </inferredMetricsTieBreakers>
 </document>
