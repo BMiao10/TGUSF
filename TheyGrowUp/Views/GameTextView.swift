@@ -53,7 +53,7 @@ class GameTextView: UIView {
         shapeLayer.shadowColor = bgColor.cgColor
         shapeLayer.shadowOffset = CGSize(width: -2, height: 0)
         shapeLayer.shadowRadius = 8
-        shapeLayer.shadowOpacity = 0.35
+        shapeLayer.shadowOpacity = 0.20
         
         self.layer.insertSublayer(shapeLayer, at: 0)
     }
