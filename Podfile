@@ -31,4 +31,16 @@ target 'TheyGrowUp' do
     # https://github.com/saoudrizwan/Disk
     pod 'Disk', '~> 0.4.0'
 
+    # Customizable UIButton
+    # https://github.com/loregr/LGButton
+    #pod 'LGButton'
+    
+    # Vector icons via fonts
+    # https://github.com/0x73/SwiftIconFont
+    #pod 'SwiftIconFont'
+    
+    # Customizable UIButton
+    # https://github.com/pmusolino/PMSuperButton
+    pod 'PMSuperButton'
+    
 end

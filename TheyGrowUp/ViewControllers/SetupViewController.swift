@@ -13,34 +13,116 @@ class SetupViewController: UIViewController {
     
     public var gender: Gender = Gender.male
     
+    @IBOutlet weak var contentArea: UIView!
+    @IBOutlet weak var babyImage: UIImageView!
+    @IBOutlet weak var nurseText: UILabel!
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var errorMessage: UILabel!
+    @IBOutlet weak var contentAreaTopConstraint: NSLayoutConstraint!
     
-    @IBAction func setupNameButton(_ sender: Any) {
-        if self.nameTextField.text?.isEmpty == true {
-            self.errorMessage.text = "Please type a name"
-        } else {
-            let babyName = self.nameTextField.text!
-            Parent.shared.addChild(name: babyName, gender: gender)
-            
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
-            vc.modalTransitionStyle = .partialCurl
-            self.present(vc, animated: true, completion: nil)
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
+    
+    override func viewDidLoad() {
+        // Customize baby image
+        let fileName = gender == .male ? "babyBoy" : "babyGirl"
+        babyImage.image = UIImage(named: fileName)
+        
+        // Customize text
+        let dict = ["Child.gender": gender.diminutive]
+        nurseText.text = try? StringRenderService.render(nurseText.text!, data: dict)
+        
+        // Register observers
+        nameTextField.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: nameTextField)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        // Position our modal off screen
+        contentAreaTopConstraint.constant = self.view.frame.height
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.contentAreaTopConstraint.constant = 0
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    private func prepareForSegue() {
+        let babyName = self.nameTextField.text!
+        Parent.shared.addChild(name: babyName, gender: gender)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showIntro" {
+            prepareForSegue()
         }
     }
     
-    @IBOutlet weak var nurseLabel: UILabel!
-    
-    @IBOutlet weak var nameTextField: UITextField!
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        switch identifier {
+        case "showIntro":
+            return isValidName()
+        default:
+            return true
+        }
     }
-    */
 
+}
+
+extension SetupViewController: UITextFieldDelegate {
+    
+    @objc private func textFieldDidChange(_ notification: Notification) {
+        nextButton.isEnabled = isValidName()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if isValidName() {
+            nameTextField.resignFirstResponder()
+            performSegue(withIdentifier: "showIntro", sender: self)
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    private func isValidName() -> Bool {
+        if let text = nameTextField.text {
+            return text.count >= 2
+        } else {
+            return false
+        }
+    }
+}
+
+// Keyboard handler
+extension SetupViewController {
+    
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            let keyboardHeight = keyboardSize.height
+            let animationDuration = (notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue
+            
+            self.contentAreaTopConstraint.constant = -1 * keyboardHeight + 40
+            UIView.animate(withDuration: animationDuration!) {
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        let animationDuration = (notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue
+        
+        self.contentAreaTopConstraint.constant = 0
+        UIView.animate(withDuration: animationDuration!) {
+            self.view.layoutIfNeeded()
+        }
+    }
 }
