@@ -35,7 +35,7 @@ public enum Gender: String, Codable {
             switch pronounType {
                 case .he: return "she"
                 case .him: return "her"
-                case .his: return "hers"
+                case .his: return "her"
             }
         }
     }

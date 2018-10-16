@@ -206,7 +206,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Neighborhood" translatesAutoresizingMaskIntoConstraints="NO" id="qf4-ER-uEh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="neighborhood" translatesAutoresizingMaskIntoConstraints="NO" id="qf4-ER-uEh">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -256,10 +256,10 @@
                                     <constraint firstAttribute="width" constant="330" id="Tqg-tc-BOk"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKj-U4-L0N" userLabel="contentView" customClass="GameTextView" customModule="TheyGrowUp" customModuleProvider="target">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKj-U4-L0N" userLabel="contentView" customClass="GameTextView" customModule="TheyGrowUp" customModuleProvider="target">
                                 <rect key="frame" x="424" y="0.0" width="600" height="768"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Neighbor" translatesAutoresizingMaskIntoConstraints="NO" id="FAo-dB-HaV" userLabel="speakerImage">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="neighbor" translatesAutoresizingMaskIntoConstraints="NO" id="FAo-dB-HaV" userLabel="speakerImage">
                                         <rect key="frame" x="-90" y="284" width="200" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="KM6-If-NQB"/>
@@ -269,7 +269,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="EFg-sf-Zae">
                                         <rect key="frame" x="120" y="60" width="420" height="712.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DisneylandGood" translatesAutoresizingMaskIntoConstraints="NO" id="f2G-Za-odV" userLabel="contentImage">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disneylandGood" translatesAutoresizingMaskIntoConstraints="NO" id="f2G-Za-odV" userLabel="contentImage">
                                                 <rect key="frame" x="0.0" y="0.0" width="420" height="250"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="250" id="1D7-jK-gUu"/>
@@ -515,7 +515,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pe9-lU-kep" userLabel="textboxText">
                                 <rect key="frame" x="482" y="377" width="433" height="273"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <mutableString key="text">Congratulations! As the new parent of your healthy baby {{Child.gender}}, {{Child.name}}, your task is to make the best choices to protect {{Child.pronoun.his}} health, as well as your own money, time, and community.   Your progress will measured by the bars shown on the left. Good luck!</mutableString>
+                                <string key="text">Congratulations! As the new parent of your healthy baby {{Child.gender}}, {{Child.name}}, your task is to make the best choices to protect {{Child.pronoun.his}} health, as well as your own money, time, and community.   Your progress will measured by the bars shown on the left. Good luck!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="0.23137254900000001" green="0.31372549020000001" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -545,14 +545,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DisneylandGood" width="480" height="327"/>
-        <image name="Neighbor" width="215" height="215"/>
-        <image name="Neighborhood" width="2048" height="1536"/>
         <image name="SetupName" width="1024" height="768"/>
         <image name="babyBoy" width="293" height="575"/>
         <image name="babyImage" width="499" height="642"/>
+        <image name="disneylandGood" width="480" height="327"/>
         <image name="homeBackground" width="1453" height="768"/>
         <image name="homeBoy" width="1024" height="768"/>
+        <image name="neighbor" width="215" height="215"/>
+        <image name="neighborhood" width="2048" height="1536"/>
         <image name="textbox" width="939" height="1250"/>
     </resources>
     <inferredMetricsTieBreakers>

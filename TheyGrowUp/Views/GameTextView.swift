@@ -48,8 +48,9 @@ class GameTextView: UIView {
         path.close()
         
         let shapeLayer = CAShapeLayer()
+        shapeLayer.isOpaque = false
         shapeLayer.path = path.cgPath
-        shapeLayer.fillColor = bgColor.withAlphaComponent(0.9).cgColor
+        shapeLayer.fillColor = bgColor.withAlphaComponent(0.6).cgColor
         shapeLayer.shadowColor = bgColor.cgColor
         shapeLayer.shadowOffset = CGSize(width: -2, height: 0)
         shapeLayer.shadowRadius = 8
