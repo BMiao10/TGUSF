@@ -23,6 +23,8 @@
 		4A11A3FA21682DA900E9B9F2 /* ScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A11A3F821682DA900E9B9F2 /* ScoreView.xib */; };
 		4A11A3FF216A89AE00E9B9F2 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A11A3FE216A89AE00E9B9F2 /* Gender.swift */; };
 		4A309EE22174555600BA4750 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A309EE12174555600BA4750 /* IntroViewController.swift */; };
+		4A83CEC621766B64004D1044 /* ChildAgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83CEC521766B64004D1044 /* ChildAgeView.swift */; };
+		4A83CEC821766BD8004D1044 /* ChildAgeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A83CEC721766BD8004D1044 /* ChildAgeView.xib */; };
 		4A8F45AE217259C0008D69B1 /* GameTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F45AD217259C0008D69B1 /* GameTextView.swift */; };
 		4AECB6462166B16B004CB1EC /* Parent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AECB6452166B16B004CB1EC /* Parent.swift */; };
 		4AECB6482166B173004CB1EC /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AECB6472166B173004CB1EC /* Child.swift */; };
@@ -60,6 +62,8 @@
 		4A11A3F821682DA900E9B9F2 /* ScoreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreView.xib; sourceTree = "<group>"; };
 		4A11A3FE216A89AE00E9B9F2 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		4A309EE12174555600BA4750 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		4A83CEC521766B64004D1044 /* ChildAgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildAgeView.swift; sourceTree = "<group>"; };
+		4A83CEC721766BD8004D1044 /* ChildAgeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildAgeView.xib; sourceTree = "<group>"; };
 		4A8F45AD217259C0008D69B1 /* GameTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTextView.swift; sourceTree = "<group>"; };
 		4AECB6452166B16B004CB1EC /* Parent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parent.swift; sourceTree = "<group>"; };
 		4AECB6472166B173004CB1EC /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 				4A11A3F52168291100E9B9F2 /* ScoreView.swift */,
 				4A11A3F821682DA900E9B9F2 /* ScoreView.xib */,
 				4A8F45AD217259C0008D69B1 /* GameTextView.swift */,
+				4A83CEC521766B64004D1044 /* ChildAgeView.swift */,
+				4A83CEC721766BD8004D1044 /* ChildAgeView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,6 +292,7 @@
 				4067CAAD20FAE47A00C6A7FE /* Assets.xcassets in Resources */,
 				4067CAA820FAE47900C6A7FE /* Main.storyboard in Resources */,
 				4AFBCC51216BF7F800054777 /* Better-Days-Ahead.mp3 in Resources */,
+				4A83CEC821766BD8004D1044 /* ChildAgeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +379,7 @@
 				4A11A3FF216A89AE00E9B9F2 /* Gender.swift in Sources */,
 				4A309EE22174555600BA4750 /* IntroViewController.swift in Sources */,
 				4AECB64A2166B183004CB1EC /* Journey.swift in Sources */,
+				4A83CEC621766B64004D1044 /* ChildAgeView.swift in Sources */,
 				4A11A3EF2167F96500E9B9F2 /* Scenario.swift in Sources */,
 				4A11A3F12168009E00E9B9F2 /* Scene.swift in Sources */,
 				4AFBCC55216C5E8300054777 /* ScoreKeeper.swift in Sources */,

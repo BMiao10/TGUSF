@@ -17,16 +17,10 @@ struct Scene: Codable {
     let image: String?
     private(set) var text: String
     private(set) var moreInfo: String?
-    private(set) var choices: [String]
-    let next: [Int]
-    let health: Int
-    let money: Int
-    let time: Int
-    let community: Int
-    let intent: Int
+    private(set) var choices: [SceneChoice]
     
     var isLastScene: Bool {
-        return next.isEmpty || next.first == -1
+        return choices.isEmpty || choices.first?.next == -1
     }
     
     enum CodingKeys: String, CodingKey, CaseIterable {
@@ -56,32 +50,10 @@ struct Scene: Codable {
         self.image = try? container.decode(String.self, forKey: .image)
         self.text = try container.decode(String.self, forKey: .text)
         self.moreInfo = try? container.decode(String.self, forKey: .moreInfo)
-        self.choices = try container.decode([String].self, forKey:.choices)
-        self.next = try container.decode([Int].self, forKey: .next)
-        self.health = try container.decode(Int.self, forKey: .health)
-        self.money = try container.decode(Int.self, forKey: .money)
-        self.time = try container.decode(Int.self, forKey: .time)
-        self.community = try container.decode(Int.self, forKey: .community)
-        self.intent = try container.decode(Int.self, forKey: .intent)
+        self.choices = try container.decode([SceneChoice].self, forKey:.choices)
         
         renderText()
     }
-//
-//    init( id: Int, setting: String, audio: String, speaker: String, text: String, moreInfo: String, choices: [String], next: [Int], health: Int, money: Int, time: Int, community: Int, intent: Int ) {
-//        self.id = id
-//        self.setting = setting
-//        self.audio = audio
-//        self.speaker = speaker
-//        self.text = text
-//        self.moreInfo = moreInfo
-//        self.choices = choices
-//        self.next = next
-//        self.health = health
-//        self.money = money
-//        self.time = time
-//        self.community = community
-//        self.intent = intent
-//    }
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
@@ -94,12 +66,6 @@ struct Scene: Codable {
         try container.encode(text, forKey: .text)
         try container.encode(moreInfo, forKey: .moreInfo)
         try container.encode(choices, forKey: .choices)
-        try container.encode(next, forKey: .next)
-        try container.encode(health, forKey: .health)
-        try container.encode(money, forKey: .money)
-        try container.encode(time, forKey: .time)
-        try container.encode(community, forKey: .community)
-        try container.encode(intent, forKey: .intent)
     }
     
     /// Called after scene initialized to render text elements
@@ -109,9 +75,29 @@ struct Scene: Codable {
         }
         
         self.choices = choices.map {
-            try! StringRenderService.render($0)
+            var mutableChoice = $0
+            if let t = try? StringRenderService.render(mutableChoice.text) {
+                mutableChoice.text = t
+            }
+            return mutableChoice
         }
     }
+    
+    func choice(_ index: Int) -> SceneChoice? {
+        return index < choices.count ? choices[index] : nil
+    }
+    
+}
+
+struct SceneChoice: Codable {
+    
+    var text: String
+    let next: Int
+    let money: Int
+    let time: Int
+    let health: Int
+    let community: Int
+    let intent: Int
     
     func scoreDelta(for item:ScoreKeeper.ScoreItems) -> Int {
         switch item {

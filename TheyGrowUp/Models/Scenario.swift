@@ -17,13 +17,37 @@ struct Scenario {
     
     enum Names: String {
         case pertussis
+        case measles
+        case kindergaren
         
         var fileName: String {
             return "scenario_" + self.rawValue
         }
+        
+        var next: Names? {
+            switch self {
+            case .pertussis:
+                return .measles
+            case .measles:
+                return .kindergaren
+            case .kindergaren:
+                return nil
+            }
+        }
+        
+        var age: (number: Int, scale: String) {
+            switch self {
+            case .pertussis:
+                return (2, "Months")
+            case .measles:
+                return (4, "Years")
+            case .kindergaren:
+                return (6, "Years")
+            }
+        }
     }
     
-    private(set) var id: String!
+    private(set) var id: Names
     
     var scenes: [Int: Scene]!
     
@@ -41,7 +65,7 @@ struct Scenario {
             throw ScenarioError.DataCorrupted(url: url)
         }
         
-        self.id = scenario.fileName
+        self.id = scenario
         self.scenes = jsonData.reduce(into: [:]) { scenes, scene in
             scenes[ scene.id ] = scene
         }
@@ -60,6 +84,10 @@ struct Scenario {
             previousScene = currentScene
             currentScene = validScene
         }
+    }
+    
+    func nextScenario() -> Scenario.Names? {
+        return id.next
     }
     
 }

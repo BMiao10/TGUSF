@@ -12,10 +12,10 @@ class IntroViewController: UIViewController {
 
 
     @IBOutlet weak var textbox: UIImageView!
-    @IBOutlet weak var textboxImage: UIImageView!
+    @IBOutlet weak var babyImage: UIImageView!
     @IBOutlet weak var textboxText: UILabel!
     @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var childAge: UIView!
+    @IBOutlet weak var childAge: ChildAgeView!
     @IBOutlet weak var scoreView: ScoreView!
     
     override func viewDidLoad() {
@@ -29,7 +29,7 @@ class IntroViewController: UIViewController {
         
         scoreView.alpha = 0.0
         childAge.alpha = 0.0
-        textboxImage.alpha = 0.0
+        babyImage.alpha = 0.0
         
         // Set scoreView values to 0
         scoreView.setProgress(for: .health, score: 0)
@@ -39,8 +39,11 @@ class IntroViewController: UIViewController {
         
         // Customize baby image
         let fileName = Parent.shared.child!.gender == .male ? "babyBoy" : "babyGirl"
-        textboxImage.image = UIImage(named: fileName)
-        
+        babyImage.image = UIImage(named: fileName)
+        childAge.ageNumber = 2
+        childAge.ageScale = "Days"
+        childAge.gender = Parent.shared.child!.gender
+
         // Customize text
         textboxText.text = try? StringRenderService.render(textboxText.text!)
     }
@@ -60,14 +63,9 @@ class IntroViewController: UIViewController {
         
         //animate text and image in textbox
         //TODO:add baby sound
-        if Parent.shared.child!.gender == .male {
-            self.textboxImage.image = UIImage(named: "babyBoy")
-        } else {
-            self.textboxImage.image = UIImage(named: "babyGirl")
-        }
         UIView.animate(withDuration: 1.1, delay: 0.7, animations: {
+            self.babyImage.alpha = 1.0            
             self.textboxText.alpha = 1.0
-            self.textboxImage.alpha = 1.0
         })
         
         //animate scoring bars

@@ -61,7 +61,7 @@ class ScoreView: UIView {
         }
         
         // Register for notifications
-        NotificationCenter.default.addObserver(self, selector: #selector(handleScoreDidChange(_:)), name: ScoreKeeper.ScoreDidChange, object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(handleScoreDidChange(_:)), name: ScoreKeeper.ScoreDidChange, object: nil)
     }
     
     override func awakeFromNib() {
@@ -92,6 +92,13 @@ class ScoreView: UIView {
     func setProgress(for item: ScoreKeeper.ScoreItems, score: Int) {
         let progress = Float(score) / Float(ScoreKeeper.maxScore) * 100
         scoreBar(for: item).setProgress(CGFloat(progress), animated: true, duration: 2.5)
+    }
+    
+    func syncProgress(with scoreKeeper: ScoreKeeper) {
+        ScoreKeeper.ScoreItems.allCases.forEach { (item) in
+            let currentScore = scoreKeeper.score(for: item)
+            setProgress(for: item, score: currentScore)
+        }
     }
     
     func hideLabels(_ state: Bool, animated: Bool = true) {

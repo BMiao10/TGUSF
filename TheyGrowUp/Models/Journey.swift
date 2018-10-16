@@ -75,18 +75,26 @@ extension Journey: Collection {
             steps.last?.next = step
             step.previous = steps.last
             
-            // Update our ScoreKeeper
-            scoreKeeper.changeScores(scene.scoreDeltas())
-            
-            // Update our intent to vaccinate tracker
-            changeIntent(by: scene.intent)
-            
             // Update our time tracking
             steps.last?.endTime = Date()
             endTime = Date()
             
             append(step)
         }
+    }
+    
+    func setResponseForCurrentStep(_ choice: Int, with scene:Scene) {
+        setResponse(choice, for: currentStep!, with: scene)
+    }
+    
+    func setResponse(_ choice: Int, for step: JourneyStep, with scene:Scene) {
+        currentStep?.response = choice
+        
+        // Update our ScoreKeeper
+        scoreKeeper.changeScores( scene.choice(choice)!.scoreDeltas() )
+        
+        // Update our intent to vaccinate tracker
+        changeIntent(by: scene.choice(choice)!.intent)
     }
 
     var length: Int {

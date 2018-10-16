@@ -16,15 +16,16 @@ class GameViewController: UIViewController {
     
     private weak var sceneAudioPlayer: AudioPlayer?
 
+    // This can be set by presenting view controller to alter which scenario is loaded
+    var scenarioName: Scenario.Names = .pertussis
     private var scenario: Scenario!
     private weak var journey: Journey?
     
     public var shouldResumeJourney: Bool = false
     
-    @IBOutlet weak var ageScaleLabel: UILabel!
-    @IBOutlet weak var ageLabel: UILabel!
-    
     @IBOutlet weak var backgroundImage: UIImageView!
+    
+    @IBOutlet weak var childAge: ChildAgeView!
     
     @IBOutlet weak var speakerImage: UIImageView!
     @IBOutlet weak var textboxText: UILabel!
@@ -48,16 +49,15 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         choiceButtons = [choiceA, choiceB, choiceC]
-        
-        // TODO: Refactor to separate view class?
-        UIView.animate(withDuration: 1.7, delay: 0.5, animations: {
-            self.ageScaleLabel.text = "Month"
-            self.ageLabel.text = "2"
-        })
 
         // TODO: Handle any load errors gracefully
-        // TODO: Remove hard coding of scene name
-        scenario = try! Scenario(named: .pertussis)
+        scenario = try! Scenario(named: scenarioName)
+        
+        // Load child age info
+        let age = scenario.id.age
+        childAge.ageNumber = age.number
+        childAge.ageScale = age.scale
+        childAge.gender = Parent.shared.child!.gender
         
         if shouldResumeJourney {
             // Load scene where user left off
@@ -65,11 +65,7 @@ class GameViewController: UIViewController {
             scenario.advance(to: journey!.currentStep!.baseSceneId)
             
             // Load up the scoreView
-            let sk = journey!.scoreKeeper
-            scoreView.setProgress(for: .health, score: sk.score(for: .health))
-            scoreView.setProgress(for: .money, score: sk.score(for: .money))
-            scoreView.setProgress(for: .time, score: sk.score(for: .time))
-            scoreView.setProgress(for: .community, score: sk.score(for: .community))
+            scoreView.syncProgress(with: journey!.scoreKeeper)
             
             // Load up where we left off
             loadScene( scenario.currentScene, addToJourney: false )
@@ -137,14 +133,18 @@ class GameViewController: UIViewController {
         }
         
         // Update choices
-        choiceButtons.forEach { (button) in
-            button.setTitle("", for: .normal)
-            button.isHidden = true
+        for (index, button) in choiceButtons.enumerated() {
+            if let choiceText = scene.choice(index)?.text {
+                button.setTitle(choiceText, for: .normal)
+                button.isHidden = false
+            } else {
+                button.setTitle("", for: .normal)
+                button.isHidden = true
+            }
         }
-        for (index, choiceLabel) in scene.choices.enumerated() {
-            choiceButtons[index].setTitle(choiceLabel, for: .normal)
-            choiceButtons[index].isHidden = false
-        }
+        
+        // Sync our score view
+        scoreView.syncProgress(with: journey!.scoreKeeper)
         
         // Update our journey
         if addToJourney {
@@ -159,15 +159,16 @@ class GameViewController: UIViewController {
     }
     
     fileprivate func switchSceneForChoice(_ choice: Int) {
-        journey?.currentStep?.response = choice
+        journey?.setResponseForCurrentStep(choice, with: scenario.currentScene)
         
         if scenario.currentScene.isLastScene {
             // TODO: Handle end of scenario -> GOTO FAQs
-            print("Scenario ended")
-            journey?.finish()
+            print("Scenario \(scenario.id) ended")
             Parent.shared.updatePlaytime()
+            
+            journey?.finish()
         } else {
-            let nextSceneId = scenario.currentScene.next[choice]
+            let nextSceneId = scenario.currentScene.choices[choice].next
             scenario.advance(to: nextSceneId)
             DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200)) {
                 self.loadScene( self.scenario.currentScene )
