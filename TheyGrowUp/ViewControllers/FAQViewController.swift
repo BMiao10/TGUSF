@@ -24,7 +24,7 @@ class FAQViewController: UIViewController {
         do {
             try parseQuestionSet(fileName: "faqs")
         } catch {
-            print(FAQError.JustDoesNotWork(fileName: "This is bad"))
+            print(FAQError.JustDoesNotWork(fileName: "faqs"))
         }
         
         let faqView = FAQView(frame: view.frame, items: items)

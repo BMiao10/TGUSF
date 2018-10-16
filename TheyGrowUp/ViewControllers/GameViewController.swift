@@ -122,11 +122,11 @@ class GameViewController: UIViewController {
         journey?.currentStep?.response = choice
         
         if scenario.currentScene.isLastScene {
-            // TODO: Handle end of scenario -> GOTO FAQs
             print("Scenario ended")
             journey?.finish()
             Parent.shared.updatePlaytime()
 
+            //TODO: change to endscreen
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FAQViewController") as! FAQViewController
             vc.modalTransitionStyle = .crossDissolve
             self.present(vc, animated: true, completion: nil)
