@@ -90,8 +90,8 @@
     "id": 4,
     "setting": "neighborhood",
     "speaker": "neighbor",
-    "audio": "whoopingCoughAudio",
-    "text": "This is what whooping sounds like. In infants, it can cause some severe complications like pneumonia! And since infants don't get the TDaP vaccine until they are 1 years old, they rely on herd immunity or their mother's vaccination during pregnancy.",
+    "audio": "coughAudio",
+    "text": "This is what whooping sounds like. In infants, it can cause some severe complications like pneumonia! Infants under two months rely on herd immunity or their mother's vaccination during pregnancy to keep them safe.",
     "moreInfo": "herdImmunityInfo",
     "choices": [
       {
@@ -118,7 +118,7 @@
     "id": 5,
     "setting": "neighborhood",
     "speaker": "neighbor",
-    "text": "Since infants don't get the TDaP vaccine until they are 1 years old, they rely on herd immunity or their mother's vaccination during pregnancy. After all, it takes a village to raise a child!",
+    "text": "Since infants don't get the TDaP vaccine until they are 2 months old, they rely on herd immunity or their mother's vaccination during pregnancy to keep them safe. After all, it takes a village to raise a child!",
     "moreInfo": "tdapInfo",
     "choices": [
       {
@@ -157,7 +157,7 @@
         "intent": 1
       },
       {
-        "text": "No, we're going to Disneyland!",
+        "text": "No, we're going to see the Golden Gate Bridge!",
         "next": 10,
         "money": 0,
         "time": 0,
@@ -171,10 +171,10 @@
     "id": 7,
     "setting": "neighborhood",
     "speaker": "neighbor",
-    "text": "Whooping cough is highly contagious, and can be preventable with vaccination. Since {{Child.name}} can't get the vaccine until {{Child.pronoun.he}} is a year old, you'll have to be careful to avoid getting {{Child.pronoun.him}} sick. (-1 health)",
+    "text": "Whooping cough is highly contagious, and can be preventable with vaccination. You'll have to be careful to avoid getting {{Child.name}} sick until {{Child.pronoun.he}} can get vaccinated. (-1 health)",
     "choices": [
       {
-        "text": "We'll talk to our doctor about vaccination",
+        "text": "We'll talk to our doctor",
         "next": 6,
         "money": 0,
         "time": 0,
@@ -209,7 +209,7 @@
         "intent": -1
       },
       {
-        "text": "No, we're going to Disneyland!",
+        "text": "No, we're going to see the Golden Gate Bridge!",
         "next": 12,
         "money": 0,
         "time": 0,
@@ -332,8 +332,8 @@
   },
   {
     "id": 15,
-    "setting": "disneylandGood",
-    "image": "disneyPertussis",
+    "setting": "neighborhood",
+    "image": "caliPertussis",
     "text": "The whooping cough outbreak gets worse, and you are grateful that {{Child.name}} is at little risk. (+1 health) As a precaution, you head home early, and are angry when you learn that the outbreak spread among unvaccinated children. (-1 money, -1 time)",
     "choices": [
       {
@@ -349,8 +349,8 @@
   },
   {
     "id": 16,
-    "setting": "disneylandBad",
-    "image": "disneyPertussis",
+    "setting": "caliBad",
+    "image": "caliPertussis",
     "text": "When the whooping cough outbreak gets worse, you are afraid to stay. Later, when the news says the outbreak originated from an unvaccinated child, you feel angry that your family trip was ruined. (-1 money, -1 time, -1 community health).",
     "choices": [
       {
@@ -393,7 +393,7 @@
   {
     "id": 18,
     "setting": "hospital",
-    "image": "sickChild",
+    "image": "ambulance",
     "text": "It turns out the child had not been vaccinated and did have whooping cough, which {{Child.name}} caught. You spend the night in the hospital, listening to {{Child.pronoun.him}} struggle to breathe. (-2 health, -1 time, -1 money)",
     "choices": [
       {

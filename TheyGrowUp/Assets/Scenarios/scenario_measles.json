@@ -1,0 +1,271 @@
+[
+  {
+    "id": 0,
+    "setting": "park",
+    "speaker": "sun",
+    "audio": "birdsAudio",
+    "image": "picnic",
+    "text": "Can you believe that {{Child.name}} is already 4 years old? {{Child.pronoun.he}} loves playing outdoors, especially at the local park. Since the weather is so nice out today, your family heads over there for a picnic. What have you packed for dessert?",
+    "choices": [
+      {
+        "text": "Fruit salad",
+        "next": 1,
+        "money": 0,
+        "time": 0,
+        "health": 1,
+        "community": 0,
+        "intent": 0
+      },
+      {
+        "text": "Your signature brownies",
+        "next": 1,
+        "money": 0,
+        "time": -1,
+        "health": -1,
+        "community": 0,
+        "intent": 0
+      },
+      {
+        "text": "Store-bought cake",
+        "next": 1,
+        "money": -1,
+        "time": 0,
+        "health": -1,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "setting": "park",
+    "image": "playground",
+    "text": "You, {{Child.name}}, and her grandpa are playing by the swings, and the air is filled with laughter. \"Grandpa?\" {{Child.name}} stops playing for a minute. \"What was it like when you were a little boy?\"",
+    "choices": [
+      {
+        "text": "Next",
+        "next": 2,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "setting": "park",
+    "speaker": "grandfather",
+    "image": "playground",
+    "text": "Those were the days! My friends and I played outside all day, and there was barely any supervision. We even had a secret treehouse! But I’ll never forget the day when....",
+    "choices": [
+      {
+        "text": "Forget what?",
+        "next": 3,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "setting": "park",
+    "speaker": "grandfather",
+    "image": "playground",
+    "text": "Well...I’ll never forget the day my best friend didn’t show up to play. He had measles, which caused him to catch pneumonia, and he was in the hospital for nearly two weeks. I was so scared.",
+    "choices": [
+      {
+        "text": "Measles is nothing to be scared of...",
+        "next": 5,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": -1
+      },
+      {
+        "text": "Really? It was that serious?",
+        "next": 4,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 1
+      },
+      {
+        "text": "It’s a good thing there are so few cases of measles these days",
+        "next": 5,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "setting": "park",
+    "speaker": "grandfather",
+    "image": "playground",
+    "text": "As serious as a heart attack! Back in my day, lots of kids got sick with measles because there was no vaccine. That’s why I made sure to vaccinate you and your brother when you were babies.",
+    "moreInfo": "About 1 out of every 20 children with measles gets pneumonia, and about 1 child in every 1,000 who get measles will die.",
+    "choices": [
+      {
+        "text": "I’m making sure {{Child.name}} stays up to date on her immunizations",
+        "next": 6,
+        "money": 0,
+        "time": 0,
+        "health": 1,
+        "community": 1,
+        "intent": 3
+      },
+      {
+        "text": "But it's so rare that we don't need the vaccine anymore, right?",
+        "next": 5,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": -1
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "setting": "park",
+    "speaker": "grandfather",
+    "image": "playground",
+    "text": "You’ve read the news, right? It may not be as common as the flu, but many children catch measles every year because they haven’t been immunized. It’s very contagious and spreads quickly!",
+    "moreInfo": "Outbreaks continue every year in the U.S. because unvaccinated people bring it home from travel in other countries and spread it to others in their community. If one person is infected, 9 out of every 10 unvaccinated children who come in contact with that person will catch it.",
+    "choices": [
+      {
+        "text": "Maybe I should have a conversation with {{Child.name}}'s doctor",
+        "next": 6,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 2
+      },
+      {
+        "text": "But there could be risks to vaccinating!",
+        "next": 7,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": -1
+      },
+      {
+        "text": "Enough with the sad talk. Let's just eat now.",
+        "next": 8,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": -1
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "setting": "park",
+    "speaker": "grandfather",
+    "image": "picnic",
+    "text": "Good idea! And enough about that for now - let's eat!",
+    "choices": [
+      {
+        "text": "Next",
+        "next": 10,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "setting": "park",
+    "speaker": "grandfather",
+    "text": "Don’t take my word for it, you really should ask your pediatrician! You follow their advice for healthy diets and exercise. I'm sure they'd be happy to tell you all about measles too.",
+    "moreInfo": "The measles, mumps, and rubella (MMR) vaccine is very safe. Possible side effects may include fever, mild rash, or swelling of glands in the cheeks or neck",
+    "choices": [
+      {
+        "text": "I might ask my friends first",
+        "next": 6,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 1
+      },
+      {
+        "text": "OK, I get it. Can we please just eat?",
+        "next": 8,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": -1
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "setting": "park",
+    "speaker": "grandfather",
+    "text": "Alright, fine. Just go talk to a pediatrician. We all want to keep {{Child.name}} safe right?",
+    "choices": [
+      {
+        "text": "Of course",
+        "next": 9,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "setting": "evening",
+    "image": "sunset",
+    "text": "You head home after a long day in the park. On the radio, you hear a news report that the rate of unvaccinated children has quadrupled in the past four years, and that measles outbreaks are occurring more frequently in the US. You’re nervous and want to protect your child’s health. Anxiety builds as you wonder if other kids in your neighborhood are vaccinated.",
+    "choices": [
+      {
+        "text": "Next",
+        "next": -1,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": -1,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "setting": "evening",
+    "image": "sunset",
+    "text": "After a fun day at the park, you all head home. On the radio, you hear a news report saying that the rate of unvaccinated children has quadrupled in the past four years, and that measles outbreaks are occurring more frequently in the US. You're glad that you're planning to see your pediatrician and ensure that {{Child.name}} stays healthy.",
+    "choices": [
+      {
+        "text": "Next",
+        "next": -1,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  }
+]

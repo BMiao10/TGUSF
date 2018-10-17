@@ -13,26 +13,6 @@ class ChildAgeView: UIView {
 
     private var contentView: UIView?
     
-    private enum Images: String {
-        case baby
-        case toddler
-        case child
-        
-        static func forAge(number: Int, scale: String) -> Images {
-            switch scale {
-            case "Year", "Years":
-                return number >= 5 ? .child : .toddler
-            default:
-                return .baby
-            }
-        }
-        
-        func fileNameForGender(_ gender: Gender) -> String {
-            // e.g. babyBoy or toddlerGirl
-            return self.rawValue + gender.diminutive.capitalized
-        }
-    }
-    
     var ageNumber: Int = 1  {
         didSet {
             setupUI()
@@ -90,8 +70,8 @@ class ChildAgeView: UIView {
         contentView?.prepareForInterfaceBuilder()
     }
 
-    func setupUI() {
-        let fileName = Images.forAge(number: ageNumber, scale: ageScale).fileNameForGender(gender)
+    private func setupUI() {
+        let fileName = ChildImages.forAge(number: ageNumber, scale: ageScale).fileNameForGender(gender)
         childImage.image = UIImage(named: fileName)
         
         ageLabel.text = String(ageNumber)

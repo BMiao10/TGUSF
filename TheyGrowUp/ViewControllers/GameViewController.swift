@@ -150,6 +150,15 @@ class GameViewController: UIViewController {
         if addToJourney {
             journey?.addStep(with: scenario.currentScene)
         }
+        
+        // If this is the first scene for a new scenario, show the age change modal
+        if  scenario.isAtStartOfScenario {
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AgeChangeViewController") as! AgeChangeViewController
+            vc.ageNumber = scenario.id.age.number
+            vc.ageScale = scenario.id.age.scale.lowercased()
+            vc.child = Parent.shared.child!
+            present(vc, animated: true, completion: nil)
+        }
     }
     
     // MARK: Button Actions
@@ -161,12 +170,20 @@ class GameViewController: UIViewController {
     fileprivate func switchSceneForChoice(_ choice: Int) {
         journey?.setResponseForCurrentStep(choice, with: scenario.currentScene)
         
-        if scenario.currentScene.isLastScene {
+        if scenario.isAtEndOfScenario {
             // TODO: Handle end of scenario -> GOTO FAQs
             print("Scenario \(scenario.id) ended")
             Parent.shared.updatePlaytime()
             
-            journey?.finish()
+            if let next = scenario.nextScenario() {
+                scenario = try! Scenario.init(named: next)
+                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200)) {
+                    self.loadScene( self.scenario.currentScene )
+                }
+            } else {
+                journey?.finish()
+                // Advance to summary screen
+            }
         } else {
             let nextSceneId = scenario.currentScene.choices[choice].next
             scenario.advance(to: nextSceneId)
@@ -176,7 +193,7 @@ class GameViewController: UIViewController {
         }
     }
     
-    private func prepareForRestart() {
+    fileprivate func prepareForRestart() {
         // TODO: Hide this button in release version
         print("Scenario restarting")
         journey?.finish()

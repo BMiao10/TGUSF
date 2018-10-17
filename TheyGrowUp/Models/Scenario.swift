@@ -51,8 +51,36 @@ struct Scenario {
     
     var scenes: [Int: Scene]!
     
-    private(set) var currentScene: Scene!
-    private(set) var previousScene: Scene?
+    private var currentSceneId: Int
+    var currentScene: Scene {
+        return scenes[currentSceneId]!
+    }
+
+    private var previousSceneId: Int?
+    var previousScene: Scene? {
+        if let id = previousSceneId {
+            return scenes[id]!
+        } else {
+            return nil
+        }
+    }
+    
+    private var firstSceneId: Int
+    var firstScene: Scene {
+        return scenes[firstSceneId]!
+    }
+    
+    private var lastSceneId: Int
+    var lastScene: Scene {
+        return scenes[lastSceneId]!
+    }
+    var isAtStartOfScenario: Bool {
+        return currentSceneId == firstSceneId
+    }
+    
+    var isAtEndOfScenario: Bool {
+        return currentScene.isLastScene
+    }
     
     init( named scenario: Names ) throws {
         guard let url = Bundle.main.url(forResource: scenario.fileName, withExtension: "json") else {
@@ -69,7 +97,9 @@ struct Scenario {
         self.scenes = jsonData.reduce(into: [:]) { scenes, scene in
             scenes[ scene.id ] = scene
         }
-        self.currentScene = jsonData[0]
+        self.firstSceneId = jsonData.first!.id
+        self.currentSceneId = jsonData.first!.id
+        self.lastSceneId = jsonData.last!.id
     }
     
     mutating func advance( to scene:Scene ) {
@@ -81,8 +111,8 @@ struct Scenario {
             // TODO: End gameplay
             return
         } else if let validScene = scenes[ sceneId ] {
-            previousScene = currentScene
-            currentScene = validScene
+            previousSceneId = currentScene.id
+            currentSceneId = validScene.id
         }
     }
     
