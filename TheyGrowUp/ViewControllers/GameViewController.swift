@@ -124,11 +124,9 @@ class GameViewController: UIViewController {
         // More info
         if let moreInfoText = scene.moreInfo {
             // TODO: Make this do something
-            moreInfo.setTitle("More Info", for: .normal)
             moreInfo.isHidden = false
         } else {
             // Hide more info
-            moreInfo.setTitle("", for: .normal)
             moreInfo.isHidden = true
         }
         
@@ -152,7 +150,7 @@ class GameViewController: UIViewController {
         }
         
         // If this is the first scene for a new scenario, show the age change modal
-        if  scenario.isAtStartOfScenario {
+        if scenario.id != .pertussis && scenario.isAtStartOfScenario {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AgeChangeViewController") as! AgeChangeViewController
             vc.ageNumber = scenario.id.age.number
             vc.ageScale = scenario.id.age.scale.lowercased()
@@ -183,6 +181,7 @@ class GameViewController: UIViewController {
             } else {
                 journey?.finish()
                 // Advance to summary screen
+                showFAQs()
             }
         } else {
             let nextSceneId = scenario.currentScene.choices[choice].next
@@ -203,6 +202,17 @@ class GameViewController: UIViewController {
     @IBAction func moreInfo(_ sender: Any) {
         //TODO:figure out moreInfo stuff
         journey?.changeIntent(by: 1)
+    }
+    
+    
+    @IBAction func testShowFAQs(_ sender: Any) {
+        showFAQs()
+    }
+    
+    fileprivate func showFAQs () {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FAQViewController") as! FAQViewController
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

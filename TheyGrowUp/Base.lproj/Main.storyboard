@@ -400,14 +400,43 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" identifier="restartGame" modalTransitionStyle="flipHorizontal" id="g2e-aS-s5i"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJo-nh-ED5" customClass="PMSuperButton" customModule="PMSuperButton">
+                                <rect key="frame" x="380" y="708" width="61" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="55L-fZ-xqQ"/>
+                                    <constraint firstAttribute="width" constant="61" id="Kyd-UT-tKB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="FAQs">
+                                    <color key="titleColor" red="0.23137254900000001" green="0.31372549020000001" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.23137254900000001" green="0.31372549020000001" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="testShowFAQs:" destination="tKk-aN-wJO" eventType="touchUpInside" id="vGz-Sy-pm6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="eeL-eJ-aAz" firstAttribute="trailing" secondItem="MKj-U4-L0N" secondAttribute="trailing" id="1OX-5w-EXz"/>
                             <constraint firstItem="MKj-U4-L0N" firstAttribute="bottom" secondItem="eeL-eJ-aAz" secondAttribute="bottom" id="Fen-h7-wBK"/>
                             <constraint firstItem="fvJ-iy-1CR" firstAttribute="top" secondItem="spX-jr-gMy" secondAttribute="bottom" constant="20" id="Hs9-k2-1uO"/>
+                            <constraint firstItem="TJo-nh-ED5" firstAttribute="leading" secondItem="fvJ-iy-1CR" secondAttribute="trailing" constant="30" id="Lq8-Dr-hJk"/>
                             <constraint firstItem="fvJ-iy-1CR" firstAttribute="leading" secondItem="eeL-eJ-aAz" secondAttribute="leading" constant="10" id="RsQ-Oh-zxO"/>
                             <constraint firstItem="MKj-U4-L0N" firstAttribute="top" secondItem="vXz-Nr-BUG" secondAttribute="top" id="hgA-jA-VpK"/>
+                            <constraint firstItem="eeL-eJ-aAz" firstAttribute="bottom" secondItem="TJo-nh-ED5" secondAttribute="bottom" constant="30" id="ky0-Xf-PZ5"/>
                             <constraint firstItem="eeL-eJ-aAz" firstAttribute="bottom" secondItem="db4-od-keb" secondAttribute="bottom" constant="20" id="nTH-9R-lR1"/>
                             <constraint firstItem="db4-od-keb" firstAttribute="leading" secondItem="eeL-eJ-aAz" secondAttribute="leading" constant="24" id="nna-Td-DbN"/>
                             <constraint firstItem="spX-jr-gMy" firstAttribute="leading" secondItem="eeL-eJ-aAz" secondAttribute="leading" id="oOl-Qg-igp"/>
@@ -643,6 +672,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAg-qb-g1G" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.6953125" y="1561.71875"/>
+        </scene>
+        <!--FAQ View Controller-->
+        <scene sceneID="weh-Kk-Cry">
+            <objects>
+                <viewController restorationIdentifier="FAQViewController" storyboardIdentifier="FAQViewController" title="FAQ View Controller" id="MlU-9D-Cd7" customClass="FAQViewController" customModule="TheyGrowUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J6h-BF-M9x">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCL-xV-nLn">
+                                <rect key="frame" x="46" y="689" width="958" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="Wce-V5-n1k"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">This information is for educational purposes only and is not intended to replace the advice of your doctor or health care provider. We encourage you to discuss with your doctor any questions or concerns you may have.</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hCL-xV-nLn" firstAttribute="trailing" secondItem="J6h-BF-M9x" secondAttribute="trailingMargin" id="0o1-rd-qPB"/>
+                            <constraint firstAttribute="bottom" secondItem="hCL-xV-nLn" secondAttribute="bottom" constant="20" symbolic="YES" id="XEC-AJ-Fti"/>
+                            <constraint firstItem="hCL-xV-nLn" firstAttribute="leading" secondItem="DrQ-vz-GNU" secondAttribute="leading" constant="46" id="qOb-XE-MBV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DrQ-vz-GNU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rqe-6L-Sa5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="896" y="1562"/>
         </scene>
     </scenes>
     <resources>

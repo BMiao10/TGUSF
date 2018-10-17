@@ -22,6 +22,10 @@
 		4A11A3F62168291100E9B9F2 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A11A3F52168291100E9B9F2 /* ScoreView.swift */; };
 		4A11A3FA21682DA900E9B9F2 /* ScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A11A3F821682DA900E9B9F2 /* ScoreView.xib */; };
 		4A11A3FF216A89AE00E9B9F2 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A11A3FE216A89AE00E9B9F2 /* Gender.swift */; };
+		4A2E46BF2176D77F00808299 /* faqs.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A2E46BE2176D77F00808299 /* faqs.json */; };
+		4A2E46C12176DC3100808299 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E46C02176DC3100808299 /* FAQViewController.swift */; };
+		4A2E46C32176DC3F00808299 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E46C22176DC3F00808299 /* FAQView.swift */; };
+		4A2E46C52176DC5000808299 /* FAQs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E46C42176DC5000808299 /* FAQs.swift */; };
 		4A309EE22174555600BA4750 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A309EE12174555600BA4750 /* IntroViewController.swift */; };
 		4A83CEC621766B64004D1044 /* ChildAgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83CEC521766B64004D1044 /* ChildAgeView.swift */; };
 		4A83CEC821766BD8004D1044 /* ChildAgeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A83CEC721766BD8004D1044 /* ChildAgeView.xib */; };
@@ -64,6 +68,10 @@
 		4A11A3F52168291100E9B9F2 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		4A11A3F821682DA900E9B9F2 /* ScoreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreView.xib; sourceTree = "<group>"; };
 		4A11A3FE216A89AE00E9B9F2 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		4A2E46BE2176D77F00808299 /* faqs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = faqs.json; sourceTree = "<group>"; };
+		4A2E46C02176DC3100808299 /* FAQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
+		4A2E46C22176DC3F00808299 /* FAQView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
+		4A2E46C42176DC5000808299 /* FAQs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQs.swift; sourceTree = "<group>"; };
 		4A309EE12174555600BA4750 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		4A83CEC521766B64004D1044 /* ChildAgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildAgeView.swift; sourceTree = "<group>"; };
 		4A83CEC721766BD8004D1044 /* ChildAgeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildAgeView.xib; sourceTree = "<group>"; };
@@ -143,6 +151,7 @@
 				40038E85213F914700D7FBA2 /* GameViewController.swift */,
 				4A309EE12174555600BA4750 /* IntroViewController.swift */,
 				4ADC99B12176B5D3009DD699 /* AgeChangeViewController.swift */,
+				4A2E46C02176DC3100808299 /* FAQViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -150,6 +159,7 @@
 		4A11A3FB216888D000E9B9F2 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4A2E46BE2176D77F00808299 /* faqs.json */,
 				4A11A3FD216A88D700E9B9F2 /* Scenarios */,
 				4A11A3FC216A88CE00E9B9F2 /* Audio */,
 			);
@@ -185,6 +195,7 @@
 				4A11A3EE2167F96500E9B9F2 /* Scenario.swift */,
 				4A11A3FE216A89AE00E9B9F2 /* Gender.swift */,
 				4AFBCC54216C5E8300054777 /* ScoreKeeper.swift */,
+				4A2E46C42176DC5000808299 /* FAQs.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,6 +209,7 @@
 				4A8F45AD217259C0008D69B1 /* GameTextView.swift */,
 				4A83CEC521766B64004D1044 /* ChildAgeView.swift */,
 				4A83CEC721766BD8004D1044 /* ChildAgeView.xib */,
+				4A2E46C22176DC3F00808299 /* FAQView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -300,6 +312,7 @@
 				4ADC99B62176C7D5009DD699 /* scenario_measles.json in Resources */,
 				4067CAB020FAE47A00C6A7FE /* LaunchScreen.storyboard in Resources */,
 				4067CAAD20FAE47A00C6A7FE /* Assets.xcassets in Resources */,
+				4A2E46BF2176D77F00808299 /* faqs.json in Resources */,
 				4067CAA820FAE47900C6A7FE /* Main.storyboard in Resources */,
 				4AFBCC51216BF7F800054777 /* Better-Days-Ahead.mp3 in Resources */,
 				4A83CEC821766BD8004D1044 /* ChildAgeView.xib in Resources */,
@@ -386,6 +399,7 @@
 				40038E84213F903F00D7FBA2 /* SetupViewController.swift in Sources */,
 				4ADC99B22176B5D3009DD699 /* AgeChangeViewController.swift in Sources */,
 				4067CAA520FAE47900C6A7FE /* HomeViewController.swift in Sources */,
+				4A2E46C12176DC3100808299 /* FAQViewController.swift in Sources */,
 				4067CAA320FAE47900C6A7FE /* AppDelegate.swift in Sources */,
 				4A11A3FF216A89AE00E9B9F2 /* Gender.swift in Sources */,
 				4A309EE22174555600BA4750 /* IntroViewController.swift in Sources */,
@@ -400,7 +414,9 @@
 				4A8F45AE217259C0008D69B1 /* GameTextView.swift in Sources */,
 				4AECB6482166B173004CB1EC /* Child.swift in Sources */,
 				4A11A3F62168291100E9B9F2 /* ScoreView.swift in Sources */,
+				4A2E46C32176DC3F00808299 /* FAQView.swift in Sources */,
 				4AECB6462166B16B004CB1EC /* Parent.swift in Sources */,
+				4A2E46C52176DC5000808299 /* FAQs.swift in Sources */,
 				4AFBCC57216C7C1700054777 /* TimeTrackable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
