@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoreInfoViewController" customModule="TheyGrowUp" customModuleProvider="target">
+            <connections>
+                <outlet property="closeButton" destination="oRI-la-aig" id="gNK-h9-eZd"/>
+                <outlet property="mainText" destination="I0T-Wg-a3l" id="7er-wu-6sI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mOL-Hl-yz8" userLabel="fixedSize">
+                    <rect key="frame" x="-12.5" y="117.5" width="565" height="385"/>
+                    <subviews>
+                        <imageView opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="modal" translatesAutoresizingMaskIntoConstraints="NO" id="jsp-mo-dze" userLabel="background">
+                            <rect key="frame" x="0.0" y="0.0" width="565" height="385"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MORE INFO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29P-FI-HBG" userLabel="heading">
+                            <rect key="frame" x="233" y="25" width="99" height="22"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                            <color key="textColor" red="0.2784313725" green="0.56470588239999997" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0T-Wg-a3l" userLabel="mainText">
+                            <rect key="frame" x="45" y="72" width="475" height="29"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <color key="textColor" red="0.23137254900000001" green="0.31372549020000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRI-la-aig" userLabel="closeButton" customClass="PMSuperButton" customModule="PMSuperButton">
+                            <rect key="frame" x="0.0" y="321" width="565" height="64"/>
+                            <color key="backgroundColor" red="0.2784313725" green="0.56470588239999997" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="64" id="dbI-hk-gOF"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                            <state key="normal" title="Close"/>
+                            <state key="disabled">
+                                <color key="titleColor" red="0.12941176469999999" green="0.4039215686" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="didChooseClose:" destination="-1" eventType="touchUpInside" id="qkz-jx-C1D"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="jsp-mo-dze" secondAttribute="trailing" id="2vv-ds-GqP"/>
+                        <constraint firstAttribute="trailing" secondItem="oRI-la-aig" secondAttribute="trailing" id="5Bc-aN-DNf"/>
+                        <constraint firstAttribute="height" constant="385" id="5LY-vM-P2E"/>
+                        <constraint firstItem="jsp-mo-dze" firstAttribute="top" secondItem="mOL-Hl-yz8" secondAttribute="top" id="7WV-Hq-Qae"/>
+                        <constraint firstAttribute="trailing" secondItem="I0T-Wg-a3l" secondAttribute="trailing" constant="45" id="QCP-J9-TJr"/>
+                        <constraint firstItem="I0T-Wg-a3l" firstAttribute="leading" secondItem="mOL-Hl-yz8" secondAttribute="leading" constant="45" id="SAf-Hd-G2O"/>
+                        <constraint firstItem="I0T-Wg-a3l" firstAttribute="top" secondItem="29P-FI-HBG" secondAttribute="bottom" constant="25" id="Zfm-SO-Ppw"/>
+                        <constraint firstAttribute="width" constant="565" id="avK-qe-c9R"/>
+                        <constraint firstItem="29P-FI-HBG" firstAttribute="centerX" secondItem="mOL-Hl-yz8" secondAttribute="centerX" id="cfK-Sn-R9o"/>
+                        <constraint firstItem="oRI-la-aig" firstAttribute="top" relation="greaterThanOrEqual" secondItem="I0T-Wg-a3l" secondAttribute="bottom" constant="30" id="dnO-qW-h4T"/>
+                        <constraint firstItem="jsp-mo-dze" firstAttribute="leading" secondItem="mOL-Hl-yz8" secondAttribute="leading" id="g9a-pA-xDQ"/>
+                        <constraint firstItem="29P-FI-HBG" firstAttribute="top" secondItem="mOL-Hl-yz8" secondAttribute="top" constant="25" id="msT-aZ-w5l"/>
+                        <constraint firstAttribute="bottom" secondItem="jsp-mo-dze" secondAttribute="bottom" id="t7g-kn-Z2U"/>
+                        <constraint firstAttribute="bottom" secondItem="oRI-la-aig" secondAttribute="bottom" id="whv-9I-Alo"/>
+                        <constraint firstItem="oRI-la-aig" firstAttribute="leading" secondItem="mOL-Hl-yz8" secondAttribute="leading" id="z5D-P8-R5h"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="mOL-Hl-yz8" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="DHo-ba-DQY"/>
+                <constraint firstItem="mOL-Hl-yz8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="NnC-ao-Cso"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="modal" width="565" height="385"/>
+    </resources>
+</document>

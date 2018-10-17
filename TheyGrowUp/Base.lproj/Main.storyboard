@@ -280,6 +280,9 @@
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="moreInfo:" destination="tKk-aN-wJO" eventType="touchUpInside" id="1QM-8n-7PI"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="No5-bq-gYi" userLabel="choiceA" customClass="PMSuperButton" customModule="PMSuperButton">
                                                         <rect key="frame" x="0.0" y="71" width="470" height="56"/>
@@ -406,7 +409,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJo-nh-ED5" customClass="PMSuperButton" customModule="PMSuperButton">
-                                <rect key="frame" x="105" y="718" width="61" height="30"/>
+                                <rect key="frame" x="95" y="718" width="61" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="55L-fZ-xqQ"/>
@@ -439,7 +442,7 @@
                             <constraint firstItem="TJo-nh-ED5" firstAttribute="bottom" secondItem="db4-od-keb" secondAttribute="bottom" id="ARK-qY-og0"/>
                             <constraint firstItem="MKj-U4-L0N" firstAttribute="bottom" secondItem="eeL-eJ-aAz" secondAttribute="bottom" id="Fen-h7-wBK"/>
                             <constraint firstItem="fvJ-iy-1CR" firstAttribute="top" secondItem="spX-jr-gMy" secondAttribute="bottom" constant="20" id="Hs9-k2-1uO"/>
-                            <constraint firstItem="TJo-nh-ED5" firstAttribute="leading" secondItem="db4-od-keb" secondAttribute="trailing" constant="20" id="Lq8-Dr-hJk"/>
+                            <constraint firstItem="TJo-nh-ED5" firstAttribute="leading" secondItem="db4-od-keb" secondAttribute="trailing" constant="10" id="Lq8-Dr-hJk"/>
                             <constraint firstItem="fvJ-iy-1CR" firstAttribute="leading" secondItem="eeL-eJ-aAz" secondAttribute="leading" constant="10" id="RsQ-Oh-zxO"/>
                             <constraint firstItem="MKj-U4-L0N" firstAttribute="top" secondItem="vXz-Nr-BUG" secondAttribute="top" id="hgA-jA-VpK"/>
                             <constraint firstItem="eeL-eJ-aAz" firstAttribute="bottom" secondItem="db4-od-keb" secondAttribute="bottom" constant="20" id="nTH-9R-lR1"/>

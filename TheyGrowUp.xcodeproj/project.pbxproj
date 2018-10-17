@@ -22,6 +22,8 @@
 		4A11A3F62168291100E9B9F2 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A11A3F52168291100E9B9F2 /* ScoreView.swift */; };
 		4A11A3FA21682DA900E9B9F2 /* ScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A11A3F821682DA900E9B9F2 /* ScoreView.xib */; };
 		4A11A3FF216A89AE00E9B9F2 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A11A3FE216A89AE00E9B9F2 /* Gender.swift */; };
+		4A16D323217700B400B85D5E /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16D321217700B400B85D5E /* MoreInfoViewController.swift */; };
+		4A16D324217700B400B85D5E /* MoreInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A16D322217700B400B85D5E /* MoreInfoViewController.xib */; };
 		4A2E46BF2176D77F00808299 /* faqs.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A2E46BE2176D77F00808299 /* faqs.json */; };
 		4A2E46C12176DC3100808299 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E46C02176DC3100808299 /* FAQViewController.swift */; };
 		4A2E46C32176DC3F00808299 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E46C22176DC3F00808299 /* FAQView.swift */; };
@@ -68,6 +70,8 @@
 		4A11A3F52168291100E9B9F2 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		4A11A3F821682DA900E9B9F2 /* ScoreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreView.xib; sourceTree = "<group>"; };
 		4A11A3FE216A89AE00E9B9F2 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		4A16D321217700B400B85D5E /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
+		4A16D322217700B400B85D5E /* MoreInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreInfoViewController.xib; sourceTree = "<group>"; };
 		4A2E46BE2176D77F00808299 /* faqs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = faqs.json; sourceTree = "<group>"; };
 		4A2E46C02176DC3100808299 /* FAQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		4A2E46C22176DC3F00808299 /* FAQView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 				4A309EE12174555600BA4750 /* IntroViewController.swift */,
 				4ADC99B12176B5D3009DD699 /* AgeChangeViewController.swift */,
 				4A2E46C02176DC3100808299 /* FAQViewController.swift */,
+				4A16D321217700B400B85D5E /* MoreInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 				4A8F45AD217259C0008D69B1 /* GameTextView.swift */,
 				4A83CEC521766B64004D1044 /* ChildAgeView.swift */,
 				4A83CEC721766BD8004D1044 /* ChildAgeView.xib */,
+				4A16D322217700B400B85D5E /* MoreInfoViewController.xib */,
 				4A2E46C22176DC3F00808299 /* FAQView.swift */,
 			);
 			path = Views;
@@ -310,6 +316,7 @@
 				406C706B21471BB700065B6F /* scenario_pertussis.json in Resources */,
 				4AF7137221669C010011C159 /* Podfile in Resources */,
 				4ADC99B62176C7D5009DD699 /* scenario_measles.json in Resources */,
+				4A16D324217700B400B85D5E /* MoreInfoViewController.xib in Resources */,
 				4067CAB020FAE47A00C6A7FE /* LaunchScreen.storyboard in Resources */,
 				4067CAAD20FAE47A00C6A7FE /* Assets.xcassets in Resources */,
 				4A2E46BF2176D77F00808299 /* faqs.json in Resources */,
@@ -408,6 +415,7 @@
 				4A11A3EF2167F96500E9B9F2 /* Scenario.swift in Sources */,
 				4ADC99B42176B6B6009DD699 /* ChildImages.swift in Sources */,
 				4A11A3F12168009E00E9B9F2 /* Scene.swift in Sources */,
+				4A16D323217700B400B85D5E /* MoreInfoViewController.swift in Sources */,
 				4AFBCC55216C5E8300054777 /* ScoreKeeper.swift in Sources */,
 				4067CAAB20FAE47900C6A7FE /* TheyGrowUp.xcdatamodeld in Sources */,
 				4AFBCC53216C00CD00054777 /* StringRenderService.swift in Sources */,

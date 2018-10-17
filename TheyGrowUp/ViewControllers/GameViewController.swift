@@ -128,13 +128,7 @@ class GameViewController: UIViewController {
         textboxText.text = scene.text
         
         // More info
-        if let moreInfoText = scene.moreInfo {
-            // TODO: Make this do something
-            moreInfo.isHidden = false
-        } else {
-            // Hide more info
-            moreInfo.isHidden = true
-        }
+        moreInfo.isHidden = scene.moreInfo == nil
         
         // Update choices
         for (index, button) in choiceButtons.enumerated() {
@@ -207,10 +201,14 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func moreInfo(_ sender: Any) {
-        //TODO:figure out moreInfo stuff
         journey?.changeIntent(by: 1)
+        
+        let vc = MoreInfoViewController()
+        vc.content = scenario.currentScene.moreInfo
+        vc.modalPresentationStyle = .formSheet
+        vc.modalTransitionStyle = .coverVertical
+        self.present(vc, animated: true, completion: nil)
     }
-    
     
     @IBAction func testShowFAQs(_ sender: Any) {
         showFAQs()
