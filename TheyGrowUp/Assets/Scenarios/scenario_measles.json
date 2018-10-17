@@ -3,7 +3,7 @@
     "id": 0,
     "setting": "park",
     "speaker": "sun",
-    "audio": "birdsAudio",
+    "audio": "parkAudio",
     "image": "picnic",
     "text": "Can you believe that {{Child.name}} is already 4 years old? {{Child.pronoun.he}} loves playing outdoors, especially at the local park. Since the weather is so nice out today, your family heads over there for a picnic. What have you packed for dessert?",
     "choices": [
@@ -75,7 +75,6 @@
     "id": 3,
     "setting": "park",
     "speaker": "grandfather",
-    "image": "playground",
     "text": "Well...I’ll never forget the day my best friend didn’t show up to play. He had measles, which caused him to catch pneumonia, and he was in the hospital for nearly two weeks. I was so scared.",
     "choices": [
       {
@@ -97,7 +96,7 @@
         "intent": 1
       },
       {
-        "text": "It’s a good thing there are so few cases of measles these days",
+        "text": "It’s a good thing measles is rare these days",
         "next": 5,
         "money": 0,
         "time": 0,
@@ -111,12 +110,11 @@
     "id": 4,
     "setting": "park",
     "speaker": "grandfather",
-    "image": "playground",
     "text": "As serious as a heart attack! Back in my day, lots of kids got sick with measles because there was no vaccine. That’s why I made sure to vaccinate you and your brother when you were babies.",
     "moreInfo": "About 1 out of every 20 children with measles gets pneumonia, and about 1 child in every 1,000 who get measles will die.",
     "choices": [
       {
-        "text": "I’m making sure {{Child.name}} stays up to date on her immunizations",
+        "text": "I’m making sure {{Child.name}} keeps up with immunizations",
         "next": 6,
         "money": 0,
         "time": 0,
@@ -125,7 +123,7 @@
         "intent": 3
       },
       {
-        "text": "But it's so rare that we don't need the vaccine anymore, right?",
+        "text": "We don't need the vaccine anymore, right?",
         "next": 5,
         "money": 0,
         "time": 0,
@@ -139,12 +137,11 @@
     "id": 5,
     "setting": "park",
     "speaker": "grandfather",
-    "image": "playground",
     "text": "You’ve read the news, right? It may not be as common as the flu, but many children catch measles every year because they haven’t been immunized. It’s very contagious and spreads quickly!",
     "moreInfo": "Outbreaks continue every year in the U.S. because unvaccinated people bring it home from travel in other countries and spread it to others in their community. If one person is infected, 9 out of every 10 unvaccinated children who come in contact with that person will catch it.",
     "choices": [
       {
-        "text": "Maybe I should have a conversation with {{Child.name}}'s doctor",
+        "text": "Maybe I should have a chat with {{Child.name}}'s doctor",
         "next": 6,
         "money": 0,
         "time": 0,

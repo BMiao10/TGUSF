@@ -29,6 +29,7 @@
 		4A2E46C32176DC3F00808299 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E46C22176DC3F00808299 /* FAQView.swift */; };
 		4A2E46C52176DC5000808299 /* FAQs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E46C42176DC5000808299 /* FAQs.swift */; };
 		4A309EE22174555600BA4750 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A309EE12174555600BA4750 /* IntroViewController.swift */; };
+		4A6367A32177818C00D639E4 /* scenario_kindergarten.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A6367A22177818B00D639E4 /* scenario_kindergarten.json */; };
 		4A7D8F49217711C200D190AF /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7D8F48217711C200D190AF /* SummaryViewController.swift */; };
 		4A83CEC621766B64004D1044 /* ChildAgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83CEC521766B64004D1044 /* ChildAgeView.swift */; };
 		4A83CEC821766BD8004D1044 /* ChildAgeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A83CEC721766BD8004D1044 /* ChildAgeView.xib */; };
@@ -78,6 +79,7 @@
 		4A2E46C22176DC3F00808299 /* FAQView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
 		4A2E46C42176DC5000808299 /* FAQs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQs.swift; sourceTree = "<group>"; };
 		4A309EE12174555600BA4750 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		4A6367A22177818B00D639E4 /* scenario_kindergarten.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = scenario_kindergarten.json; sourceTree = "<group>"; };
 		4A7D8F48217711C200D190AF /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		4A83CEC521766B64004D1044 /* ChildAgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildAgeView.swift; sourceTree = "<group>"; };
 		4A83CEC721766BD8004D1044 /* ChildAgeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildAgeView.xib; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		4A11A3FD216A88D700E9B9F2 /* Scenarios */ = {
 			isa = PBXGroup;
 			children = (
+				4A6367A22177818B00D639E4 /* scenario_kindergarten.json */,
 				406C706A21471BB700065B6F /* scenario_pertussis.json */,
 				4ADC99B52176C7D4009DD699 /* scenario_measles.json */,
 			);
@@ -317,6 +320,7 @@
 				40220DB5214748F500C4D4A6 /* coughAudio.mp3 in Resources */,
 				4A11A3FA21682DA900E9B9F2 /* ScoreView.xib in Resources */,
 				406C706B21471BB700065B6F /* scenario_pertussis.json in Resources */,
+				4A6367A32177818C00D639E4 /* scenario_kindergarten.json in Resources */,
 				4AF7137221669C010011C159 /* Podfile in Resources */,
 				4ADC99B62176C7D5009DD699 /* scenario_measles.json in Resources */,
 				4A16D324217700B400B85D5E /* MoreInfoViewController.xib in Resources */,

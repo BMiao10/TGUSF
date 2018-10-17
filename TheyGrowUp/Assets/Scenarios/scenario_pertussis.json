@@ -10,7 +10,7 @@
         "text": "Wave and say hello!",
         "next": 1,
         "money": 0,
-        "time": 0,
+        "time": -1,
         "health": 0,
         "community": 0,
         "intent": 0
@@ -19,7 +19,7 @@
         "text": "Ignore him and go inside",
         "next": 2,
         "money": 0,
-        "time": 0,
+        "time": -1,
         "health": 0,
         "community": 0,
         "intent": 0
@@ -30,13 +30,13 @@
     "id": 1,
     "setting": "neighborhood",
     "speaker": "neighbor",
-    "text": "John waves back and crosses the street for a quick chat. -1 time",
+    "text": "John waves back and crosses the street for a quick chat.",
     "choices": [
       {
         "text": "Ask him about his day",
         "next": 3,
         "money": 0,
-        "time": -1,
+        "time": 0,
         "health": 0,
         "community": 0,
         "intent": 0
@@ -47,13 +47,13 @@
     "id": 2,
     "setting": "neighborhood",
     "speaker": "neighbor",
-    "text": "Before you can slip away, John waves and crosses the street for a quick chat. You wave back and put on a polite smile. -1 time",
+    "text": "Before you can slip away, John waves and crosses the street for a quick chat. You wave back and put on a polite smile.",
     "choices": [
       {
         "text": "Ask him about his day",
         "next": 3,
         "money": 0,
-        "time": -1,
+        "time": 0,
         "health": 0,
         "community": 0,
         "intent": 0
@@ -73,7 +73,7 @@
         "time": 0,
         "health": 0,
         "community": 0,
-        "intent": 0
+        "intent": -1
       },
       {
         "text": "Could my child catch it?",
@@ -82,7 +82,7 @@
         "time": 0,
         "health": 0,
         "community": 0,
-        "intent": 0
+        "intent": 1
       }
     ]
   },
@@ -101,7 +101,7 @@
         "time": 0,
         "health": 0,
         "community": 0,
-        "intent": -1
+        "intent": 1
       },
       {
         "text": "I didn't get the vaccination",
@@ -137,7 +137,7 @@
         "time": 0,
         "health": 0,
         "community": 0,
-        "intent": 1
+        "intent": -1
       }
     ]
   },
@@ -145,7 +145,7 @@
     "id": 6,
     "setting": "neighborhood",
     "speaker": "neighbor",
-    "text": "That's great! Vaccination and herd immunity are some of the things, along with clean water and healthy food, that we recommend to improve community health. Speaking of community, are you bringing {{Child.name}} to the barbeque next week? (+1 community health)",
+    "text": "That's great! Vaccination and herd immunity are some of the things, along with clean water and healthy food, that we recommend to improve community health. Speaking of community, are you bringing {{Child.name}} to the barbeque next week?",
     "choices": [
       {
         "text": "Yes, definitely!",
@@ -157,7 +157,7 @@
         "intent": 1
       },
       {
-        "text": "No, we're going to see the Golden Gate Bridge!",
+        "text": "No, we're going to California!",
         "next": 10,
         "money": 0,
         "time": 0,
@@ -171,7 +171,7 @@
     "id": 7,
     "setting": "neighborhood",
     "speaker": "neighbor",
-    "text": "Whooping cough is highly contagious, and can be preventable with vaccination. You'll have to be careful to avoid getting {{Child.name}} sick until {{Child.pronoun.he}} can get vaccinated. (-1 health)",
+    "text": "Whooping cough is highly contagious, and can be preventable with vaccination. You'll have to be careful to avoid getting {{Child.name}} sick until {{Child.pronoun.he}} can get vaccinated. ",
     "choices": [
       {
         "text": "We'll talk to our doctor",
@@ -209,7 +209,7 @@
         "intent": -1
       },
       {
-        "text": "No, we're going to see the Golden Gate Bridge!",
+        "text": "No, we're going to California!",
         "next": 12,
         "money": 0,
         "time": 0,
@@ -283,7 +283,7 @@
         "time": 0,
         "health": 0,
         "community": 0,
-        "intent": 0
+        "intent": -1
       },
       {
         "text": "Does that mean {{Child.name}} could catch it?",
@@ -292,7 +292,7 @@
         "time": 0,
         "health": 0,
         "community": 0,
-        "intent": 0
+        "intent": 1
       }
     ]
   },
@@ -300,7 +300,7 @@
     "id": 13,
     "setting": "neighborhood",
     "image": "bbq",
-    "text": "Feeling reassured that there is little risk, your family has a great time at the barbecue! Everyone compliments the cornbread your family brought and {{Child.name}} had a lot of fun playing at the park! (+1 community health, +1 health)",
+    "text": "Feeling reassured that there is little risk, your family has a great time at the barbecue! Everyone compliments the cornbread your family brought and {{Child.name}} had a lot of fun playing at the park! ",
     "choices": [
       {
         "text": "Fantastic!",
@@ -317,7 +317,7 @@
     "id": 14,
     "setting": "neighborhood",
     "image": "bbq",
-    "text": "Your family has a great time at the barbecue, but you see a child coughing and worry it could be something serious, like whooping cough. You end up leaving the event early, and stocking up on chicken soup just in case. (-1 community health, -1 time)",
+    "text": "Your family has a great time at the barbecue, but you see a child coughing and worry it could be something serious, like whooping cough. You end up leaving the event early, and stocking up on chicken soup just in case. ",
     "choices": [
       {
         "text": "Return home",
@@ -334,7 +334,7 @@
     "id": 15,
     "setting": "neighborhood",
     "image": "caliPertussis",
-    "text": "The whooping cough outbreak gets worse, and you are grateful that {{Child.name}} is at little risk. (+1 health) As a precaution, you head home early, and are angry when you learn that the outbreak spread among unvaccinated children. (-1 money, -1 time)",
+    "text": "The whooping cough outbreak gets worse, and you are grateful that {{Child.name}} is at little risk. As a precaution, you head home early, and are angry when you learn that the outbreak spread among unvaccinated children. ",
     "choices": [
       {
         "text": "I'm just glad {{Child.name}} is safe...",
@@ -351,7 +351,7 @@
     "id": 16,
     "setting": "caliBad",
     "image": "caliPertussis",
-    "text": "When the whooping cough outbreak gets worse, you are afraid to stay. Later, when the news says the outbreak originated from an unvaccinated child, you feel angry that your family trip was ruined. (-1 money, -1 time, -1 community health).",
+    "text": "When the whooping cough outbreak gets worse, you are afraid to stay. Later, when the news says the outbreak originated from an unvaccinated child, you feel angry that your family trip was ruined. ",
     "choices": [
       {
         "text": "Oh no! :(",
@@ -373,10 +373,10 @@
       {
         "text": "We'll take our chances",
         "next": 16,
-        "money": 0,
-        "time": 0,
+        "money": -1,
+        "time": -1,
         "health": 0,
-        "community": 0,
+        "community": -1,
         "intent": 1
       },
       {
@@ -393,8 +393,9 @@
   {
     "id": 18,
     "setting": "hospital",
+    "audio": "coughAudio",
     "image": "ambulance",
-    "text": "It turns out the child had not been vaccinated and did have whooping cough, which {{Child.name}} caught. You spend the night in the hospital, listening to {{Child.pronoun.him}} struggle to breathe. (-2 health, -1 time, -1 money)",
+    "text": "It turns out the child had not been vaccinated and did have whooping cough, which {{Child.name}} caught. You spend the night in the hospital, listening to {{Child.pronoun.him}} struggle to breathe. ",
     "choices": [
       {
         "text": "I know this could have been prevented",

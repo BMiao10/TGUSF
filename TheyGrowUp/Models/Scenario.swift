@@ -18,7 +18,7 @@ struct Scenario {
     enum Names: String, Codable {
         case pertussis
         case measles
-        case kindergaren
+        case kindergarten
         
         var fileName: String {
             return "scenario_" + self.rawValue
@@ -29,8 +29,8 @@ struct Scenario {
             case .pertussis:
                 return .measles
             case .measles:
-                return .kindergaren
-            case .kindergaren:
+                return .kindergarten
+            case .kindergarten:
                 return nil
             }
         }
@@ -41,7 +41,7 @@ struct Scenario {
                 return (2, "Months")
             case .measles:
                 return (4, "Years")
-            case .kindergaren:
+            case .kindergarten:
                 return (6, "Years")
             }
         }
