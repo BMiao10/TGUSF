@@ -78,6 +78,12 @@ class GameViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         scoreView.hideLabels(true, animated: animated)
+        
+        // Configure button labels
+        choiceButtons.forEach {
+            $0.titleLabel?.adjustsFontSizeToFitWidth = true
+            $0.titleLabel?.minimumScaleFactor = 0.7
+        }
     }
     
     
@@ -135,6 +141,7 @@ class GameViewController: UIViewController {
             if let choiceText = scene.choice(index)?.text {
                 button.setTitle(choiceText, for: .normal)
                 button.isHidden = false
+                //button.sizeToFit()
             } else {
                 button.setTitle("", for: .normal)
                 button.isHidden = true
