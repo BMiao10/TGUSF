@@ -17,8 +17,7 @@ class AgeChangeViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var childImage: UIImageView!
     @IBOutlet weak var textLabel: UILabel!
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()

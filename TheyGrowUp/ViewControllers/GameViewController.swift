@@ -154,13 +154,18 @@ class GameViewController: UIViewController {
             journey?.addStep(scenarioId: scenario.id, scene: scenario.currentScene)
         }
         
-        // If this is the first scene for a new scenario, show the age change modal
-        if scenario.id != .pertussis && scenario.isAtStartOfScenario {
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AgeChangeViewController") as! AgeChangeViewController
-            vc.ageNumber = scenario.id.age.number
-            vc.ageScale = scenario.id.age.scale.lowercased()
-            vc.child = Parent.shared.child!
-            present(vc, animated: true, completion: nil)
+        if scenario.isAtStartOfScenario {
+            // If this is the first scene, we need to update the child age
+            setupChildAge()
+            
+            // If this is the first scene for a new scenario, show the age change modal
+            if scenario.id != .pertussis {
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AgeChangeViewController") as! AgeChangeViewController
+                vc.ageNumber = scenario.id.age.number
+                vc.ageScale = scenario.id.age.scale.lowercased()
+                vc.child = Parent.shared.child!
+                present(vc, animated: true, completion: nil)
+            }
         }
     }
     
@@ -186,7 +191,8 @@ class GameViewController: UIViewController {
             } else {
                 journey?.finish()
                 // Advance to summary screen
-                showFAQs()
+                showSummary()
+                //showFAQs()
             }
         } else {
             let nextSceneId = scenario.currentScene.choices[choice].next
@@ -216,6 +222,17 @@ class GameViewController: UIViewController {
     
     @IBAction func testShowFAQs(_ sender: Any) {
         showFAQs()
+    }
+    
+    @IBAction func testShowSummary(_ sender: Any) {
+        showSummary()
+    }
+    
+    
+    fileprivate func showSummary () {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SummaryViewController") as! SummaryViewController
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true, completion: nil)
     }
     
     fileprivate func showFAQs () {

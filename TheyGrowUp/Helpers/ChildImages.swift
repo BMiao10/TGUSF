@@ -15,8 +15,8 @@ enum ChildImages: String {
     case child
     
     static func forAge(number: Int, scale: String) -> ChildImages {
-        switch scale {
-        case "Year", "Years":
+        switch scale.lowercased() {
+        case "year", "years":
             return number >= 5 ? .child : .toddler
         default:
             return .baby

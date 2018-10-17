@@ -29,6 +29,7 @@
 		4A2E46C32176DC3F00808299 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E46C22176DC3F00808299 /* FAQView.swift */; };
 		4A2E46C52176DC5000808299 /* FAQs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E46C42176DC5000808299 /* FAQs.swift */; };
 		4A309EE22174555600BA4750 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A309EE12174555600BA4750 /* IntroViewController.swift */; };
+		4A7D8F49217711C200D190AF /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7D8F48217711C200D190AF /* SummaryViewController.swift */; };
 		4A83CEC621766B64004D1044 /* ChildAgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83CEC521766B64004D1044 /* ChildAgeView.swift */; };
 		4A83CEC821766BD8004D1044 /* ChildAgeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A83CEC721766BD8004D1044 /* ChildAgeView.xib */; };
 		4A8F45AE217259C0008D69B1 /* GameTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F45AD217259C0008D69B1 /* GameTextView.swift */; };
@@ -77,6 +78,7 @@
 		4A2E46C22176DC3F00808299 /* FAQView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
 		4A2E46C42176DC5000808299 /* FAQs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQs.swift; sourceTree = "<group>"; };
 		4A309EE12174555600BA4750 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		4A7D8F48217711C200D190AF /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		4A83CEC521766B64004D1044 /* ChildAgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildAgeView.swift; sourceTree = "<group>"; };
 		4A83CEC721766BD8004D1044 /* ChildAgeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildAgeView.xib; sourceTree = "<group>"; };
 		4A8F45AD217259C0008D69B1 /* GameTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTextView.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				4ADC99B12176B5D3009DD699 /* AgeChangeViewController.swift */,
 				4A2E46C02176DC3100808299 /* FAQViewController.swift */,
 				4A16D321217700B400B85D5E /* MoreInfoViewController.swift */,
+				4A7D8F48217711C200D190AF /* SummaryViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				4AFBCC55216C5E8300054777 /* ScoreKeeper.swift in Sources */,
 				4067CAAB20FAE47900C6A7FE /* TheyGrowUp.xcdatamodeld in Sources */,
 				4AFBCC53216C00CD00054777 /* StringRenderService.swift in Sources */,
+				4A7D8F49217711C200D190AF /* SummaryViewController.swift in Sources */,
 				4A8F45AE217259C0008D69B1 /* GameTextView.swift in Sources */,
 				4AECB6482166B173004CB1EC /* Child.swift in Sources */,
 				4A11A3F62168291100E9B9F2 /* ScoreView.swift in Sources */,

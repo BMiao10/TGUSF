@@ -88,4 +88,17 @@ class FAQViewController: UIViewController {
             items.append(FAQItem(question: customFAQs.questions[i], answer: customFAQs.answers[i] ))
         }
     }
+    
+    @IBAction func restartGame(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        vc.modalTransitionStyle = .flipHorizontal
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func emailFAQs(_ sender: Any) {
+        let cdc = "https://www.cdc.gov/vaccines/parents/parent-questions.html"
+        if let url = URL(string: "mailto:?subject=Vaccination%20FAQs&body=\(cdc)") {
+            UIApplication.shared.open(url)
+        }
+    }
 }

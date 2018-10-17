@@ -197,6 +197,7 @@ public class FAQView: UIView {
         self.titleLabel.font = configuration.titleTextFont
         self.titleLabel.backgroundColor = configuration.titleLabelBackgroundColor
         self.titleLabel.text = title
+        self.titleLabel.isUserInteractionEnabled = true
     }
     
     private func setupTableView() {
