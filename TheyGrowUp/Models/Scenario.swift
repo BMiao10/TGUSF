@@ -15,7 +15,7 @@ struct Scenario {
         case DataCorrupted(url: URL)
     }
     
-    enum Names: String {
+    enum Names: String, Codable {
         case pertussis
         case measles
         case kindergaren
@@ -48,6 +48,10 @@ struct Scenario {
     }
     
     private(set) var id: Names
+    // Convenience naming
+    var name: Names {
+        return id
+    }
     
     var scenes: [Int: Scene]!
     

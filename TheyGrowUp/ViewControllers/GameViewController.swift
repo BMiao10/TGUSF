@@ -49,28 +49,25 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         choiceButtons = [choiceA, choiceB, choiceC]
-
-        // TODO: Handle any load errors gracefully
-        scenario = try! Scenario(named: scenarioName)
-        
-        // Load child age info
-        let age = scenario.id.age
-        childAge.ageNumber = age.number
-        childAge.ageScale = age.scale
-        childAge.gender = Parent.shared.child!.gender
         
         if shouldResumeJourney {
             // Load scene where user left off
             journey = Parent.shared.journeys.last
+            
+            // TODO: Handle any load errors gracefully
+            scenario = try! Scenario(named: journey!.currentStep!.scenarioId)
             scenario.advance(to: journey!.currentStep!.baseSceneId)
             
-            // Load up the scoreView
+            // Sync up the scoreView
             scoreView.syncProgress(with: journey!.scoreKeeper)
             
             // Load up where we left off
             loadScene( scenario.currentScene, addToJourney: false )
         } else {
             // Create new journey and will load first scene
+            // TODO: Handle any load errors gracefully
+            scenario = try! Scenario(named: scenarioName)
+            
             journey = Parent.shared.addJourney()
             loadScene( scenario.currentScene )
         }
@@ -84,6 +81,14 @@ class GameViewController: UIViewController {
             $0.titleLabel?.adjustsFontSizeToFitWidth = true
             $0.titleLabel?.minimumScaleFactor = 0.7
         }
+    }
+    
+    fileprivate func setupChildAge () {
+        // Load child age info
+        let age = scenario.name.age
+        childAge.ageNumber = age.number
+        childAge.ageScale = age.scale
+        childAge.gender = Parent.shared.child!.gender
     }
     
     
@@ -135,7 +140,6 @@ class GameViewController: UIViewController {
             if let choiceText = scene.choice(index)?.text {
                 button.setTitle(choiceText, for: .normal)
                 button.isHidden = false
-                //button.sizeToFit()
             } else {
                 button.setTitle("", for: .normal)
                 button.isHidden = true
@@ -147,7 +151,7 @@ class GameViewController: UIViewController {
         
         // Update our journey
         if addToJourney {
-            journey?.addStep(with: scenario.currentScene)
+            journey?.addStep(scenarioId: scenario.id, scene: scenario.currentScene)
         }
         
         // If this is the first scene for a new scenario, show the age change modal

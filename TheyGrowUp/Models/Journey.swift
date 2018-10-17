@@ -22,6 +22,8 @@ class Journey: TimeTrackable, Codable {
     typealias JourneySteps = [JourneyStep]
     private var steps = JourneySteps()
     
+    private(set) var scenariosPlayed: [Scenario.Names] = []
+    
     private(set) var isFinished: Bool = false
     
     private(set) var intent: Int = 0
@@ -40,7 +42,28 @@ class Journey: TimeTrackable, Codable {
     func changeIntent(by delta:Int) {
         intent += delta
     }
+    
+    func setResponseForCurrentStep(_ choice: Int, with scene:Scene) {
+        setResponse(choice, for: currentStep!, with: scene)
+    }
+    
+    func setResponse(_ choice: Int, for step: JourneyStep, with scene:Scene) {
+        currentStep?.response = choice
+        
+        // Update our ScoreKeeper
+        scoreKeeper.changeScores( scene.choice(choice)!.scoreDeltas() )
+        
+        // Update our intent to vaccinate tracker
+        changeIntent(by: scene.choice(choice)!.intent)
+    }
 
+    private func addScenario(_ scenario: Scenario.Names) {
+        if scenariosPlayed.contains(scenario) {
+            return
+        } else {
+            scenariosPlayed.append(scenario)
+        }
+    }
 }
 
 extension Journey: Collection {
@@ -67,9 +90,9 @@ extension Journey: Collection {
         if !isFinished { steps.append(step) }
     }
     
-    func addStep(with scene:Scene) {
+    func addStep(scenarioId: Scenario.Names, scene: Scene) {
         if !isFinished {
-            let step = JourneyStep(baseScene: scene)
+            let step = JourneyStep(scenarioId: scenarioId, baseScene: scene)
             
             // Set up our steps' relationships
             steps.last?.next = step
@@ -79,22 +102,11 @@ extension Journey: Collection {
             steps.last?.endTime = Date()
             endTime = Date()
             
+            // Add scenario to our tracking array
+            addScenario(scenarioId)
+            
             append(step)
         }
-    }
-    
-    func setResponseForCurrentStep(_ choice: Int, with scene:Scene) {
-        setResponse(choice, for: currentStep!, with: scene)
-    }
-    
-    func setResponse(_ choice: Int, for step: JourneyStep, with scene:Scene) {
-        currentStep?.response = choice
-        
-        // Update our ScoreKeeper
-        scoreKeeper.changeScores( scene.choice(choice)!.scoreDeltas() )
-        
-        // Update our intent to vaccinate tracker
-        changeIntent(by: scene.choice(choice)!.intent)
     }
 
     var length: Int {

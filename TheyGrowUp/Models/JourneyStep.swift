@@ -12,6 +12,7 @@ class JourneyStep: TimeTrackable, Codable {
     
     enum CodingKeys: String, CodingKey {
         case id
+        case scenarioId
         case baseSceneId
         case startTime
         case endTime
@@ -24,6 +25,7 @@ class JourneyStep: TimeTrackable, Codable {
     weak var previous: JourneyStep?
     weak var next: JourneyStep?
     
+    let scenarioId: Scenario.Names
     let baseSceneId: Int
     
     // TODO Implement type checking
@@ -37,7 +39,8 @@ class JourneyStep: TimeTrackable, Codable {
     let startTime = Date()
     var endTime = Date()
     
-    init( baseScene: Scene ){
+    init( scenarioId: Scenario.Names, baseScene: Scene ){
+        self.scenarioId = scenarioId
         self.baseSceneId = baseScene.id
     }
     
