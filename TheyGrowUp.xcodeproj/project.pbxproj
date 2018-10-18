@@ -17,6 +17,9 @@
 		4067CAAD20FAE47A00C6A7FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4067CAAC20FAE47A00C6A7FE /* Assets.xcassets */; };
 		4067CAB020FAE47A00C6A7FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4067CAAE20FAE47A00C6A7FE /* LaunchScreen.storyboard */; };
 		406C706B21471BB700065B6F /* scenario_pertussis.json in Resources */ = {isa = PBXBuildFile; fileRef = 406C706A21471BB700065B6F /* scenario_pertussis.json */; };
+		4A0B597E21781C47009E6AA3 /* cookingAudio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4A0B597B21781C47009E6AA3 /* cookingAudio.mp3 */; };
+		4A0B597F21781C47009E6AA3 /* parkAudio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4A0B597C21781C47009E6AA3 /* parkAudio.mp3 */; };
+		4A0B598021781C47009E6AA3 /* carAudio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4A0B597D21781C47009E6AA3 /* carAudio.mp3 */; };
 		4A11A3EF2167F96500E9B9F2 /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A11A3EE2167F96500E9B9F2 /* Scenario.swift */; };
 		4A11A3F12168009E00E9B9F2 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A11A3F02168009E00E9B9F2 /* Scene.swift */; };
 		4A11A3F62168291100E9B9F2 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A11A3F52168291100E9B9F2 /* ScoreView.swift */; };
@@ -67,6 +70,9 @@
 		4067CAAF20FAE47A00C6A7FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4067CAB120FAE47A00C6A7FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		406C706A21471BB700065B6F /* scenario_pertussis.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scenario_pertussis.json; sourceTree = "<group>"; };
+		4A0B597B21781C47009E6AA3 /* cookingAudio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cookingAudio.mp3; sourceTree = "<group>"; };
+		4A0B597C21781C47009E6AA3 /* parkAudio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = parkAudio.mp3; sourceTree = "<group>"; };
+		4A0B597D21781C47009E6AA3 /* carAudio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = carAudio.mp3; sourceTree = "<group>"; };
 		4A11A3EE2167F96500E9B9F2 /* Scenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
 		4A11A3F02168009E00E9B9F2 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		4A11A3F52168291100E9B9F2 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
@@ -179,6 +185,9 @@
 		4A11A3FC216A88CE00E9B9F2 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				4A0B597D21781C47009E6AA3 /* carAudio.mp3 */,
+				4A0B597B21781C47009E6AA3 /* cookingAudio.mp3 */,
+				4A0B597C21781C47009E6AA3 /* parkAudio.mp3 */,
 				4AFBCC50216BF7F700054777 /* Better-Days-Ahead.mp3 */,
 				40220DB4214748F500C4D4A6 /* coughAudio.mp3 */,
 			);
@@ -319,14 +328,17 @@
 			files = (
 				40220DB5214748F500C4D4A6 /* coughAudio.mp3 in Resources */,
 				4A11A3FA21682DA900E9B9F2 /* ScoreView.xib in Resources */,
+				4A0B598021781C47009E6AA3 /* carAudio.mp3 in Resources */,
 				406C706B21471BB700065B6F /* scenario_pertussis.json in Resources */,
 				4A6367A32177818C00D639E4 /* scenario_kindergarten.json in Resources */,
 				4AF7137221669C010011C159 /* Podfile in Resources */,
 				4ADC99B62176C7D5009DD699 /* scenario_measles.json in Resources */,
+				4A0B597E21781C47009E6AA3 /* cookingAudio.mp3 in Resources */,
 				4A16D324217700B400B85D5E /* MoreInfoViewController.xib in Resources */,
 				4067CAB020FAE47A00C6A7FE /* LaunchScreen.storyboard in Resources */,
 				4067CAAD20FAE47A00C6A7FE /* Assets.xcassets in Resources */,
 				4A2E46BF2176D77F00808299 /* faqs.json in Resources */,
+				4A0B597F21781C47009E6AA3 /* parkAudio.mp3 in Resources */,
 				4067CAA820FAE47900C6A7FE /* Main.storyboard in Resources */,
 				4AFBCC51216BF7F800054777 /* Better-Days-Ahead.mp3 in Resources */,
 				4A83CEC821766BD8004D1044 /* ChildAgeView.xib in Resources */,
@@ -579,13 +591,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8J3E2DAF69;
+				DEVELOPMENT_TEAM = 75HK3J4GG5;
 				INFOPLIST_FILE = TheyGrowUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TGUSF.Vaccines;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tgusf.vaxgame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -598,13 +610,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8J3E2DAF69;
+				DEVELOPMENT_TEAM = 75HK3J4GG5;
 				INFOPLIST_FILE = TheyGrowUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TGUSF.Vaccines;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tgusf.vaxgame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 2;
