@@ -25,7 +25,7 @@ class SetupViewController: UIViewController {
     
     override func viewDidLoad() {
         // Customize baby image
-        let fileName = gender == .male ? "setupBabyBoy" : "setupBabyGirl"
+        let fileName = gender == .male ? "babyBoy" : "babyGirl"
         babyImage.image = UIImage(named: fileName)
         
         // Customize text

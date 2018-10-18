@@ -53,6 +53,10 @@ class IntroViewController: UIViewController {
         animateMe()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        sceneAudioPlayer?.fadeOut()
+    }
+    
     func animateMe() {
         //animate text box
         //initialize baby age/ageScale

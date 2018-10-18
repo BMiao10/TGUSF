@@ -40,7 +40,7 @@
     "id": 1,
     "setting": "park",
     "image": "playground",
-    "text": "You, {{Child.name}}, and her grandpa are playing by the swings, and the air is filled with laughter. \"Grandpa?\" {{Child.name}} stops playing for a minute. \"What was it like when you were a little boy?\"",
+    "text": "You, {{Child.name}}, and {{Child.pronoun.his}} grandpa are playing by the swings, and the air is filled with laughter. \"Grandpa?\" {{Child.name}} stops playing for a minute. \"What was it like when you were a little boy?\"",
     "choices": [
       {
         "text": "Next",
@@ -75,7 +75,7 @@
     "id": 3,
     "setting": "park",
     "speaker": "grandfather",
-    "text": "Well...I’ll never forget the day my best friend didn’t show up to play. He had measles, which caused him to catch pneumonia, and he was in the hospital for nearly two weeks. I was so scared.",
+    "text": "Well... I’ll never forget the day my best friend didn’t show up to play. He had measles, which caused him to catch pneumonia, and he was in the hospital for nearly two weeks. I was so scared.",
     "choices": [
       {
         "text": "Measles is nothing to be scared of...",

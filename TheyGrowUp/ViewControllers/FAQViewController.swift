@@ -12,6 +12,8 @@ class FAQViewController: UIViewController {
 
     var items = [FAQItem]()
     var FAQSet = [FAQs]()
+    @IBOutlet weak var emailButton: UIButton!
+    @IBOutlet weak var playAgainButton: UIButton!
     
     enum FAQError: Error {
         case FileUnavailable(fileName: String)
@@ -56,7 +58,7 @@ class FAQViewController: UIViewController {
         // Set color for links and detected data
         faqView.tintColor = UIColor.blue
         
-        self.view.addSubview(faqView)
+        self.view.insertSubview(faqView, belowSubview: emailButton)
     }
     
     func parseQuestionSet(fileName: String) throws {

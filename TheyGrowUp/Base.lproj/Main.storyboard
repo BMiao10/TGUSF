@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -923,6 +922,10 @@ From {{Child.pronoun.his}} birth to 18 years old, your choices led to…</string
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DrQ-vz-GNU"/>
                     </view>
+                    <connections>
+                        <outlet property="emailButton" destination="rOr-6z-x3b" id="PBq-kb-8Oh"/>
+                        <outlet property="playAgainButton" destination="46b-ud-No3" id="jWg-LY-A1C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rqe-6L-Sa5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
