@@ -42,7 +42,7 @@ class IntroViewController: UIViewController {
         let fileName = Parent.shared.child!.gender == .male ? "babyBoyGame" : "babyGirlGame"
         babyImage.image = UIImage(named: fileName)
         childAge.ageNumber = 2
-        childAge.ageScale = "Days"
+        childAge.ageScale = "Months"
         childAge.gender = Parent.shared.child!.gender
 
         // Customize text

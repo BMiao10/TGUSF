@@ -76,6 +76,8 @@ class GameViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         scoreView.hideLabels(true, animated: animated)
         
+        //TODO: move 
+        
         // Configure button labels
         choiceButtons.forEach {
             $0.titleLabel?.adjustsFontSizeToFitWidth = true
