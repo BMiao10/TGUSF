@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import AVFoundation
 
 class IntroViewController: UIViewController {
-
+    private weak var sceneAudioPlayer: AudioPlayer?
 
     @IBOutlet weak var textbox: UIImageView!
     @IBOutlet weak var babyImage: UIImageView!
@@ -38,7 +39,7 @@ class IntroViewController: UIViewController {
         scoreView.setProgress(for: .community, score: 0)
         
         // Customize baby image
-        let fileName = Parent.shared.child!.gender == .male ? "babyBoy" : "babyGirl"
+        let fileName = Parent.shared.child!.gender == .male ? "babyBoyGame" : "babyGirlGame"
         babyImage.image = UIImage(named: fileName)
         childAge.ageNumber = 2
         childAge.ageScale = "Days"
@@ -62,11 +63,13 @@ class IntroViewController: UIViewController {
         })
         
         //animate text and image in textbox
-        //TODO:add baby sound
         UIView.animate(withDuration: 1.1, delay: 0.7, animations: {
             self.babyImage.alpha = 1.0            
             self.textboxText.alpha = 1.0
         })
+        
+        // Play baby audio
+        sceneAudioPlayer = try? AudioPlayerManager.play(fileName: "babyLaughAudio.mp3", discardOnCompletion: true)
         
         //animate scoring bars
         self.scoreView.setProgress(for: .health, score: ScoreKeeper.maxScore)
