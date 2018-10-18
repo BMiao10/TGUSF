@@ -1,420 +1,420 @@
 [
-    {
-        "id": 0,
-        "setting": "neighborhood",
-        "audio": "carAudio",
-        "image": "neighborhood",
-        "text": "You pull into your driveway, excited to see {{Child.name}} after such a long day. Your neighbor, John, who works as a nurse at the local hospital, has also just arrived home. ",
-        "choices": [
-            {
-                "text": "Wave and say hello!",
-                "next": 1,
-                "money": 0,
-                "time": -1,
-                "health": 0,
-                "community": 0,
-                "intent": 0
-            },
-            {
-                "text": "Ignore him and go inside",
-                "next": 2,
-                "money": 0,
-                "time": -1,
-                "health": 0,
-                "community": 0,
-                "intent": 0
-            }
-        ]
-    },
-    {
-        "id": 1,
-        "setting": "neighborhood",
-        "speaker": "neighbor",
-        "text": "John waves back and crosses the street for a quick chat.",
-        "choices": [
-            {
-                "text": "Ask him about his day",
-                "next": 3,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 0
-            }
-        ]
-    },
-    {
-        "id": 2,
-        "setting": "neighborhood",
-        "speaker": "neighbor",
-        "text": "Before you can slip away, John waves and crosses the street for a quick chat. You wave back and put on a polite smile.",
-        "choices": [
-            {
-                "text": "Ask him about his day",
-                "next": 3,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 0
-            }
-        ]
-    },
-    {
-        "id": 3,
-        "setting": "neighborhood",
-        "speaker": "neighbor",
-        "text": "My day? Not great, actually. There was a baby with whooping cough who we're all pretty worried about. She caught it from her brother, who wasn't vaccinated.",
-        "choices": [
-            {
-                "text": "How bad could a cough be?",
-                "next": 4,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": -1
-            },
-            {
-                "text": "Could my child catch it?",
-                "next": 5,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 1
-            }
-        ]
-    },
-    {
-        "id": 4,
-        "setting": "neighborhood",
-        "speaker": "neighbor",
-        "audio": "coughAudio",
-        "text": "This is what whooping sounds like. In infants, it can cause some severe complications like pneumonia! Infants under two months rely on herd immunity or their mother's vaccination during pregnancy to keep them safe.",
-        "moreInfo": "Herd immunity occurs when enough people are immune to a disease (through vaccination and/or prior illness) to make its spread from person to person unlikely. People who contribute to herd immunity help prevent the disease from spreading to newborns or those with chonic illnesses who can't be vaccinated. ",
-        "choices": [
-            {
-                "text": "Our family is all vaccinated!",
-                "next": 6,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 1
-            },
-            {
-                "text": "I didn't get the vaccination",
-                "next": 7,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": -1
-            }
-        ]
-    },
-    {
-        "id": 5,
-        "setting": "neighborhood",
-        "speaker": "neighbor",
-        "text": "Since infants don't get the TDaP vaccine until they are 2 months old, they rely on herd immunity or their mother's vaccination during pregnancy to keep them safe. After all, it takes a village to raise a child!",
-        "moreInfo": "Infants and children should receive 5 doses of TDaP (at 2, 4, and 6 months, between 15-18 months, and between 4-6 years of age). Pregnant women who receive the vaccine in their third trimester can transfer protective antibodies to their newborns.",
-        "choices": [
-            {
-                "text": "Our family is all vaccinated!",
-                "next": 6,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 1
-            },
-            {
-                "text": "I didn't get the vaccination",
-                "next": 7,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": -1
-            }
-        ]
-    },
-    {
-        "id": 6,
-        "setting": "neighborhood",
-        "speaker": "neighbor",
-        "text": "That's great! Vaccination and herd immunity are some of the things, along with clean water and healthy food, that we recommend to improve community health. Speaking of community, are you bringing {{Child.name}} to the barbeque next week?",
-        "choices": [
-            {
-                "text": "Yes, definitely!",
-                "next": 9,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 1,
-                "intent": 1
-            },
-            {
-                "text": "No, we're going to California!",
-                "next": 10,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 1,
-                "intent": 1
-            }
-        ]
-    },
-    {
-        "id": 7,
-        "setting": "neighborhood",
-        "speaker": "neighbor",
-        "text": "Whooping cough is highly contagious, and can be preventable with vaccination. You'll have to be careful to avoid getting {{Child.name}} sick until {{Child.pronoun.he}} can get vaccinated. ",
-        "choices": [
-            {
-                "text": "We'll talk to our doctor",
-                "next": 6,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": -1
-            },
-            {
-                "text": "I don't plan on vaccinating {{Child.name}}",
-                "next": 8,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": -1
-            }
-        ]
-    },
-    {
-        "id": 8,
-        "setting": "neighborhood",
-        "speaker": "neighbor",
-        "text": "That is your choice, but I still recommend you do some more research. By the way, are you planning to go to that community barbeque next week?",
-        "choices": [
-            {
-                "text": "Yes, definitely!",
-                "next": 11,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": -1
-            },
-            {
-                "text": "No, we're going to California!",
-                "next": 12,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": -1
-            }
-        ]
-    },
-    {
-        "id": 9,
-        "setting": "neighborhood",
-        "speaker": "neighbor",
-        "text": "Great, then I'll see you and {{Child.name}} there!",
-        "choices": [
-            {
-                "text": "See you there",
-                "next": 13,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 0
-            }
-        ]
-    },
-    {
-        "id": 10,
-        "setting": "neighborhood",
-        "speaker": "neighbor",
-        "text": "That sounds fun! I heard there might be a possible whooping cough outbreak, so just be careful. But {{Child.name}} should be fine, since your whole family was vaccinated before {{Child.pronoun.he}} was born.",
-        "choices": [
-            {
-                "text": "Sounds great! Thanks John!",
-                "next": 15,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 0
-            }
-        ]
-    },
-    {
-        "id": 11,
-        "setting": "neighborhood",
-        "speaker": "neighbor",
-        "text": "Great, then I'll see you and {{Child.name}} there!",
-        "choices": [
-            {
-                "text": "See you there",
-                "next": 14,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 0
-            }
-        ]
-    },
-    {
-        "id": 12,
-        "setting": "neighborhood",
-        "speaker": "neighbor",
-        "text": "That sounds fun! But wasn't there news about a possible whooping cough outbreak?",
-        "choices": [
-            {
-                "text": "{{Child.name}} won't get sick!",
-                "next": 16,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": -1
-            },
-            {
-                "text": "Does that mean {{Child.name}} could catch it?",
-                "next": 17,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 1
-            }
-        ]
-    },
-    {
-        "id": 13,
-        "setting": "neighborhood",
-        "image": "bbq",
-        "text": "Feeling reassured that there is little risk, your family has a great time at the barbecue! Everyone compliments the cornbread your family brought and {{Child.name}} had a lot of fun playing at the park! ",
-        "choices": [
-            {
-                "text": "Fantastic!",
-                "next": -1,
-                "money": 0,
-                "time": 0,
-                "health": 1,
-                "community": 1,
-                "intent": 0
-            }
-        ]
-    },
-    {
-        "id": 14,
-        "setting": "neighborhood",
-        "image": "bbq",
-        "text": "Your family has a great time at the barbecue, but you see a child coughing and worry it could be something serious, like whooping cough. You end up leaving the event early, and stocking up on chicken soup just in case. ",
-        "choices": [
-            {
-                "text": "Return home",
-                "next": 18,
-                "money": 0,
-                "time": -1,
-                "health": 0,
-                "community": -1,
-                "intent": 0
-            }
-        ]
-    },
-    {
-        "id": 15,
-        "setting": "neighborhood",
-        "image": "caliPertussis",
-        "text": "The whooping cough outbreak gets worse, and you are grateful that {{Child.name}} is at little risk. As a precaution, you head home early, and are angry when you learn that the outbreak spread among unvaccinated children. ",
-        "choices": [
-            {
-                "text": "I'm just glad {{Child.name}} is safe...",
-                "next": -1,
-                "money": -1,
-                "time": -1,
-                "health": 1,
-                "community": 0,
-                "intent": 0
-            }
-        ]
-    },
-    {
-        "id": 16,
-        "setting": "caliBad",
-        "image": "caliPertussis",
-        "text": "When the whooping cough outbreak gets worse, you are afraid to stay. Later, when the news says the outbreak originated from an unvaccinated child, you feel angry that your family trip was ruined. ",
-        "choices": [
-            {
-                "text": "Oh no! :(",
-                "next": -1,
-                "money": -1,
-                "time": -1,
-                "health": 0,
-                "community": -1,
-                "intent": -1
-            }
-        ]
-    },
-    {
-        "id": 17,
-        "setting": "neighborhood",
-        "speaker": "neighbor",
-        "text": "It's definitely possible, since {{Child.pronoun.he}} has not been vaccinated.",
-        "choices": [
-            {
-                "text": "We'll take our chances",
-                "next": 16,
-                "money": -1,
-                "time": -1,
-                "health": 0,
-                "community": -1,
-                "intent": 1
-            },
-            {
-                "text": "I guess we could go to the barbecue instead...",
-                "next": 11,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 1
-            }
-        ]
-    },
-    {
-        "id": 18,
-        "setting": "hospital",
-        "audio": "coughAudio",
-        "image": "ambulance",
-        "text": "It turns out the child had not been vaccinated and did have whooping cough, which {{Child.name}} caught. You spend the night in the hospital, listening to {{Child.pronoun.him}} struggle to breathe. ",
-        "choices": [
-            {
-                "text": "I know this could have been prevented",
-                "next": -1,
-                "money": -1,
-                "time": -1,
-                "health": -1,
-                "community": 0,
-                "intent": 0
-            },
-            {
-                "text": "I'm still hesitant to vaccinate",
-                "next": -1,
-                "money": -1,
-                "time": -1,
-                "health": -1,
-                "community": 0,
-                "intent": 0
-            }
-        ]
-    }
+  {
+    "id": 0,
+    "setting": "neighborhood",
+    "audio": "carAudio",
+    "image": "neighborhood",
+    "text": "You pull into your driveway, excited to see {{Child.name}} after such a long day. Your neighbor, John, who works as a nurse at the local hospital, has also just arrived home. ",
+    "choices": [
+      {
+        "text": "Wave and say hello!",
+        "next": 1,
+        "money": 0,
+        "time": -1,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      },
+      {
+        "text": "Ignore him and go inside",
+        "next": 2,
+        "money": 0,
+        "time": -1,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "setting": "neighborhood",
+    "speaker": "neighbor",
+    "text": "John waves back and crosses the street for a quick chat.",
+    "choices": [
+      {
+        "text": "Ask him about his day",
+        "next": 3,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "setting": "neighborhood",
+    "speaker": "neighbor",
+    "text": "Before you can slip away, John waves and crosses the street for a quick chat. You wave back and put on a polite smile.",
+    "choices": [
+      {
+        "text": "Ask him about his day",
+        "next": 3,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "setting": "neighborhood",
+    "speaker": "neighbor",
+    "text": "My day? Not great, actually. There was a baby with whooping cough who we're all pretty worried about. She caught it from her brother, who wasn't vaccinated.",
+    "choices": [
+      {
+        "text": "How bad could a cough be?",
+        "next": 4,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": -1
+      },
+      {
+        "text": "Could my child catch it?",
+        "next": 5,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 1
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "setting": "neighborhood",
+    "speaker": "neighbor",
+    "audio": "coughAudio",
+    "text": "This is what whooping sounds like. In infants, it can cause some severe complications like pneumonia! Infants under two months rely on herd immunity or their mother's vaccination during pregnancy to keep them safe.",
+    "moreInfo": "Herd immunity occurs when enough people are immune to a disease (through vaccination and/or prior illness) to make its spread from person to person unlikely. People who contribute to herd immunity help prevent the disease from spreading to newborns or those with chonic illnesses who can't be vaccinated. ",
+    "choices": [
+      {
+        "text": "Our family is all vaccinated!",
+        "next": 6,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 1
+      },
+      {
+        "text": "I didn't get the vaccination",
+        "next": 7,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": -1
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "setting": "neighborhood",
+    "speaker": "neighbor",
+    "text": "Since infants don't get the TDaP vaccine until they are 2 months old, they rely on herd immunity or their mother's vaccination during pregnancy to keep them safe. After all, it takes a village to raise a child!",
+    "moreInfo": "Infants and children should receive 5 doses of TDaP (at 2, 4, and 6 months, between 15-18 months, and between 4-6 years of age). Pregnant women who receive the vaccine in their third trimester can transfer protective antibodies to their newborns.",
+    "choices": [
+      {
+        "text": "Our family is all vaccinated!",
+        "next": 6,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 1
+      },
+      {
+        "text": "I didn't get the vaccination",
+        "next": 7,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": -1
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "setting": "neighborhood",
+    "speaker": "neighbor",
+    "text": "That's great! Vaccination and herd immunity are some of the things, along with clean water and healthy food, that we recommend to improve community health. Speaking of community, are you bringing {{Child.name}} to the barbeque next week?",
+    "choices": [
+      {
+        "text": "Yes, definitely!",
+        "next": 9,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 1,
+        "intent": 1
+      },
+      {
+        "text": "No, we're going to California!",
+        "next": 10,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 1,
+        "intent": 1
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "setting": "neighborhood",
+    "speaker": "neighbor",
+    "text": "Whooping cough is highly contagious, and can be preventable with vaccination. You'll have to be careful to avoid getting {{Child.name}} sick until {{Child.pronoun.he}} can get vaccinated. ",
+    "choices": [
+      {
+        "text": "We'll talk to our doctor",
+        "next": 6,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": -1
+      },
+      {
+        "text": "I don't plan on vaccinating {{Child.name}}",
+        "next": 8,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": -1
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "setting": "neighborhood",
+    "speaker": "neighbor",
+    "text": "That is your choice, but I still recommend you do some more research. By the way, are you planning to go to that community barbeque next week?",
+    "choices": [
+      {
+        "text": "Yes, definitely!",
+        "next": 11,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": -1
+      },
+      {
+        "text": "No, we're going to California!",
+        "next": 12,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": -1
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "setting": "neighborhood",
+    "speaker": "neighbor",
+    "text": "Great, then I'll see you and {{Child.name}} there!",
+    "choices": [
+      {
+        "text": "See you there",
+        "next": 13,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "setting": "neighborhood",
+    "speaker": "neighbor",
+    "text": "That sounds fun! I heard there might be a possible whooping cough outbreak, so just be careful. But {{Child.name}} should be fine, since your whole family was vaccinated before {{Child.pronoun.he}} was born.",
+    "choices": [
+      {
+        "text": "Sounds great! Thanks John!",
+        "next": 15,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "setting": "neighborhood",
+    "speaker": "neighbor",
+    "text": "Great, then I'll see you and {{Child.name}} there!",
+    "choices": [
+      {
+        "text": "See you there",
+        "next": 14,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "setting": "neighborhood",
+    "speaker": "neighbor",
+    "text": "That sounds fun! But wasn't there news about a possible whooping cough outbreak?",
+    "choices": [
+      {
+        "text": "{{Child.name}} won't get sick!",
+        "next": 16,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": -1
+      },
+      {
+        "text": "Does that mean {{Child.name}} could catch it?",
+        "next": 17,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 1
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "setting": "neighborhood",
+    "image": "bbq",
+    "text": "Feeling reassured that there is little risk, your family has a great time at the barbecue! Everyone compliments the cornbread your family brought and {{Child.name}} had a lot of fun playing at the park! ",
+    "choices": [
+      {
+        "text": "Fantastic!",
+        "next": -1,
+        "money": 0,
+        "time": 0,
+        "health": 1,
+        "community": 1,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "setting": "neighborhood",
+    "image": "bbq",
+    "text": "Your family has a great time at the barbecue, but you see a child coughing and worry it could be something serious, like whooping cough. You end up leaving the event early, and stocking up on chicken soup just in case. ",
+    "choices": [
+      {
+        "text": "Return home",
+        "next": 18,
+        "money": 0,
+        "time": -1,
+        "health": 0,
+        "community": -1,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "setting": "neighborhood",
+    "image": "caliPertussis",
+    "text": "The whooping cough outbreak gets worse, and you are grateful that {{Child.name}} is at little risk. As a precaution, you head home early, and are angry when you learn that the outbreak spread among unvaccinated children. ",
+    "choices": [
+      {
+        "text": "I'm just glad {{Child.name}} is safe...",
+        "next": -1,
+        "money": -1,
+        "time": -1,
+        "health": 1,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "setting": "caliBad",
+    "image": "caliPertussis",
+    "text": "When the whooping cough outbreak gets worse, you are afraid to stay. Later, when the news says the outbreak originated from an unvaccinated child, you feel angry that your family trip was ruined. ",
+    "choices": [
+      {
+        "text": "Oh no! :(",
+        "next": -1,
+        "money": -1,
+        "time": -1,
+        "health": 0,
+        "community": -1,
+        "intent": -1
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "setting": "neighborhood",
+    "speaker": "neighbor",
+    "text": "It's definitely possible, since {{Child.pronoun.he}} has not been vaccinated.",
+    "choices": [
+      {
+        "text": "We'll take our chances",
+        "next": 16,
+        "money": -1,
+        "time": -1,
+        "health": 0,
+        "community": -1,
+        "intent": 1
+      },
+      {
+        "text": "I guess we could go to the barbecue instead...",
+        "next": 11,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 1
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "setting": "hospital",
+    "audio": "coughAudio",
+    "image": "ambulance",
+    "text": "It turns out the child had not been vaccinated and did have whooping cough, which {{Child.name}} caught. You spend the night in the hospital, listening to {{Child.pronoun.him}} struggle to breathe. ",
+    "choices": [
+      {
+        "text": "I know this could have been prevented",
+        "next": -1,
+        "money": -1,
+        "time": -1,
+        "health": -1,
+        "community": 0,
+        "intent": 0
+      },
+      {
+        "text": "I'm still hesitant to vaccinate",
+        "next": -1,
+        "money": -1,
+        "time": -1,
+        "health": -1,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  }
 ]
