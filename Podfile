@@ -14,7 +14,7 @@ target 'TheyGrowUp' do
     #pod 'pop', '~> 1.0'
     
     # Easy load custom fonts
-    pod 'FontBlaster', '~>4.1'
+    #pod 'FontBlaster', '~>4.1'
     
     # Swifty regex
     # https://github.com/crossroadlabs/Regex

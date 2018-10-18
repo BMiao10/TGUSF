@@ -7,7 +7,6 @@ PODS:
     - ObjectMapper (~> 3.3)
   - CrossroadRegex (1.1.0)
   - Disk (0.4.0)
-  - FontBlaster (4.1.0)
   - ObjectMapper (3.3.0)
   - PMSuperButton (2.2.0)
   - SwiftLocation (3.2.3):
@@ -20,7 +19,6 @@ DEPENDENCIES:
   - AlamofireObjectMapper (~> 5.0)
   - CrossroadRegex (~> 1.1)
   - Disk (~> 0.4.0)
-  - FontBlaster (~> 4.1)
   - PMSuperButton
   - SwiftLocation (~> 3.2.3)
 
@@ -31,7 +29,6 @@ SPEC REPOS:
     - AlamofireObjectMapper
     - CrossroadRegex
     - Disk
-    - FontBlaster
     - ObjectMapper
     - PMSuperButton
     - SwiftLocation
@@ -43,12 +40,11 @@ SPEC CHECKSUMS:
   AlamofireObjectMapper: 3395e698901d8b0e6f48b7d0c43bd47875325102
   CrossroadRegex: 5eaadb3f7b4014728f1cbd1014756b126c1dbd9a
   Disk: ef2956657d5bb56034b38b29b352170165226440
-  FontBlaster: 127aa66419478d1c62926c7fdb39841633344a45
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   PMSuperButton: 5e7b2eb79468dba1ced3fd00e47a7ce88a1fa664
   SwiftLocation: a3c3bc2023118171ef3572188a31def94aa0892c
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: bc03255ca360b416042c15b5520ea806635c05f4
+PODFILE CHECKSUM: 75125cbd056b0fa6321446e0132a7fc0909f8953
 
 COCOAPODS: 1.5.3
