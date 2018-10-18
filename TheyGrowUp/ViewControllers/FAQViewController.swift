@@ -76,9 +76,9 @@ class FAQViewController: UIViewController {
         //for demo purposes
         //TODO: extend for additional metrics
         if (Parent.shared.journeys.last?.intent)! > 0 {
-            loadQuestions(customFAQs: self.FAQSet[0])
-        } else {
             loadQuestions(customFAQs: self.FAQSet[1])
+        } else {
+            loadQuestions(customFAQs: self.FAQSet[0])
         }
     }
     
