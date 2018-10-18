@@ -61,7 +61,7 @@ class ScoreView: UIView {
         }
         
         // Register for notifications
-        NotificationCenter.default.addObserver(self, selector: #selector(handleScoreDidChange(_:)), name: ScoreKeeper.ScoreDidChange, object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(handleScoreDidChange(_:)), name: ScoreKeeper.ScoreDidChange, object: nil)
     }
     
     override func awakeFromNib() {
@@ -78,19 +78,40 @@ class ScoreView: UIView {
     
     // MARK - Notifications
     
-    @objc fileprivate func handleScoreDidChange(_ notification:Notification) {
+    @objc fileprivate func handleScoreDidChange(_ notification: Notification) {
         
         let scoreItem = notification.userInfo?[ ScoreKeeper.ScoreDidChangeNotificationKeys.scoreItem ] as! ScoreKeeper.ScoreItems
         let newScore = notification.userInfo?[ ScoreKeeper.ScoreDidChangeNotificationKeys.newScore ] as! Int
         
-        let progress = Float(newScore) / Float(ScoreKeeper.maxScore) * 100
-        scoreBar(for: scoreItem).setProgress(CGFloat(progress), animated: true, duration: 2.5)
-        
+        setProgress(for: scoreItem, score: newScore)
     }
     
     // MARK - Helpers
     
-    fileprivate func label(for item:ScoreKeeper.ScoreItems) -> UILabel {
+    // Warning: Only exposed publicly for manual override of ScoreKeeper
+    func setProgress(for item: ScoreKeeper.ScoreItems, score: Int) {
+        let progress = Float(score) / Float(ScoreKeeper.maxScore) * 100
+        scoreBar(for: item).setProgress(CGFloat(progress), animated: true, duration: 2.5)
+    }
+    
+    func syncProgress(with scoreKeeper: ScoreKeeper) {
+        ScoreKeeper.ScoreItems.allCases.forEach { (item) in
+            let currentScore = scoreKeeper.score(for: item)
+            setProgress(for: item, score: currentScore)
+        }
+    }
+    
+    func hideLabels(_ state: Bool, animated: Bool = true) {
+        let duration = animated ? 2.0 : 0.0
+        UIView.animate(withDuration: duration) {
+            self.healthLabel.alpha = 0
+            self.moneyLabel.alpha = 0
+            self.timeLabel.alpha = 0
+            self.communityLabel.alpha = 0
+        }
+    }
+    
+    fileprivate func label(for item: ScoreKeeper.ScoreItems) -> UILabel {
         switch item {
         case .health:
             return healthLabel
@@ -103,7 +124,7 @@ class ScoreView: UIView {
         }
     }
     
-    fileprivate func scoreBar(for item:ScoreKeeper.ScoreItems) -> LinearProgressBar {
+    fileprivate func scoreBar(for item: ScoreKeeper.ScoreItems) -> LinearProgressBar {
         switch item {
         case .health:
             return healthScore

@@ -15,21 +15,80 @@ struct Scenario {
         case DataCorrupted(url: URL)
     }
     
-    var scenes: [Scene] = []
-    
-    private(set) var currentScene: Scene!
-    private(set) var currentIndex: Int = 0 {
-        didSet (newIndex) {
-            if newIndex >= scenes.count {
-                currentIndex = scenes.count - 1
+    enum Names: String, Codable {
+        case pertussis
+        case measles
+        case kindergarten
+        
+        var fileName: String {
+            return "scenario_" + self.rawValue
+        }
+        
+        var next: Names? {
+            switch self {
+            case .pertussis:
+                return .measles
+            case .measles:
+                return .kindergarten
+            case .kindergarten:
+                return nil
+            }
+        }
+        
+        var age: (number: Int, scale: String) {
+            switch self {
+            case .pertussis:
+                return (2, "Months")
+            case .measles:
+                return (4, "Years")
+            case .kindergarten:
+                return (6, "Years")
             }
         }
     }
-    private(set) var previousScene: Scene?
     
-    init( fileName: String ) throws {
-        guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
-            throw ScenarioError.FileUnavailable(fileName: fileName)
+    private(set) var id: Names
+    // Convenience naming
+    var name: Names {
+        return id
+    }
+    
+    var scenes: [Int: Scene]!
+    
+    private var currentSceneId: Int
+    var currentScene: Scene {
+        return scenes[currentSceneId]!
+    }
+
+    private var previousSceneId: Int?
+    var previousScene: Scene? {
+        if let id = previousSceneId {
+            return scenes[id]!
+        } else {
+            return nil
+        }
+    }
+    
+    private var firstSceneId: Int
+    var firstScene: Scene {
+        return scenes[firstSceneId]!
+    }
+    
+    private var lastSceneId: Int
+    var lastScene: Scene {
+        return scenes[lastSceneId]!
+    }
+    var isAtStartOfScenario: Bool {
+        return currentSceneId == firstSceneId
+    }
+    
+    var isAtEndOfScenario: Bool {
+        return currentScene.isLastScene
+    }
+    
+    init( named scenario: Names ) throws {
+        guard let url = Bundle.main.url(forResource: scenario.fileName, withExtension: "json") else {
+            throw ScenarioError.FileUnavailable(fileName: scenario.fileName)
         }
             
         guard let data = try? Data(contentsOf: url),
@@ -38,26 +97,31 @@ struct Scenario {
             throw ScenarioError.DataCorrupted(url: url)
         }
         
-        self.scenes = jsonData
-        self.currentScene = self.scenes[0]
-    }
-    
-    mutating func advance( by steps:Int = 1 ) -> Scene? {
-        return advance(to:(currentIndex + steps))
-    }
-    
-    mutating func advance( to sceneIndex:Int ) -> Scene? {
-        if sceneIndex == -1 {
-            // TODO: End gameplay
-            return nil
-        } else if sceneIndex < scenes.count {
-            previousScene = currentScene
-            currentIndex = sceneIndex
-            currentScene = scenes[ currentIndex ]
-            return currentScene
-        } else {
-            return nil
+        self.id = scenario
+        self.scenes = jsonData.reduce(into: [:]) { scenes, scene in
+            scenes[ scene.id ] = scene
         }
+        self.firstSceneId = jsonData.first!.id
+        self.currentSceneId = jsonData.first!.id
+        self.lastSceneId = jsonData.last!.id
+    }
+    
+    mutating func advance( to scene:Scene ) {
+        return advance(to: scene.id)
+    }
+    
+    mutating func advance( to sceneId:Int ) {
+        if sceneId == -1 {
+            // TODO: End gameplay
+            return
+        } else if let validScene = scenes[ sceneId ] {
+            previousSceneId = currentScene.id
+            currentSceneId = validScene.id
+        }
+    }
+    
+    func nextScenario() -> Scenario.Names? {
+        return id.next
     }
     
 }

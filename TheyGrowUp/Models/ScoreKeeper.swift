@@ -8,11 +8,11 @@
 
 import Foundation
 
-public struct ScoreKeeper {
+public struct ScoreKeeper: Codable {
     
     static let maxScore = 3
     
-    enum ScoreItems: String, CaseIterable {
+    enum ScoreItems: String, CaseIterable, Codable {
         case health
         case money
         case time

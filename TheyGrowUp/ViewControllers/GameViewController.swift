@@ -10,55 +10,89 @@
 
 import UIKit
 import AVFoundation
+import PMSuperButton
 
 class GameViewController: UIViewController {
     
     private weak var sceneAudioPlayer: AudioPlayer?
 
+    // This can be set by presenting view controller to alter which scenario is loaded
+    var scenarioName: Scenario.Names = .pertussis
     private var scenario: Scenario!
     private weak var journey: Journey?
     
-    @IBOutlet weak var choiceALabel: UIButton!
-    @IBOutlet weak var choiceBLabel: UIButton!
-    @IBOutlet weak var choiceCLabel: UIButton!
-    private var choiceButtons: [UIButton]!
-
-    @IBOutlet weak var moreInfoLabel: UIButton!
-    
-    @IBOutlet weak var ageScaleLabel: UILabel!
-    @IBOutlet weak var ageLabel: UILabel!
+    public var shouldResumeJourney: Bool = false
     
     @IBOutlet weak var backgroundImage: UIImageView!
     
+    @IBOutlet weak var childAge: ChildAgeView!
+    
+    @IBOutlet weak var speakerImage: UIImageView!
     @IBOutlet weak var textboxText: UILabel!
     @IBOutlet weak var textboxImage: UIImageView!
     
-    @IBOutlet weak var scoreView: ScoreView!
-    @IBOutlet var moreInfoView: UIView!
+    @IBOutlet weak var choiceA: PMSuperButton!
+    @IBOutlet weak var choiceB: PMSuperButton!
+    @IBOutlet weak var choiceC: PMSuperButton!
+    private var choiceButtons: [UIButton]!
     
-    @IBOutlet weak var moreInfoContent: UILabel!
-
+    @IBOutlet weak var moreInfo: PMSuperButton!
+    
+    @IBOutlet weak var scoreView: ScoreView!
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        choiceButtons = [choiceALabel, choiceBLabel, choiceCLabel]
+        choiceButtons = [choiceA, choiceB, choiceC]
         
-        // TODO: Refactor to separate view class?
-        UIView.animate(withDuration: 1.7, delay: 0.5, animations: {
-            self.ageScaleLabel.text = "Month"
-            self.ageLabel.text = "2"
-        })
-       
-        //load first scene
-        journey = Parent.shared.addJourney()
-        // TODO: Handle any load errors gracefully
-        scenario = try! Scenario(fileName: "scenario_pertussis")
-        loadScene( scenario.currentScene )
+        if shouldResumeJourney {
+            // Load scene where user left off
+            journey = Parent.shared.journeys.last
+            
+            // TODO: Handle any load errors gracefully
+            scenario = try! Scenario(named: journey!.currentStep!.scenarioId)
+            scenario.advance(to: journey!.currentStep!.baseSceneId)
+            
+            // Sync up the scoreView
+            scoreView.syncProgress(with: journey!.scoreKeeper)
+            
+            // Load up where we left off
+            loadScene( scenario.currentScene, addToJourney: false )
+        } else {
+            // Create new journey and will load first scene
+            // TODO: Handle any load errors gracefully
+            scenario = try! Scenario(named: scenarioName)
+            
+            journey = Parent.shared.addJourney()
+            loadScene( scenario.currentScene )
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        scoreView.hideLabels(true, animated: animated)
+        
+        // Configure button labels
+        choiceButtons.forEach {
+            $0.titleLabel?.adjustsFontSizeToFitWidth = true
+            $0.titleLabel?.minimumScaleFactor = 0.7
+        }
+    }
+    
+    fileprivate func setupChildAge () {
+        // Load child age info
+        let age = scenario.name.age
+        childAge.ageNumber = age.number
+        childAge.ageScale = age.scale
+        childAge.gender = Parent.shared.child!.gender
     }
     
     
-    fileprivate func loadScene(_ scene:Scene) {
+    fileprivate func loadScene(_ scene:Scene, addToJourney: Bool = true) {
         //load background
         backgroundImage.image = UIImage(named: scene.setting)
         
@@ -75,86 +109,142 @@ class GameViewController: UIViewController {
         
         // TODO: Add image animation
         
-        //show speaker images
-        textboxImage.image = UIImage(named: scene.speaker)
+        // Show speaker images
+        if let speaker = scene.speaker,
+            let validSpeaker = UIImage(named: speaker) {
+            speakerImage.image = validSpeaker
+            speakerImage.isHidden = false
+        } else {
+            speakerImage.image = nil
+            speakerImage.isHidden = true
+        }
+        
+        // Show text image
+        if let sceneImage = scene.image,
+            let validImage = UIImage(named: sceneImage) {
+            textboxImage.image = validImage
+            textboxImage.isHidden = false
+        } else {
+            textboxImage.image = nil
+            textboxImage.isHidden = true
+        }
         
         //show dialogue
         textboxText.text = scene.text
         
         // More info
-        if let moreInfo = scene.moreInfo {
-            // Show more info
-            moreInfoLabel.setTitle("More Info", for: .normal)
-            moreInfoLabel.isHidden = false
-            journey?.changeIntent(by: 1)
-        } else {
-            // Hide more info
-            moreInfoLabel.setTitle("", for: .normal)
-            moreInfoLabel.isHidden = true
-        }
+        moreInfo.isHidden = scene.moreInfo == nil
         
         // Update choices
-        choiceButtons.forEach { (button) in
-            button.setTitle("", for: .normal)
-        }
-        for (index, choiceLabel) in scene.choices.enumerated() {
-            choiceButtons[index].setTitle(choiceLabel, for: .normal)
+        for (index, button) in choiceButtons.enumerated() {
+            if let choiceText = scene.choice(index)?.text {
+                button.setTitle(choiceText, for: .normal)
+                button.isHidden = false
+            } else {
+                button.setTitle("", for: .normal)
+                button.isHidden = true
+            }
         }
         
+        // Sync our score view
+        scoreView.syncProgress(with: journey!.scoreKeeper)
+        
         // Update our journey
-        journey?.append( JourneyStep(baseScene: scenario.currentScene) )
+        if addToJourney {
+            journey?.addStep(scenarioId: scenario.id, scene: scenario.currentScene)
+        }
+        
+        if scenario.isAtStartOfScenario {
+            // If this is the first scene, we need to update the child age
+            setupChildAge()
+            
+            // If this is the first scene for a new scenario, show the age change modal
+            if scenario.id != .pertussis {
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AgeChangeViewController") as! AgeChangeViewController
+                vc.ageNumber = scenario.id.age.number
+                vc.ageScale = scenario.id.age.scale.lowercased()
+                vc.child = Parent.shared.child!
+                present(vc, animated: true, completion: nil)
+            }
+        }
     }
     
     // MARK: Button Actions
-    @IBAction func choiceAButton(_ sender: Any) {
-        switchSceneForChoice(0)
-    }
-    
-    @IBAction func choiceBButton(_ sender: Any) {
-        switchSceneForChoice(1)
-    }
-    
-    @IBAction func choiceCButton(_ sender: Any) {
-        switchSceneForChoice(2)
+    @IBAction func didMakeChoice(_ sender: Any) {
+        let index = choiceButtons.firstIndex(of: sender as! UIButton)
+        switchSceneForChoice(index!)
     }
     
     fileprivate func switchSceneForChoice(_ choice: Int) {
-        journey?.currentStep?.response = choice
+        journey?.setResponseForCurrentStep(choice, with: scenario.currentScene)
         
-        if scenario.currentScene.isLastScene {
-            print("Scenario ended")
-            journey?.finish()
+        if scenario.isAtEndOfScenario {
+            // TODO: Handle end of scenario -> GOTO FAQs
+            print("Scenario \(scenario.id) ended")
             Parent.shared.updatePlaytime()
-
-            //TODO: change to endscreen
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FAQViewController") as! FAQViewController
-            vc.modalTransitionStyle = .crossDissolve
-            self.present(vc, animated: true, completion: nil)
             
+            if let next = scenario.nextScenario() {
+                scenario = try! Scenario.init(named: next)
+                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200)) {
+                    self.loadScene( self.scenario.currentScene )
+                }
+            } else {
+                journey?.finish()
+                // Advance to summary screen
+                showSummary()
+                //showFAQs()
+            }
         } else {
-            let nextSceneId = scenario.currentScene.next[choice]
-            loadScene( scenario.advance(to: nextSceneId)! )
+            let nextSceneId = scenario.currentScene.choices[choice].next
+            scenario.advance(to: nextSceneId)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200)) {
+                self.loadScene( self.scenario.currentScene )
+            }
         }
     }
     
-    @IBAction func restartButton(_ sender: Any) {
+    fileprivate func prepareForRestart() {
         // TODO: Hide this button in release version
         print("Scenario restarting")
         journey?.finish()
         Parent.shared.updatePlaytime()
-        
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeController") as! ViewController
-        vc.modalTransitionStyle = .flipHorizontal
-        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func moreInfo(_ sender: Any) {
-        moreInfoContent.text = scenario.currentScene.moreInfo
-        self.view.addSubview(moreInfoView)
+        journey?.changeIntent(by: 1)
+        
+        let vc = MoreInfoViewController()
+        vc.content = scenario.currentScene.moreInfo
+        vc.modalPresentationStyle = .formSheet
+        vc.modalTransitionStyle = .coverVertical
+        self.present(vc, animated: true, completion: nil)
     }
     
-    @IBAction func closeMoreInfo(_ sender: Any) {
-        self.moreInfoView.removeFromSuperview()
+    @IBAction func testShowFAQs(_ sender: Any) {
+        showFAQs()
     }
     
+    @IBAction func testShowSummary(_ sender: Any) {
+        showSummary()
+    }
+    
+    
+    fileprivate func showSummary () {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SummaryViewController") as! SummaryViewController
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    fileprivate func showFAQs () {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FAQViewController") as! FAQViewController
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "restartGame" {
+            prepareForRestart()
+        }
+    }
+
 }

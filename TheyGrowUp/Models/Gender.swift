@@ -8,12 +8,12 @@
 
 import Foundation
 
-public enum Gender: String {
+public enum Gender: String, Codable {
     case male
     case female
     
-    public enum Pronouns: String {
-        case he, him, his
+    public enum Pronouns: String, Codable {
+        case he, him, his, He, Him, His
     }
     
     public var diminutive: String {
@@ -35,7 +35,10 @@ public enum Gender: String {
             switch pronounType {
                 case .he: return "she"
                 case .him: return "her"
-                case .his: return "hers"
+                case .his: return "her"
+                case .He: return "She"
+                case .Him: return "Her"
+                case .His: return "Her"
             }
         }
     }

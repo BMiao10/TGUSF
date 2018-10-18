@@ -63,7 +63,10 @@ public struct StringRenderService {
             "Child.gender": child.gender.diminutive,
             "Child.pronoun.he": child.gender.pronoun(.he),
             "Child.pronoun.him": child.gender.pronoun(.him),
-            "Child.pronoun.his": child.gender.pronoun(.his)
+            "Child.pronoun.his": child.gender.pronoun(.his),
+            "Child.pronoun.He": child.gender.pronoun(.He),
+            "Child.pronoun.Him": child.gender.pronoun(.Him),
+            "Child.pronoun.His": child.gender.pronoun(.His)
         ]
         
         return try render(string, data: dict)

@@ -8,12 +8,13 @@
 
 import Foundation
 
-class Journey: TimeTrackable {
+class Journey: TimeTrackable, Codable {
     
-    // UUID set by server
-    private var id: String?
+    // UUID
+    // TODO: Sync with server
+    private(set) var id: String = UUID().uuidString
     
-    public let player: Parent
+    private let playerId: String
     
     internal let startTime = Date()
     internal var endTime = Date()
@@ -21,19 +22,16 @@ class Journey: TimeTrackable {
     typealias JourneySteps = [JourneyStep]
     private var steps = JourneySteps()
     
+    private(set) var scenariosPlayed: [Scenario.Names] = []
+    
     private(set) var isFinished: Bool = false
     
     private(set) var intent: Int = 0
     
     private(set) var scoreKeeper = ScoreKeeper()
     
-    init( player: Parent ) {
-        self.player = player
-    }
-    
-    convenience init( player: Parent, steps: JourneySteps ) {
-        self.init( player: player )
-        self.steps = steps
+    init( playerId: String ) {
+        self.playerId = playerId
     }
     
     func finish() {
@@ -44,7 +42,28 @@ class Journey: TimeTrackable {
     func changeIntent(by delta:Int) {
         intent += delta
     }
+    
+    func setResponseForCurrentStep(_ choice: Int, with scene:Scene) {
+        setResponse(choice, for: currentStep!, with: scene)
+    }
+    
+    func setResponse(_ choice: Int, for step: JourneyStep, with scene:Scene) {
+        currentStep?.response = choice
+        
+        // Update our ScoreKeeper
+        scoreKeeper.changeScores( scene.choice(choice)!.scoreDeltas() )
+        
+        // Update our intent to vaccinate tracker
+        changeIntent(by: scene.choice(choice)!.intent)
+    }
 
+    private func addScenario(_ scenario: Scenario.Names) {
+        if scenariosPlayed.contains(scenario) {
+            return
+        } else {
+            scenariosPlayed.append(scenario)
+        }
+    }
 }
 
 extension Journey: Collection {
@@ -68,22 +87,25 @@ extension Journey: Collection {
     }
     
     func append(_ step:JourneyStep) {
+        if !isFinished { steps.append(step) }
+    }
+    
+    func addStep(scenarioId: Scenario.Names, scene: Scene) {
         if !isFinished {
+            let step = JourneyStep(scenarioId: scenarioId, baseScene: scene)
+            
             // Set up our steps' relationships
             steps.last?.next = step
             step.previous = steps.last
-            
-            // Update our ScoreKeeper
-            scoreKeeper.changeScores(step.baseScene.scoreDeltas())
-            
-            // Update our intent to vaccinate tracker
-            changeIntent(by: step.baseScene.intent)
             
             // Update our time tracking
             steps.last?.endTime = Date()
             endTime = Date()
             
-            return steps.append(step)
+            // Add scenario to our tracking array
+            addScenario(scenarioId)
+            
+            append(step)
         }
     }
 

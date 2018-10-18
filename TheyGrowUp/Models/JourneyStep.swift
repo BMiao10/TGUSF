@@ -8,15 +8,25 @@
 
 import Foundation
 
-class JourneyStep: TimeTrackable {
+class JourneyStep: TimeTrackable, Codable {
     
-    // UUID set by server
-    private var id: String?
+    enum CodingKeys: String, CodingKey {
+        case id
+        case scenarioId
+        case baseSceneId
+        case startTime
+        case endTime
+    }
+    
+    // UUID
+    // TODO: Sync with server
+    private(set) var id: String = UUID().uuidString
     
     weak var previous: JourneyStep?
-    var next: JourneyStep?
+    weak var next: JourneyStep?
     
-    let baseScene: Scene!
+    let scenarioId: Scenario.Names
+    let baseSceneId: Int
     
     // TODO Implement type checking
     var response: Int? {
@@ -29,8 +39,9 @@ class JourneyStep: TimeTrackable {
     let startTime = Date()
     var endTime = Date()
     
-    init( baseScene: Scene ){
-        self.baseScene = baseScene
+    init( scenarioId: Scenario.Names, baseScene: Scene ){
+        self.scenarioId = scenarioId
+        self.baseSceneId = baseScene.id
     }
     
 }
