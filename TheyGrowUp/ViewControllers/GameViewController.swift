@@ -17,7 +17,7 @@ class GameViewController: UIViewController {
     private weak var sceneAudioPlayer: AudioPlayer?
 
     // This can be set by presenting view controller to alter which scenario is loaded
-    var scenarioName: Scenario.Names = .measles
+    var scenarioName: Scenario.Names = .pertussis
     private var scenario: Scenario!
     private weak var journey: Journey?
     
