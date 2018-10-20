@@ -17,7 +17,7 @@ class GameViewController: UIViewController {
     private weak var sceneAudioPlayer: AudioPlayer?
 
     // This can be set by presenting view controller to alter which scenario is loaded
-    var scenarioName: Scenario.Names = .pertussis
+    var scenarioName: Scenario.Names = .hospital
     private var scenario: Scenario!
     private weak var journey: Journey?
     
@@ -161,7 +161,7 @@ class GameViewController: UIViewController {
             setupChildAge()
             
             // If this is the first scene for a new scenario, show the age change modal
-            if scenario.id != .pertussis {
+            if scenario.id != Scenario.Names.first {
                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AgeChangeViewController") as! AgeChangeViewController
                 vc.ageNumber = scenario.id.age.number
                 vc.ageScale = scenario.id.age.scale.lowercased()

@@ -15,7 +15,8 @@ struct Scenario {
         case DataCorrupted(url: URL)
     }
     
-    enum Names: String, Codable {
+    enum Names: String, Codable, CaseIterable {
+        case hospital
         case pertussis
         case measles
         case kindergarten
@@ -24,8 +25,18 @@ struct Scenario {
             return "scenario_" + self.rawValue
         }
         
+        static var first: Names {
+            return .hospital
+        }
+        
+        static var last: Names {
+            return .kindergarten
+        }
+        
         var next: Names? {
             switch self {
+            case .hospital:
+                return .pertussis
             case .pertussis:
                 return .measles
             case .measles:
@@ -37,6 +48,8 @@ struct Scenario {
         
         var age: (number: Int, scale: String) {
             switch self {
+            case .hospital:
+                return (2, "Days")
             case .pertussis:
                 return (2, "Months")
             case .measles:
