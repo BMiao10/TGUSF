@@ -26,11 +26,11 @@ struct Scenario {
         }
         
         static var first: Names {
-            return .hospital
+            return self.allCases.first!
         }
         
         static var last: Names {
-            return .kindergarten
+            return self.allCases.last!
         }
         
         var next: Names? {
