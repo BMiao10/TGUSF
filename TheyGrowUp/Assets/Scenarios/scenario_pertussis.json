@@ -392,7 +392,7 @@
   },
   {
     "id": 18,
-    "setting": "hospital",
+    "setting": "hospitalBad",
     "audio": "coughAudio",
     "image": "ambulance",
     "text": "It turns out the child had not been vaccinated and did have whooping cough, which {{Child.name}} caught. You spend the night in the hospital, listening to {{Child.pronoun.him}} struggle to breathe. ",

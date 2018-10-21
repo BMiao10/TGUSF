@@ -76,10 +76,10 @@ class IntroViewController: UIViewController {
         sceneAudioPlayer = try? AudioPlayerManager.play(fileName: "babyLaughAudio.mp3", discardOnCompletion: true)
         
         //animate scoring bars
-        self.scoreView.setProgress(for: .health, score: ScoreKeeper.maxScore)
-        self.scoreView.setProgress(for: .money, score: ScoreKeeper.maxScore)
-        self.scoreView.setProgress(for: .time, score: ScoreKeeper.maxScore)
-        self.scoreView.setProgress(for: .community, score: ScoreKeeper.maxScore)
+        self.scoreView.setProgress(for: .health, score: ScoreKeeper.maxScore-1)
+        self.scoreView.setProgress(for: .money, score: ScoreKeeper.maxScore-1)
+        self.scoreView.setProgress(for: .time, score: ScoreKeeper.maxScore-1)
+        self.scoreView.setProgress(for: .community, score: ScoreKeeper.maxScore-1)
         
         // show next button
         UIView.animate(withDuration: 0.5, delay: 2, animations: {

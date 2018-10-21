@@ -69,6 +69,7 @@ class GameViewController: UIViewController {
             scenario = try! Scenario(named: scenarioName)
             
             journey = Parent.shared.addJourney()
+            
             loadScene( scenario.currentScene )
         }
     }
@@ -76,7 +77,7 @@ class GameViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         scoreView.hideLabels(true, animated: animated)
         
-        //TODO: move 
+        //TODO: increase size of content panel
         
         // Configure button labels
         choiceButtons.forEach {

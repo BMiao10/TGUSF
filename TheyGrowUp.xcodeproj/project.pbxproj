@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		40038E84213F903F00D7FBA2 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40038E83213F903F00D7FBA2 /* SetupViewController.swift */; };
 		40038E86213F914700D7FBA2 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40038E85213F914700D7FBA2 /* GameViewController.swift */; };
+		401ECC55217C3A6700F568F6 /* scenario_hospital.json in Resources */ = {isa = PBXBuildFile; fileRef = 401ECC54217C3A6700F568F6 /* scenario_hospital.json */; };
+		401ECC57217C504300F568F6 /* lullabyAudio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 401ECC56217C504300F568F6 /* lullabyAudio.mp3 */; };
 		40220DB5214748F500C4D4A6 /* coughAudio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40220DB4214748F500C4D4A6 /* coughAudio.mp3 */; };
 		4067964A2178354D00AA4ECC /* ChildImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406796452178354C00AA4ECC /* ChildImages.swift */; };
 		4067964B2178354D00AA4ECC /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406796462178354C00AA4ECC /* AudioPlayer.swift */; };
@@ -62,6 +64,8 @@
 		191559A6D43CF01F939C7495 /* Pods_TheyGrowUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheyGrowUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40038E83213F903F00D7FBA2 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		40038E85213F914700D7FBA2 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		401ECC54217C3A6700F568F6 /* scenario_hospital.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = scenario_hospital.json; sourceTree = "<group>"; };
+		401ECC56217C504300F568F6 /* lullabyAudio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lullabyAudio.mp3; sourceTree = "<group>"; };
 		40220DB4214748F500C4D4A6 /* coughAudio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coughAudio.mp3; sourceTree = "<group>"; };
 		406796452178354C00AA4ECC /* ChildImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildImages.swift; sourceTree = "<group>"; };
 		406796462178354C00AA4ECC /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 				4A3470682178288000039305 /* babyLaughAudio.mp3 */,
 				4A0B597D21781C47009E6AA3 /* carAudio.mp3 */,
 				4A0B597B21781C47009E6AA3 /* cookingAudio.mp3 */,
+				401ECC56217C504300F568F6 /* lullabyAudio.mp3 */,
 				4A0B597C21781C47009E6AA3 /* parkAudio.mp3 */,
 				4AFBCC50216BF7F700054777 /* Better-Days-Ahead.mp3 */,
 				40220DB4214748F500C4D4A6 /* coughAudio.mp3 */,
@@ -216,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				4A6367A22177818B00D639E4 /* scenario_kindergarten.json */,
+				401ECC54217C3A6700F568F6 /* scenario_hospital.json */,
 				406C706A21471BB700065B6F /* scenario_pertussis.json */,
 				4ADC99B52176C7D4009DD699 /* scenario_measles.json */,
 			);
@@ -344,7 +350,9 @@
 				4067CAAD20FAE47A00C6A7FE /* Assets.xcassets in Resources */,
 				4A3470672178250F00039305 /* Images.xcassets in Resources */,
 				4A2E46BF2176D77F00808299 /* faqs.json in Resources */,
+				401ECC57217C504300F568F6 /* lullabyAudio.mp3 in Resources */,
 				4A0B597F21781C47009E6AA3 /* parkAudio.mp3 in Resources */,
+				401ECC55217C3A6700F568F6 /* scenario_hospital.json in Resources */,
 				4067CAA820FAE47900C6A7FE /* Main.storyboard in Resources */,
 				4A3470692178288000039305 /* babyLaughAudio.mp3 in Resources */,
 				4AFBCC51216BF7F800054777 /* Better-Days-Ahead.mp3 in Resources */,

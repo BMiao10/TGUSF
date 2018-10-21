@@ -1,483 +1,481 @@
 [
-  {
-    "id": 0,
-    "setting": "home",
-    "text": "{{Child.name}} is almost ready for kindergarten. You are at home with your mother. She’s taking care of {{Child.name}} while you you look over school enrollment requirements.",
-    "choices": [
-      {
-        "text": "Next",
-        "next": 1,
-        "money": 0,
-        "time": 0,
-        "health": 0,
-        "community": 0,
-        "intent": 0
-      }
-    ]
-  },
-  {
-    "id": 1,
-    "setting": "home",
-    "speaker": "grandmother",
-    "text": "You’ve been at this school enrollment thing for hours now. Why don’t you let me help? Don’t forget, I had to get you into school, too.",
-    "choices": [
-      {
-        "text": "Thanks mom. I’m almost done.",
-        "next": 3,
-        "money": 0,
-        "time": 0,
-        "health": 0,
-        "community": 0,
-        "intent": 0
-      },
-      {
-        "text": "Mom, I know what I’m doing. I’m just thinking!",
-        "next": 2,
-        "money": 0,
-        "time": 0,
-        "health": 0,
-        "community": 0,
-        "intent": 0
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "setting": "home",
-    "speaker": "grandmother",
-    "text": "Well...don’t think too hard or you’ll hurt yourself. Let me help you. {{Child.name}} can help, too!",
-    "choices": [
-      {
-        "text": "Sure!",
-        "next": 4,
-        "money": 0,
-        "time": 0,
-        "health": 0,
-        "community": 0,
-        "intent": 0
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "setting": "home",
-    "speaker": "grandmother",
-    "text": "Don’t stress. Trust me, I can help. And {{Child.name}} can help, too!",
-    "choices": [
-      {
-        "text": "Sure!",
-        "next": 4,
-        "money": 0,
-        "time": 0,
-        "health": 0,
-        "community": 0,
-        "intent": 0
-      }
-    ]
-  },
-  {
-    "id": 4,
-    "setting": "home",
-    "speaker": "grandmother",
-    "text": "What’s giving you grief about enrollment?",
-    "choices": [
-      {
-        "text": "I don’t know if {{Child.name}} is up-to-date with immunization.",
-        "next": 5,
-        "money": 0,
-        "time": 0,
-        "health": 0,
-        "community": 0,
-        "intent": 0
-      },
-      {
-        "text": "I didn’t know that vaccines were required for school.",
-        "next": 5,
-        "money": 0,
-        "time": 0,
-        "health": 0,
-        "community": 0,
-        "intent": 0
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "setting": "home",
-    "speaker": "grandmother",
-    "image": "forms",
-    "text": "Vaccines...that was one of the rules the nurse gave you before leaving the hospital! Her chicken soup recipe is unforgettable! Good for the soul! You have been following those rules, right?",
-    "choices": [
-      {
-        "text": "Yes ma’am. I’m healthy as a horse. Can’t you tell?",
-        "next": 6,
-        "money": 0,
-        "time": 0,
-        "health": 0,
-        "community": 0,
-        "intent": 0
-      },
-      {
-        "text": "So many rules, so little time.",
-        "next": 7,
-        "money": 0,
-        "time": 0,
-        "health": 0,
-        "community": 0,
-        "intent": 0
-      }
-    ]
-  },
-  {
-    "id": 6,
-    "setting": "home",
-    "speaker": "grandmother",
-    "text": "You’re eating well and exercising. You’re a slave to your beauty sleep. You drink water like a fish. You look fabulous!",
-    "choices": [
-      {
-        "text": "I learned from the best.",
-        "next": 9,
-        "money": 0,
-        "time": 0,
-        "health": 0,
-        "community": 1,
-        "intent": 0
-      },
-      {
-        "text": "Thanks, I know",
-        "next": 9,
-        "money": 0,
-        "time": 0,
-        "health": 0,
-        "community": 0,
-        "intent": 0
-      }
-    ]
-  },
-  {
-    "id": 7,
-    "setting": "home",
-    "speaker": "grandmother",
-    "text": "You’re eating much better and exercising again. I see that. Getting good sleep and drinking plenty of water, too. You’re doing, it darling!",
-    "choices": [
-      {
-        "text": "Alright mom",
-        "next": 8,
-        "money": 0,
-        "time": 0,
-        "health": 0,
-        "community": 0,
-        "intent": 0
-      },
-      {
-        "text": "I’m doing my best.",
-        "next": 8,
-        "money": 0,
-        "time": 0,
-        "health": 0,
-        "community": 0,
-        "intent": 0
-      }
-    ]
-  },
-  {
-    "id": 8,
-    "setting": "home",
-    "speaker": "grandmother",
-    "text": "Just remember, you have the pediatrician on speed dial. They can talk with you about immunization. You’re not the only one with questions.",
-    "choices": [
-      {
-        "text": "I’ll give them a call. They’re #1 on speed dial!",
-        "next": 9,
-        "money": 0,
-        "time": 0,
-        "health": 0,
-        "community": 0,
-        "intent": 1
-      },
-      {
-        "text": "I need to do more thinking.",
-        "next": 10,
-        "money": 0,
-        "time": 0,
-        "health": 0,
-        "community": 0,
-        "intent": 0
-      }
-    ]
-  },
-  {
-    "id": 9,
-    "setting": "home",
-    "speaker": "grandmother",
-    "text": "That’s the spirit! By the way I’m starving. What’s for dinner tonight?",
-    "choices": [
-      {
-        "text": "Chicken soup",
-        "next": 11,
-        "money": 1,
-        "time": -1,
-        "health": 0,
-        "community": 0,
-        "intent": 0
-      },
-      {
-        "text": "Hearty salad",
-        "next": 11,
-        "money": 1,
-        "time": 0,
-        "health": 1,
-        "community": 0,
-        "intent": 0
-      },
-      {
-        "text": "Frozen pizzas",
-        "next": 15,
-        "money": -1,
-        "time": 1,
-        "health": -1,
-        "community": 0,
-        "intent": 0
-      }
-    ]
-  },
-  {
-    "id": 10,
-    "setting": "home",
-    "speaker": "grandmother",
-    "text": "Ok just don’t wait too long. By the way I’m starving. What’s for dinner tonight?",
-    "choices": [
-      {
-        "text": "Chicken soup",
-        "next": 13,
-        "money": 1,
-        "time": -1,
-        "health": 0,
-        "community": 0,
-        "intent": 0
-      },
-      {
-        "text": "Hearty salad",
-        "next": 13,
-        "money": 1,
-        "time": 0,
-        "health": 1,
-        "community": 0,
-        "intent": 0
-      },
-      {
-        "text": "Frozen pizzas",
-        "next": 16,
-        "money": -1,
-        "time": 1,
-        "health": -1,
-        "community": 0,
-        "intent": 0
-      }
-    ]
-  },
-  {
-    "id": 11,
-    "setting": "home",
-    "speaker": "grandmother",
-    "audio": "cookingAudio",
-    "image": "kitchen",
-    "text": "That sounds delicious! Why don’t you take a break? I’ll take it from here. Dinner for three, coming right up!",
-    "choices": [
-      {
-        "text": "Next",
-        "next": 12,
-        "money": 0,
-        "time": 1,
-        "health": 0,
-        "community": 0,
-        "intent": 0
-      }
-    ]
-  },
-  {
-    "id": 12,
-    "setting": "home",
-    "speaker": "grandmother",
-    "image": "schoolGood",
-    "text": "Time flies by, and before you know it, it’s two weeks before the deadline to enroll {{Child.name}} in kindergarten. You made an appointment with the pediatrician weeks ago and got {{Child.name}} up to date with immunizations. You feel good knowing that everything will go smoothly for the start of kindergarten.",
-    "choices": [
-      {
-        "text": "Next",
-        "next": -1,
-        "money": 0,
-        "time": 1,
-        "health": 1,
-        "community": 1,
-        "intent": 0
-      }
-    ]
-  },
-  {
-    "id": 13,
-    "setting": "home",
-    "speaker": "grandmother",
-    "audio": "cookingAudio",
-    "image": "kitchen",
-    "text": "That sounds delicious! Why don’t you take a break? I’ll take it from here. Dinner for three, coming right up!",
-    "choices": [
-      {
-        "text": "Next",
-        "next": 14,
-        "money": 0,
-        "time": 1,
-        "health": 0,
-        "community": 0,
-        "intent": 0
-      }
-    ]
-  },
-  {
-    "id": 14,
-    "setting": "home",
-    "speaker": "grandmother",
-    "image": "schoolBad",
-    "text": "Time flies by, and before you know it, it’s two weeks before the deadline to enroll {{Child.name}} in kindergarten. You rush to make an appointment with the pediatrician. You have to miss work to make the appointment, and you won’t be able to go grocery shopping as planned. Guess that means takeout for dinner tonight. Oh well, better late than never.",
-    "choices": [
-      {
-        "text": "Next",
-        "next": -1,
-        "money": -1,
-        "time": -1,
-        "health": -1,
-        "community": 1,
-        "intent": 0
-      }
-    ]
-  },
-  {
-    "id": 15,
-    "setting": "home",
-    "speaker": "grandmother",
-    "image": "pizza",
-    "text": "Now hold on, you can't feed that to a child. She needs vegetables and real food, not salt-crusted fake cheese.",
-    "moreInfo": "High salt content can put children at higher risk for developing high blood pressure, heart disease, and stroke in the future",
-    "choices": [
-      {
-        "text": "It's the only thing she'll eat",
-        "next": 16,
-        "money": 0,
-        "time": 0,
-        "health": -1,
-        "community": 0,
-        "intent": 0
-      },
-      {
-        "text": "We don't eat processed food often",
-        "next": 19,
-        "money": 0,
-        "time": 0,
-        "health": 1,
-        "community": 0,
-        "intent": 0
-      }
-    ]
-  },
-  {
-    "id": 16,
-    "setting": "home",
-    "speaker": "grandmother",
-    "image": "pizza",
-    "text": "Now hold on, you can't feed that to a child. She needs vegetables and real food, not salt-crusted fake cheese.",
-    "moreInfo": "High salt content can put children at higher risk for developing high blood pressure, heart disease, and stroke in the future",
-    "choices": [
-      {
-        "text": "It's the only thing she'll eat",
-        "next": 17,
-        "money": 0,
-        "time": 0,
-        "health": -1,
-        "community": 0,
-        "intent": 0
-      },
-      {
-        "text": "We don't eat processed food often",
-        "next": 20,
-        "money": 0,
-        "time": 0,
-        "health": 1,
-        "community": 0,
-        "intent": 0
-      }
-    ]
-  },
-  {
-    "id": 17,
-    "setting": "home",
-    "speaker": "grandmother",
-    "audio": "cookingAudio",
-    "image": "kitchen",
-    "text": "Well clearly you haven't been cooking good food... How about I take it from here? Dinner for three, coming right up!",
-    "choices": [
-      {
-        "text": "That sounds great!",
-        "next": 12,
-        "money": 0,
-        "time": 1,
-        "health": 0,
-        "community": 0,
-        "intent": 0
-      }
-    ]
-  },
-  {
-    "id": 18,
-    "setting": "home",
-    "speaker": "grandmother",
-    "audio": "cookingAudio",
-    "image": "kitchen",
-    "text": "Well clearly you haven't been cooking good food... How about I take it from here? Dinner for three, coming right up!",
-    "choices": [
-      {
-        "text": "That sounds great!",
-        "next": 14,
-        "money": 0,
-        "time": 1,
-        "health": 0,
-        "community": 0,
-        "intent": 0
-      }
-    ]
-  },
-  {
-    "id": 19,
-    "setting": "home",
-    "speaker": "grandmother",
-    "image": "pizza",
-    "text": "Alright then... But I'm cooking next time!",
-    "choices": [
-      {
-        "text": "That sounds great!",
-        "next": 12,
-        "money": 0,
-        "time": 0,
-        "health": 0,
-        "community": 1,
-        "intent": 0
-      }
-    ]
-  },
-  {
-    "id": 20,
-    "setting": "home",
-    "speaker": "grandmother",
-    "image": "pizza",
-    "text": "Alright then... But I'm cooking next time!",
-    "choices": [
-      {
-        "text": "That sounds great!",
-        "next": 14,
-        "money": 0,
-        "time": 0,
-        "health": 0,
-        "community": 1,
-        "intent": 0
-      }
-    ]
-  }
+    {
+        "id": 0,
+        "setting": "home",
+        "text": "{{Child.name}} is almost ready for kindergarten. You are at home with your mother. She’s taking care of {{Child.name}} while you you look over school enrollment requirements.",
+        "choices": [
+            {
+                "text": "Next",
+                "next": 1,
+                "money": 0,
+                "time": 0,
+                "health": 0,
+                "community": 0,
+                "intent": 0
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "setting": "home",
+        "speaker": "grandmother",
+        "text": "You’ve been at this school enrollment thing for hours now. Why don’t you let me help? Don’t forget, I had to get you into school, too.",
+        "choices": [
+            {
+                "text": "Thanks mom. I’m almost done.",
+                "next": 3,
+                "money": 0,
+                "time": 0,
+                "health": 0,
+                "community": 0,
+                "intent": 0
+            },
+            {
+                "text": "Mom, I know what I’m doing. I’m just thinking!",
+                "next": 2,
+                "money": 0,
+                "time": 0,
+                "health": 0,
+                "community": 0,
+                "intent": 0
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "setting": "home",
+        "speaker": "grandmother",
+        "text": "Well...don’t think too hard or you’ll hurt yourself. Let me help you. {{Child.name}} can help, too!",
+        "choices": [
+            {
+                "text": "Sure!",
+                "next": 4,
+                "money": 0,
+                "time": 0,
+                "health": 0,
+                "community": 0,
+                "intent": 0
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "setting": "home",
+        "speaker": "grandmother",
+        "text": "Don’t stress. Trust me, I can help. And {{Child.name}} can help, too!",
+        "choices": [
+            {
+                "text": "Sure!",
+                "next": 4,
+                "money": 0,
+                "time": 0,
+                "health": 0,
+                "community": 0,
+                "intent": 0
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "setting": "home",
+        "speaker": "grandmother",
+        "text": "What’s giving you grief about enrollment?",
+        "choices": [
+            {
+                "text": "I don’t know if {{Child.name}} is up-to-date with immunization.",
+                "next": 5,
+                "money": 0,
+                "time": 0,
+                "health": 0,
+                "community": 0,
+                "intent": 0
+            },
+            {
+                "text": "I didn’t know that vaccines were required for school.",
+                "next": 5,
+                "money": 0,
+                "time": 0,
+                "health": 0,
+                "community": 0,
+                "intent": 0
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "setting": "home",
+        "speaker": "grandmother",
+        "image": "forms",
+        "text": "Vaccines...that was one of the rules the nurse gave you before leaving the hospital! Her chicken soup recipe is unforgettable! Good for the soul! You have been following those rules, right?",
+        "choices": [
+            {
+                "text": "Yes ma’am. I’m healthy as a horse. Can’t you tell?",
+                "next": 6,
+                "money": 0,
+                "time": 0,
+                "health": 0,
+                "community": 0,
+                "intent": 0
+            },
+            {
+                "text": "So many rules, so little time.",
+                "next": 7,
+                "money": 0,
+                "time": 0,
+                "health": 0,
+                "community": 0,
+                "intent": 0
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "setting": "home",
+        "speaker": "grandmother",
+        "text": "You’re eating well and exercising. You’re a slave to your beauty sleep. You drink water like a fish. You look fabulous!",
+        "choices": [
+            {
+                "text": "I learned from the best.",
+                "next": 9,
+                "money": 0,
+                "time": 0,
+                "health": 0,
+                "community": 1,
+                "intent": 0
+            },
+            {
+                "text": "Thanks, I know",
+                "next": 9,
+                "money": 0,
+                "time": 0,
+                "health": 0,
+                "community": 0,
+                "intent": 0
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "setting": "home",
+        "speaker": "grandmother",
+        "text": "You’re eating much better and exercising again. I see that. Getting good sleep and drinking plenty of water, too. You’re doing, it darling!",
+        "choices": [
+            {
+                "text": "Alright mom",
+                "next": 8,
+                "money": 0,
+                "time": 0,
+                "health": 0,
+                "community": 0,
+                "intent": 0
+            },
+            {
+                "text": "I’m doing my best.",
+                "next": 8,
+                "money": 0,
+                "time": 0,
+                "health": 0,
+                "community": 0,
+                "intent": 0
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "setting": "home",
+        "speaker": "grandmother",
+        "text": "Just remember, you have the pediatrician on speed dial. They can talk with you about immunization. You’re not the only one with questions.",
+        "choices": [
+            {
+                "text": "I’ll give them a call. They’re #1 on speed dial!",
+                "next": 9,
+                "money": 0,
+                "time": 0,
+                "health": 0,
+                "community": 0,
+                "intent": 1
+            },
+            {
+                "text": "I need to do more thinking.",
+                "next": 10,
+                "money": 0,
+                "time": 0,
+                "health": 0,
+                "community": 0,
+                "intent": 0
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "setting": "home",
+        "speaker": "grandmother",
+        "text": "That’s the spirit! By the way I’m starving. What’s for dinner tonight?",
+        "choices": [
+            {
+                "text": "Chicken soup",
+                "next": 11,
+                "money": 1,
+                "time": -1,
+                "health": 0,
+                "community": 0,
+                "intent": 0
+            },
+            {
+                "text": "Hearty salad",
+                "next": 11,
+                "money": 1,
+                "time": 0,
+                "health": 1,
+                "community": 0,
+                "intent": 0
+            },
+            {
+                "text": "Frozen pizzas",
+                "next": 15,
+                "money": -1,
+                "time": 1,
+                "health": -1,
+                "community": 0,
+                "intent": 0
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "setting": "home",
+        "speaker": "grandmother",
+        "text": "Ok just don’t wait too long. By the way I’m starving. What’s for dinner tonight?",
+        "choices": [
+            {
+                "text": "Chicken soup",
+                "next": 13,
+                "money": 1,
+                "time": -1,
+                "health": 0,
+                "community": 0,
+                "intent": 0
+            },
+            {
+                "text": "Hearty salad",
+                "next": 13,
+                "money": 1,
+                "time": 0,
+                "health": 1,
+                "community": 0,
+                "intent": 0
+            },
+            {
+                "text": "Frozen pizzas",
+                "next": 16,
+                "money": -1,
+                "time": 1,
+                "health": -1,
+                "community": 0,
+                "intent": 0
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "setting": "home",
+        "speaker": "grandmother",
+        "audio": "cookingAudio",
+        "image": "kitchen",
+        "text": "That sounds delicious! Why don’t you take a break? I’ll take it from here. Dinner for three, coming right up!",
+        "choices": [
+            {
+                "text": "That sounds great!",
+                "next": 12,
+                "money": 0,
+                "time": 1,
+                "health": 0,
+                "community": 0,
+                "intent": 0
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "setting": "home",
+        "image": "schoolGood",
+        "text": "Time flies by, and before you know it, it’s two weeks before the deadline to enroll {{Child.name}} in kindergarten. You made an appointment with the pediatrician weeks ago and got {{Child.name}} up to date with immunizations. You feel good knowing that everything will go smoothly for the start of kindergarten.",
+        "choices": [
+            {
+                "text": "Next",
+                "next": -1,
+                "money": 0,
+                "time": 1,
+                "health": 1,
+                "community": 1,
+                "intent": 0
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "setting": "home",
+        "speaker": "grandmother",
+        "audio": "cookingAudio",
+        "image": "kitchen",
+        "text": "That sounds delicious! Why don’t you take a break? I’ll take it from here. Dinner for three, coming right up!",
+        "choices": [
+            {
+                "text": "That sounds great!",
+                "next": 14,
+                "money": 0,
+                "time": 1,
+                "health": 0,
+                "community": 0,
+                "intent": 0
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "setting": "home",
+        "image": "schoolBad",
+        "text": "Time flies by, and before you know it, it’s two weeks before the deadline to enroll {{Child.name}} in kindergarten. You rush to make an appointment with the pediatrician. You have to miss work to make the appointment, and you won’t be able to go grocery shopping as planned. Guess that means takeout for dinner tonight. Oh well, better late than never.",
+        "choices": [
+            {
+                "text": "Next",
+                "next": -1,
+                "money": -1,
+                "time": -1,
+                "health": -1,
+                "community": 1,
+                "intent": 0
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "setting": "home",
+        "speaker": "grandmother",
+        "image": "pizza",
+        "text": "Now hold on, you can't feed that to a child. She needs vegetables and real food, not salt-crusted fake cheese.",
+        "moreInfo": "High salt content can put children at higher risk for developing high blood pressure, heart disease, and stroke in the future",
+        "choices": [
+            {
+                "text": "It's the only thing she'll eat",
+                "next": 17,
+                "money": 0,
+                "time": 0,
+                "health": -1,
+                "community": 0,
+                "intent": 0
+            },
+            {
+                "text": "We don't eat processed food often",
+                "next": 19,
+                "money": 0,
+                "time": 0,
+                "health": 1,
+                "community": 0,
+                "intent": 0
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "setting": "home",
+        "speaker": "grandmother",
+        "image": "pizza",
+        "text": "Now hold on, you can't feed that to a child. She needs vegetables and real food, not salt-crusted fake cheese.",
+        "moreInfo": "High salt content can put children at higher risk for developing high blood pressure, heart disease, and stroke in the future",
+        "choices": [
+            {
+                "text": "It's the only thing she'll eat",
+                "next": 18,
+                "money": 0,
+                "time": 0,
+                "health": -1,
+                "community": 0,
+                "intent": 0
+            },
+            {
+                "text": "We don't eat processed food often",
+                "next": 20,
+                "money": 0,
+                "time": 0,
+                "health": 1,
+                "community": 0,
+                "intent": 0
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "setting": "home",
+        "speaker": "grandmother",
+        "audio": "cookingAudio",
+        "image": "kitchen",
+        "text": "Well clearly you haven't been cooking good food... How about I take it from here? Dinner for three, coming right up!",
+        "choices": [
+            {
+                "text": "That sounds great!",
+                "next": 12,
+                "money": 0,
+                "time": 1,
+                "health": 0,
+                "community": 0,
+                "intent": 0
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "setting": "home",
+        "speaker": "grandmother",
+        "audio": "cookingAudio",
+        "image": "kitchen",
+        "text": "Well clearly you haven't been cooking good food... How about I take it from here? Dinner for three, coming right up!",
+        "choices": [
+            {
+                "text": "That sounds great!",
+                "next": 14,
+                "money": 0,
+                "time": 1,
+                "health": 0,
+                "community": 0,
+                "intent": 0
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "setting": "home",
+        "speaker": "grandmother",
+        "image": "pizza",
+        "text": "Alright then... But I'm cooking next time!",
+        "choices": [
+            {
+                "text": "That sounds great!",
+                "next": 12,
+                "money": 0,
+                "time": 0,
+                "health": 0,
+                "community": 1,
+                "intent": 0
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "setting": "home",
+        "speaker": "grandmother",
+        "image": "pizza",
+        "text": "Alright then... But I'm cooking next time!",
+        "choices": [
+            {
+                "text": "That sounds great!",
+                "next": 14,
+                "money": 0,
+                "time": 0,
+                "health": 0,
+                "community": 1,
+                "intent": 0
+            }
+        ]
+    }
 ]

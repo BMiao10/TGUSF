@@ -20,10 +20,10 @@ public struct ScoreKeeper: Codable {
     }
 
     private(set) var scores: [ScoreItems: Int] = [
-        .health: maxScore,
-        .money: maxScore,
-        .time: maxScore,
-        .community: maxScore
+        .health: maxScore-1,
+        .money: maxScore-1,
+        .time: maxScore-1,
+        .community: maxScore-1
     ]
 
     func score(for item:ScoreItems) -> Int {
