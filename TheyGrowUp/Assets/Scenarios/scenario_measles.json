@@ -5,7 +5,7 @@
     "speaker": "sun",
     "audio": "parkAudio",
     "image": "picnic",
-    "text": "Can you believe that {{Child.name}} is already 4 years old? {{Child.pronoun.he}} loves playing outdoors, especially at the local park. Since the weather is so nice out today, your family heads over there for a picnic. What have you packed for dessert?",
+    "text": "Can you believe that {{Child.name}} is already 4 years old? {{Child.pronoun.He}} loves playing outdoors, especially at the local park. Since the weather is so nice out today, your family heads over there for a picnic. What have you packed for dessert?",
     "choices": [
       {
         "text": "Fruit salad",
@@ -114,7 +114,7 @@
     "moreInfo": "About 1 out of every 20 children with measles gets pneumonia, and about 1 child in every 1,000 who get measles will die.",
     "choices": [
       {
-        "text": "I’m making sure {{Child.name}} keeps up with immunizations",
+        "text": "I'll keep {{Child.name}} up to date with immunizations",
         "next": 6,
         "money": 0,
         "time": 0,
@@ -260,7 +260,7 @@
         "money": 0,
         "time": 0,
         "health": 0,
-        "community": 0,
+        "community": 1,
         "intent": 0
       }
     ]

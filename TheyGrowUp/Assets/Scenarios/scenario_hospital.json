@@ -1,292 +1,292 @@
 [
-    {
-        "id": 0,
-        "setting": "hospitalGood",
-        "text": "You’re just leaving the hospital, beaming with pride and excited to finally go home with baby {{Child.name}}. A nurse comes up to finish some last minute preparations.",
-        "choices": [
-            {
-                "text": "Next",
-                "next": 1,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 0
-            }
-        ]
-    },
-    {
-        "id": 1,
-        "setting": "hospitalGood",
-        "speaker": "nurse",
-        "text": "Babies! Gotta love them! The joy, the pain, the responsibility. It’s a lot for new parents to handle, especially in the first few months. Up for the challenge?",
-        "choices": [
-            {
-                "text": "I was born ready.",
-                "next": 2,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 0
-            },
-            {
-                "text": "I think so.",
-                "next": 2,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 0
-            }
-        ]
-    },
-    {
-        "id": 2,
-        "setting": "hospitalGood",
-        "speaker": "nurse",
-        "text": "You can do it! Just follow the advice my grandma gave me when I became a parent. She said, “If you can’t take care of yourself, how can you take care of a baby?”",
-        "moreInfo": "Babies require a lot of care and up to 80% of new mothers experience \"baby blues,\" or feelings of worry, unhappiness, and fatigue that last a week or two. Some new moms experience a more severe form of depression known as postpartum depression, which can be managed by prompt treatment.",
-        "choices": [
-            {
-                "text": "Really? She said that?",
-                "next": 3,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 0
-            },
-            {
-                "text": "What does she mean by that?",
-                "next": 3,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 0
-            }
-        ]
-    },
-    {
-        "id": 3,
-        "setting": "hospitalGood",
-        "speaker": "nurse",
-        "image": "healthyFood",
-        "text": "I didn’t know what she meant...until she shared her seven secrets to living healthy. Eat right. Drink water. Exercise. Get good sleep. Take breaks. See your doctor. Get vaccinated.",
-        "choices": [
-            {
-                "text": "That’s really smart advice!",
-                "next": 5,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 1
-            },
-            {
-                "text": "Vaccinated?",
-                "next": 4,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 0
-            }
-        ]
-    },
-    {
-        "id": 4,
-        "setting": "hospitalGood",
-        "speaker": "nurse",
-        "text": "Vaccines save lives! You should talk with your doctor about immunization. I kept my child’s pediatrician on speed dial. So helpful to talk with someone I could trust for information about my family’s health.\n",
-        "choices": [
-            {
-                "text": "I’ll call him with questions.",
-                "next": 5,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 2
-            },
-            {
-                "text": "I'm leaving now. Anything else?",
-                "next": 5,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": -1
-            }
-        ]
-    },
-    {
-        "id": 5,
-        "setting": "hospitalGood",
-        "speaker": "nurse",
-        "image": "recipe",
-        "text": "I like you, so I’ll also throw in my grandma’s recipe for chicken soup. Everyone loves it! And by the way, take those extra diapers home...you’ll need em!",
-        "choices": [
-            {
-                "text": "Wow! It feel like I’ve hit jackpot!",
-                "next": 6,
-                "money": 1,
-                "time": 0,
-                "health": 1,
-                "community": 0,
-                "intent": 0
-            },
-            {
-                "text": "Lucky me.",
-                "next": 6,
-                "money": 1,
-                "time": 0,
-                "health": 1,
-                "community": 0,
-                "intent": 0
-            }
-        ]
-    },
-    {
-        "id": 6,
-        "setting": "hospitalGood",
-        "speaker": "nurse",
-        "text": "Ok then, I won’t keep you waiting. Off you go! Don’t forget those secrets. Eat right. Drink water. Exercise. Get good sleep. See your doctor. Get vaccinated.",
-        "choices": [
-            {
-                "text": "Living and breathing your advice as we speak! ",
-                "next": 7,
-                "money": 0,
-                "time": 0,
-                "health": 1,
-                "community": 0,
-                "intent": 0
-            },
-            {
-                "text": "Thank you, I have to go.",
-                "next": 7,
-                "money": 0,
-                "time": 1,
-                "health": 0,
-                "community": 0,
-                "intent": 0
-            }
-        ]
-    },
-    {
-        "id": 7,
-        "setting": "home",
-        "audio": "lullabyAudio",
-        "image": "cradle",
-        "text": "Home sweet home. It's your first night back home with {{Child.name}}, and you're nervous but excited at this new chapter in your life. You carry {{Child.name}} over to {{Child.pronoun.his}} crib, hoping not to wake {{Child.pronoun.him}}. You place {{Child.pronoun.him}} gently in {{Child.pronoun.his}} own bed...",
-        "choices": [
-            {
-                "text": "On {{Child.pronoun.his}} back",
-                "next": 8,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 0
-            },
-            {
-                "text": "On {{Child.pronoun.his}} side",
-                "next": 9,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 0
-            }
-        ]
-    },
-    {
-        "id": 8,
-        "setting": "home",
-        "audio": "lullabyAudio",
-        "image": "cradle",
-        "text": "You remembered that your doctor had advised you to place {{Child.name}} on {{Child.pronoun.his}} back while sleeping to prevent SIDS. And you've just followed her advice to a T! A wave of confidence suddenly washes over you as you realize that you've conquered the first steps in keeping {{Child.name}} healthy!",
-        "moreInfo": "The risk of Sudden Infant Death Syndrome (SIDS) can be minimized by placing babies on their back for sleep, and by not bed-sharing. Have a conversation with your child's provider if you have any questions or concerns to discuss the best options for keeping your child healthy.",
-        "choices": [
-            {
-                "text": "Great job! ",
-                "next": 11,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 1,
-                "intent": 0
-            }
-        ]
-    },
-    {
-        "id": 9,
-        "setting": "home",
-        "image": "cradle",
-        "text": "You place {{Child.name}} into the crib on {{Child.pronoun.his}} side. {{Child.pronoun.he}} looks so peaceful, but you can't help feeling like there's something that you've forgotten....",
-        "choices": [
-            {
-                "text": "What did the doctor say about sleeping?",
-                "next": 10,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": -1,
-                "intent": 0
-            }
-        ]
-    },
-    {
-        "id": 10,
-        "setting": "home",
-        "text": "Suddenly, you recall the saying that babies should be placed on their backs while sleeping to prevent SIDS! Glad you remembered this fact, you quickly turn {{Child.name}} so that {{Child.pronoun.he}} is now sleeping on his back. ",
-        "moreInfo": "The risk of Sudden Infant Death Syndrome (SIDS) can be minimized by placing babies on their back for sleep, and by not bed-sharing. Have a conversation with your child's provider if you have any questions or concerns to discuss the best options for keeping your child healthy.",
-        "choices": [
-            {
-                "text": "I should write this down!",
-                "next": 11,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 0
-            }
-        ]
-    },
-    {
-        "id": 11,
-        "setting": "home",
-        "image": "bed",
-        "text": "As you finally crawl into your own bed, you begin to wonder. What kind of person will {{Child.name}} be? What kind of parent will you be? How will you keep {{Child.name}} healthy?",
-        "choices": [
-            {
-                "text": "Zzzzz.....",
-                "next": 12,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 0
-            }
-        ]
-    },
-    {
-        "id": 12,
-        "setting": "home",
-        "audio": "lullabyAudio",
-        "image": "bed",
-        "text": "Before you know it, you begin to doze off. The thoughts drifting away, one by one, until there is only the peacefulness of you and {{Child.name}} fast asleep.",
-        "choices": [
-            {
-                "text": "Good night!",
-                "next": -1,
-                "money": 0,
-                "time": 0,
-                "health": 0,
-                "community": 0,
-                "intent": 0
-            }
-        ]
-    }
+  {
+    "id": 0,
+    "setting": "hospitalGood",
+    "text": "You’re just leaving the hospital, beaming with pride and excited to finally go home with baby {{Child.name}}. A nurse comes up to finish some last minute preparations.",
+    "choices": [
+      {
+        "text": "Next",
+        "next": 1,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "setting": "hospitalGood",
+    "speaker": "nurse",
+    "text": "Babies! Gotta love them! The joy, the pain, the responsibility. It’s a lot for new parents to handle, especially in the first few months. Up for the challenge?",
+    "choices": [
+      {
+        "text": "I was born ready.",
+        "next": 2,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      },
+      {
+        "text": "I think so.",
+        "next": 2,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "setting": "hospitalGood",
+    "speaker": "nurse",
+    "text": "You can do it! Just follow the advice my grandma gave me when I became a parent. She said, “If you can’t take care of yourself, how can you take care of a baby?”",
+    "moreInfo": "Babies require a lot of care and up to 80% of new mothers experience \"baby blues,\" or feelings of worry, unhappiness, and fatigue that last a week or two. Some new moms experience a more severe form of depression known as postpartum depression, which can be managed by prompt treatment.",
+    "choices": [
+      {
+        "text": "Really? She said that?",
+        "next": 3,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      },
+      {
+        "text": "What does she mean by that?",
+        "next": 3,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "setting": "hospitalGood",
+    "speaker": "nurse",
+    "image": "healthyFood",
+    "text": "I didn’t know what she meant...until she shared her seven secrets to living healthy. Eat right. Drink water. Exercise. Get good sleep. Take breaks. See your doctor. Get vaccinated.",
+    "choices": [
+      {
+        "text": "That’s really smart advice!",
+        "next": 5,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 1
+      },
+      {
+        "text": "Vaccinated?",
+        "next": 4,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "setting": "hospitalGood",
+    "speaker": "nurse",
+    "text": "Vaccines save lives! You should talk with your doctor about immunization. I kept my child’s pediatrician on speed dial. So helpful to talk with someone I could trust for information about my family’s health.\n",
+    "choices": [
+      {
+        "text": "I’ll call him with questions.",
+        "next": 5,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 2
+      },
+      {
+        "text": "I'm leaving now. Anything else?",
+        "next": 5,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": -1
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "setting": "hospitalGood",
+    "speaker": "nurse",
+    "image": "recipe",
+    "text": "I like you, so I’ll also throw in my grandma’s recipe for chicken soup. Everyone loves it! And by the way, take those extra diapers home...you’ll need em!",
+    "choices": [
+      {
+        "text": "Wow! It feel like I’ve hit jackpot!",
+        "next": 6,
+        "money": 1,
+        "time": 0,
+        "health": 1,
+        "community": 0,
+        "intent": 0
+      },
+      {
+        "text": "Lucky me.",
+        "next": 6,
+        "money": 1,
+        "time": 0,
+        "health": 1,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "setting": "hospitalGood",
+    "speaker": "nurse",
+    "text": "Ok then, I won’t keep you waiting. Off you go! Don’t forget those secrets. Eat right. Drink water. Exercise. Get good sleep. See your doctor. Get vaccinated.",
+    "choices": [
+      {
+        "text": "Living and breathing your advice as we speak! ",
+        "next": 7,
+        "money": 0,
+        "time": 0,
+        "health": 1,
+        "community": 0,
+        "intent": 0
+      },
+      {
+        "text": "Thank you, I have to go.",
+        "next": 7,
+        "money": 0,
+        "time": 1,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "setting": "home",
+    "audio": "lullabyAudio",
+    "image": "cradle",
+    "text": "Home sweet home. It's your first night back home with {{Child.name}}, and you're nervous but excited at this new chapter in your life. You carry {{Child.name}} over to {{Child.pronoun.his}} crib, hoping not to wake {{Child.pronoun.him}}. You place {{Child.pronoun.him}} gently in {{Child.pronoun.his}} crib...",
+    "choices": [
+      {
+        "text": "On {{Child.pronoun.his}} back",
+        "next": 8,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      },
+      {
+        "text": "On {{Child.pronoun.his}} side",
+        "next": 9,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "setting": "home",
+    "audio": "lullabyAudio",
+    "image": "cradle",
+    "text": "You remembered that your doctor had advised you to place {{Child.name}} on {{Child.pronoun.his}} back while sleeping to prevent SIDS. And you've just followed her advice to a T! A wave of confidence suddenly washes over you as you realize that you've conquered the first steps in keeping {{Child.name}} healthy!",
+    "moreInfo": "The risk of Sudden Infant Death Syndrome (SIDS) can be minimized by placing babies on their back for sleep, and by not bed-sharing. Have a conversation with your child's provider if you have any questions or concerns to discuss the best options for keeping your child healthy",
+    "choices": [
+      {
+        "text": "Great job! ",
+        "next": 11,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 1,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "setting": "home",
+    "image": "cradle",
+    "text": "You place {{Child.name}} into the crib on {{Child.pronoun.his}} side. {{Child.pronoun.he}} looks so peaceful, but you can't help feeling like there's something that you've forgotten....",
+    "choices": [
+      {
+        "text": "What had the doctor said about good sleeping habits?",
+        "next": 10,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": -1,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "setting": "home",
+    "text": "Suddenly, you recall the saying that babies should be placed on their backs while sleeping to prevent SIDS! Glad you remembered this fact, you quickly turn {{Child.name}} so that {{Child.pronoun.he}} is now sleeping on his back. ",
+    "moreInfo": "The risk of Sudden Infant Death Syndrome (SIDS) can be minimized by placing babies on their back for sleep, and by not bed-sharing. Have a conversation with your child's provider if you have any questions or concerns to discuss the best options for keeping your child healthy",
+    "choices": [
+      {
+        "text": "I should write this down!",
+        "next": 11,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "setting": "home",
+    "image": "bed",
+    "text": "As you finally crawl into your own bed, you begin to wonder. What kind of person will {{Child.name}} be? What kind of parent will you be? How will you keep {{Child.name}} healthy?",
+    "choices": [
+      {
+        "text": "Zzz.....",
+        "next": 12,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "setting": "home",
+    "audio": "lullabyAudio",
+    "image": "bed",
+    "text": "Before you know it, you begin to doze off. The thoughts drifting away, one by one, until there is only the peacefulness of you and {{Child.name}} fast asleep.",
+    "choices": [
+      {
+        "text": "Good night!",
+        "next": -1,
+        "money": 0,
+        "time": 0,
+        "health": 0,
+        "community": 0,
+        "intent": 0
+      }
+    ]
+  }
 ]
